@@ -1,15 +1,49 @@
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
 @import "tailwindcss";
 
 @theme {
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  --color-navy: #1a3a5c;
-  --color-navy-dark: #122740;
-  --color-navy-light: #2c5580;
-  --color-gold: #d4af37;
-  --color-gold-light: #e6c866;
-  --color-offwhite: #ffffff;
-  --color-lightgray: #f5f5f5;
+  /* Warm, editorial palette */
+  --color-paper: #faf8f3;
+  --color-paper-dim: #f1ece1;
+  --color-ink: #2a2a2a;
+  --color-ink-soft: #55534d;
+  --color-navy: #1b2a4a;
+  --color-navy-dark: #101c33;
+  --color-navy-light: #2f4270;
+  --color-hairline: #dcd6c8;
+
+  /* Chart categorical palette — validated for CVD separation (see dataviz skill) */
+  --color-chart-1: #3d5a99;
+  --color-chart-2: #0c9a8d;
+  --color-chart-3: #c08a20;
+  --color-chart-4: #8b3a6b;
+}
+
+/*
+ * Aliases consumed by embedded report chart components
+ * (RegulatoryTimeline, AdoptionEstimatesChart, CBDCvsUPIChart), which use
+ * --color-accent / --color-text / --color-bg / --color-border / --color-muted
+ * naming. Mapped onto our real navy/charcoal/off-white theme tokens above.
+ */
+:root {
+  --color-bg: var(--color-paper);
+  --color-text: var(--color-ink);
+  --color-muted: var(--color-ink-soft);
+  --color-muted-strong: #9b9484;
+  --color-border: var(--color-hairline);
+  --color-accent: var(--color-navy);
+  --color-accent-2: var(--color-navy-light);
 }
 
 html {
@@ -18,8 +52,30 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-lightgray);
-  color: var(--color-navy-dark);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}
+
+/* Copy-protected report content */
+.report-protected {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Site-wide hover lift — cards, badges, gallery images, buttons */
+.hover-lift {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease,
+    color 220ms ease, border-color 220ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -12px rgba(27, 42, 74, 0.28), 0 4px 10px -6px rgba(27, 42, 74, 0.12);
 }

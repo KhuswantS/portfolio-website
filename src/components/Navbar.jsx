@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
   { to: "/research", label: "Research" },
+  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -13,13 +13,17 @@ export default function Navbar() {
 
   const linkClass = ({ isActive }) =>
     `text-sm font-medium tracking-wide transition-colors ${
-      isActive ? "text-gold" : "text-white/80 hover:text-white"
+      isActive ? "text-navy" : "text-ink-soft hover:text-navy"
     }`;
 
   return (
-    <header className="sticky top-0 z-50 bg-navy shadow-md">
+    <header className="sticky top-0 z-50 border-b border-hairline bg-paper/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <NavLink to="/" className="text-lg font-semibold tracking-tight text-white">
+        <NavLink
+          to="/"
+          className="font-serif text-lg font-semibold tracking-[0.01em] text-ink"
+          end
+        >
           Khuswant Sharma
         </NavLink>
 
@@ -40,14 +44,14 @@ export default function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          <span className={`h-0.5 w-6 bg-white transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
-          <span className={`h-0.5 w-6 bg-white transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`h-0.5 w-6 bg-white transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+          <span className={`h-0.5 w-6 bg-ink transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
+          <span className={`h-0.5 w-6 bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span className={`h-0.5 w-6 bg-ink transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`} />
         </button>
       </nav>
 
       {open && (
-        <ul className="flex flex-col gap-1 border-t border-white/10 bg-navy px-6 pb-4 md:hidden">
+        <ul className="flex flex-col gap-1 border-t border-hairline bg-paper px-6 pb-4 md:hidden">
           {links.map((link) => (
             <li key={link.to}>
               <NavLink
@@ -55,7 +59,7 @@ export default function Navbar() {
                 end={link.to === "/"}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `block py-2 text-sm font-medium ${isActive ? "text-gold" : "text-white/80"}`
+                  `block py-2 text-sm font-medium ${isActive ? "text-navy" : "text-ink-soft"}`
                 }
               >
                 {link.label}
