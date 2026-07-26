@@ -1,23 +1,29 @@
-import { SiPython } from "react-icons/si";
+import { Link } from "react-router-dom";
+import { SiPython, SiClaude } from "react-icons/si";
 import { IoLogoTableau, IoLogoMicrosoft } from "react-icons/io5";
-import { RiFileExcel2Fill } from "react-icons/ri";
-import { FaFilePowerpoint } from "react-icons/fa6";
+import { RiFileExcel2Fill, RiFilePpt2Fill, RiFileWord2Fill, RiOpenaiFill } from "react-icons/ri";
 import { TbDatabase } from "react-icons/tb";
 
+// Excel, Power BI, PowerPoint, Word form one office-tools cluster and stay in
+// this exact order as the first row; the rest follow in the same grid.
 const technicalTools = [
   { label: "Excel (Advanced)", Icon: RiFileExcel2Fill },
-  { label: "Power BI", Icon: IoLogoMicrosoft },
+  { label: "Power BI (learning)", Icon: IoLogoMicrosoft },
+  { label: "PowerPoint", Icon: RiFilePpt2Fill },
+  { label: "Word", Icon: RiFileWord2Fill },
   { label: "Tableau", Icon: IoLogoTableau },
   { label: "Python", Icon: SiPython },
   { label: "SQL", Icon: TbDatabase },
-  { label: "PowerPoint", Icon: FaFilePowerpoint },
+  { label: "Claude & Claude Code", Icon: SiClaude },
+  { label: "ChatGPT", Icon: RiOpenaiFill },
 ];
 
 const coreCompetencies = [
-  "Financial Modeling",
-  "Valuation (DCF/Comps)",
-  "PE/VC Ecosystem Knowledge",
-  "Stakeholder Management",
+  "PE/VC ecosystem & industry mapping",
+  "Stakeholder engagement & partner relations",
+  "Qualitative & regulatory research",
+  "Financial modeling (in progress - CFA Level I candidate)",
+  "Presentation & investor-facing content development",
 ];
 
 const education = [
@@ -26,8 +32,11 @@ const education = [
 ];
 
 const researchProjects = [
-  "Cryptocurrency & Blockchain: Market Dynamics, Adoption Drivers & Regulatory Implications",
-  "Awareness & Understanding of Cryptocurrency Among Retail Investors",
+  {
+    text: "Tax Without Recognition: India's Virtual Digital Asset Regime and the July 2026 Rupture (published research report)",
+    href: "/research/tax-without-recognition",
+  },
+  { text: "Awareness & Understanding of Cryptocurrency Among Retail Investors" },
 ];
 
 const gallery = [
@@ -58,14 +67,14 @@ function CompetencyChip({ label }) {
 
 export default function About() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+    <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">About</p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ink sm:text-4xl">
         Professional Summary
       </h1>
 
       <div className="mt-12 grid gap-12 sm:grid-cols-5 sm:items-center">
-        <div className="sm:col-span-2">
+        <div className="group sm:col-span-2">
           <div
             className="mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-2xl shadow-lg"
             style={{
@@ -79,6 +88,9 @@ export default function About() {
               className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
             />
           </div>
+          <p className="mt-5 whitespace-nowrap text-center font-serif text-3xl font-semibold text-ink opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 sm:text-4xl">
+            Khuswant Sharma
+          </p>
         </div>
 
         <div className="sm:col-span-3">
@@ -99,11 +111,11 @@ export default function About() {
       </div>
 
       <div className="mt-16 space-y-8 border-t border-hairline pt-16">
-        <h2 className="font-serif text-xl font-semibold text-ink">Skills</h2>
+        <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Skills</h2>
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft">Technical Tools</p>
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {technicalTools.map((tool) => (
               <ToolBadge key={tool.label} label={tool.label} Icon={tool.Icon} />
             ))}
@@ -122,7 +134,7 @@ export default function About() {
 
       <div className="mt-16 grid gap-12 border-t border-hairline pt-16 sm:grid-cols-2">
         <div>
-          <h2 className="font-serif text-xl font-semibold text-ink">Education</h2>
+          <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Education</h2>
           <ul className="mt-5 space-y-3">
             {education.map((item) => (
               <li key={item.school} className="text-sm leading-relaxed text-ink-soft">
@@ -136,11 +148,17 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="font-serif text-xl font-semibold text-ink">Research Projects</h2>
+          <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Research Projects</h2>
           <ul className="mt-5 space-y-3">
             {researchProjects.map((project) => (
-              <li key={project} className="text-sm leading-relaxed text-ink-soft">
-                {project}
+              <li key={project.text} className="text-sm leading-relaxed text-ink-soft">
+                {project.href ? (
+                  <Link to={project.href} className="font-medium text-navy hover:underline">
+                    {project.text}
+                  </Link>
+                ) : (
+                  project.text
+                )}
               </li>
             ))}
           </ul>
@@ -148,7 +166,7 @@ export default function About() {
       </div>
 
       <div className="mt-16 border-t border-hairline pt-16">
-        <h2 className="font-serif text-xl font-semibold text-ink">Experience</h2>
+        <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Experience</h2>
 
         <div className="hover-lift mt-8 rounded-lg border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
           <div className="flex flex-wrap items-center gap-4">
@@ -182,11 +200,14 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-16 flex justify-center border-t border-hairline pt-16">
+      <div className="mt-16 flex flex-col items-center gap-5 border-t border-hairline pt-16 text-center">
+        <p className="text-sm text-ink-soft">
+          You&rsquo;ve read the summary. For the full picture, download my CV below.
+        </p>
         <a
           href="/cv/Khuswant_Sharma.pdf"
           download
-          className="hover-lift inline-flex items-center gap-2 rounded-md bg-navy px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy-light"
+          className="hover-lift inline-flex items-center gap-2.5 rounded-md bg-navy px-10 py-4 text-base font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy-light"
         >
           Download CV
           <span aria-hidden="true">&darr;</span>

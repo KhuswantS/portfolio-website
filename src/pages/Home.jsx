@@ -39,7 +39,7 @@ const stats = [
 export default function Home() {
   return (
     <div>
-      <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-28 text-center sm:py-36">
+      <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-28 text-center sm:py-36">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-hairline py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="mb-8 flex items-end justify-between">
             <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">
               Featured Research
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-hairline bg-paper-dim/60 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
+        <div className="mx-auto max-w-5xl px-6 text-center">
           <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">What I Do</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
             I conduct independent due diligence on emerging-market companies and
@@ -155,7 +155,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-hairline py-16 sm:py-20">
-        <div className="mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
+        <div className="mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
           <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">
             Explore the Research Library
           </h2>

@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from 'recharts';
 
 // Drop this into Section 1, "The measurement problem." The point of this
@@ -59,33 +61,38 @@ function CustomTooltip({ active, payload }) {
 }
 
 export default function AdoptionEstimatesChart() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-60px' });
+
   return (
-    <figure className="w-full my-8">
+    <figure ref={ref} className="w-full my-8">
       <div className="h-72 sm:h-80">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} margin={{ top: 24, right: 16, left: 0, bottom: 20 }}>
-            <XAxis
-              dataKey="name"
-              tick={<WrappedAxisTick />}
-              tickLine={false}
-              axisLine={{ stroke: 'var(--color-border, #DCD5C4)' }}
-              interval={0}
-            />
-            <YAxis
-              tick={{ fontSize: 11 }}
-              tickLine={false}
-              axisLine={false}
-              label={{ value: 'Million users', angle: -90, position: 'insideLeft', fontSize: 11 }}
-            />
-            <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #DCD5C4)', opacity: 0.35 }} />
-            <Bar dataKey="value" radius={[4, 4, 0, 0]} maxBarSize={72}>
-              {data.map((d, i) => (
-                <Cell key={i} fill={d.fill} />
-              ))}
-              <LabelList dataKey="value" position="top" formatter={(v) => `${v}M`} fontSize={12} fontWeight={600} />
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
+        {isInView && (
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={data} margin={{ top: 24, right: 16, left: 0, bottom: 20 }}>
+              <XAxis
+                dataKey="name"
+                tick={<WrappedAxisTick />}
+                tickLine={false}
+                axisLine={{ stroke: 'var(--color-border, #DCD5C4)' }}
+                interval={0}
+              />
+              <YAxis
+                tick={{ fontSize: 11 }}
+                tickLine={false}
+                axisLine={false}
+                label={{ value: 'Million users', angle: -90, position: 'insideLeft', fontSize: 11 }}
+              />
+              <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #DCD5C4)', opacity: 0.35 }} />
+              <Bar dataKey="value" radius={[4, 4, 0, 0]} maxBarSize={72} animationDuration={900} animationEasing="ease-out">
+                {data.map((d, i) => (
+                  <Cell key={i} fill={d.fill} />
+                ))}
+                <LabelList dataKey="value" position="top" formatter={(v) => `${v}M`} fontSize={12} fontWeight={600} />
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        )}
       </div>
       <figcaption className="mt-3 text-xs leading-relaxed" style={{ color: 'var(--color-muted, #5B564E)' }}>
         These three figures are not measuring the same thing and should not be averaged or

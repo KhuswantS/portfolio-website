@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList } from 'recharts';
 
 // Drop this into Section 6, "Does the e-rupee work as a substitute." A
@@ -27,25 +29,30 @@ function CustomTooltip({ active, payload }) {
 }
 
 export default function CBDCvsUPIChart() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-60px' });
+
   return (
-    <figure className="w-full my-8">
+    <figure ref={ref} className="w-full my-8">
       <div className="h-56 sm:h-64">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} layout="vertical" margin={{ top: 8, right: 40, left: 16, bottom: 8 }}>
-            <XAxis type="number" scale="log" domain={[1, 500]} tick={{ fontSize: 11 }} tickLine={false} axisLine={{ stroke: 'var(--color-border, #DCD5C4)' }} />
-            <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={140} />
-            <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #DCD5C4)', opacity: 0.35 }} />
-            <Bar dataKey="value" radius={[0, 4, 4, 0]} maxBarSize={36} fill="var(--color-accent, #16223D)">
-              <LabelList
-                dataKey="value"
-                position="right"
-                formatter={(v, entry) => `${v}${entry && entry.name === 'UPI' ? 'M+' : 'M'}`}
-                fontSize={12}
-                fontWeight={600}
-              />
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
+        {isInView && (
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={data} layout="vertical" margin={{ top: 8, right: 40, left: 16, bottom: 8 }}>
+              <XAxis type="number" scale="log" domain={[1, 500]} tick={{ fontSize: 11 }} tickLine={false} axisLine={{ stroke: 'var(--color-border, #DCD5C4)' }} />
+              <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={140} />
+              <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #DCD5C4)', opacity: 0.35 }} />
+              <Bar dataKey="value" radius={[0, 4, 4, 0]} maxBarSize={36} fill="var(--color-accent, #16223D)" animationDuration={900} animationEasing="ease-out">
+                <LabelList
+                  dataKey="value"
+                  position="right"
+                  formatter={(v, entry) => `${v}${entry && entry.name === 'UPI' ? 'M+' : 'M'}`}
+                  fontSize={12}
+                  fontWeight={600}
+                />
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        )}
       </div>
       <figcaption className="mt-3 text-xs leading-relaxed" style={{ color: 'var(--color-muted, #5B564E)' }}>
         Log scale. After three and a half years, the e-rupee pilot has reached roughly 3% of

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -8,6 +9,12 @@ import ResearchArticle from "./pages/ResearchArticle";
 import Contact from "./pages/Contact";
 
 export default function App() {
+  useEffect(() => {
+    const handleContextMenu = (e) => e.preventDefault();
+    document.addEventListener("contextmenu", handleContextMenu);
+    return () => document.removeEventListener("contextmenu", handleContextMenu);
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />

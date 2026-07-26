@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16 sm:py-20">
+    <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">Contact</p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ink sm:text-4xl">
         Get in Touch

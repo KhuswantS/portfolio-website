@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { reports } from "../data/reports";
 import { formatDate } from "../lib/format";
@@ -26,7 +25,7 @@ function ReportBlock({ block, index }) {
   switch (block.type) {
     case "heading":
       return (
-        <h2 key={index} className="mt-12 mb-4 font-serif text-2xl font-semibold text-ink">
+        <h2 key={index} className="mt-12 mb-4 font-serif text-2xl font-semibold text-ink sm:text-3xl">
           {block.text}
         </h2>
       );
@@ -112,12 +111,6 @@ export default function ResearchArticle() {
   const { slug } = useParams();
   const report = reports.find((r) => r.slug === slug);
 
-  useEffect(() => {
-    const handleContextMenu = (e) => e.preventDefault();
-    document.addEventListener("contextmenu", handleContextMenu);
-    return () => document.removeEventListener("contextmenu", handleContextMenu);
-  }, []);
-
   if (!report) {
     return (
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
@@ -158,7 +151,7 @@ export default function ResearchArticle() {
         <span aria-hidden="true">&darr;</span>
       </a>
 
-      <div className="report-protected mt-10 border-t border-hairline pt-10 [&>*:first-child]:mt-0">
+      <div className="mt-10 border-t border-hairline pt-10 [&>*:first-child]:mt-0">
         {report.content.map((block, i) => (
           <ReportBlock key={i} block={block} index={i} />
         ))}
