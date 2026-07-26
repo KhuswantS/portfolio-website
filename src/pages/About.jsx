@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SiPython, SiClaude } from "react-icons/si";
 import { IoLogoTableau, IoLogoMicrosoft } from "react-icons/io5";
@@ -66,6 +67,10 @@ function CompetencyChip({ label }) {
 }
 
 export default function About() {
+  // Hover (desktop mouse) and this tap-toggle (touch) are independent triggers
+  // for the same reveal state - neither reads from or resets the other.
+  const [isRevealed, setIsRevealed] = useState(false);
+
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">About</p>
@@ -76,7 +81,18 @@ export default function About() {
       <div className="mt-12 grid gap-12 sm:grid-cols-5 sm:items-center">
         <div className="group sm:col-span-2">
           <div
-            className="mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-2xl shadow-lg"
+            role="button"
+            tabIndex={0}
+            aria-pressed={isRevealed}
+            aria-label="Toggle photo reveal"
+            onClick={() => setIsRevealed((v) => !v)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setIsRevealed((v) => !v);
+              }
+            }}
+            className="mx-auto aspect-[4/5] w-full max-w-xs cursor-pointer overflow-hidden rounded-2xl shadow-lg"
             style={{
               maskImage: "linear-gradient(to bottom, black 75%, transparent 100%)",
               WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 100%)",
@@ -85,10 +101,16 @@ export default function About() {
             <img
               src="/images/IMG_4824.jpg"
               alt="Khuswant Sharma"
-              className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
+              className={`h-full w-full object-cover transition-all duration-500 ${
+                isRevealed ? "grayscale-0" : "grayscale hover:grayscale-0"
+              }`}
             />
           </div>
-          <p className="mt-5 whitespace-nowrap text-center font-serif text-3xl font-semibold text-ink opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 sm:text-4xl">
+          <p
+            className={`mt-5 whitespace-nowrap text-center font-serif text-3xl font-semibold text-ink transition-opacity duration-300 ease-out sm:text-4xl ${
+              isRevealed ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+            }`}
+          >
             Khuswant Sharma
           </p>
         </div>
