@@ -1,16 +1,38 @@
-# React + Vite
+# Khuswant Sharma — Investment Research Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal site for independent investment research and analysis. Built to showcase original work rather than a resume — the reports are the point.
 
-Currently, two official plugins are available:
+**Live:** [khuswantsharma.com](https://khuswantsharma.com) (currently at [portfolio-website-pi-six-56.vercel.app](https://portfolio-website-pi-six-56.vercel.app) while the domain transfers)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What's here
 
-## React Compiler
+- **Home** — entry point and a short positioning statement
+- **Research** — a library of original reports; each one includes sourced analysis, interactive charts, and a downloadable PDF
+- **About** — background, experience, and how I work
+- **Contact** — get in touch directly
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The first published report, *Tax Without Recognition*, covers India's virtual digital asset regulatory regime and the July 2026 institutional split between the RBI and the Parliamentary Standing Committee on Finance.
 
-## Expanding the Oxlint configuration
+## Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- [React](https://react.dev/) + [Vite](https://vite.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Framer Motion](https://motion.dev/) for scroll-triggered animation
+- [Recharts](https://recharts.org/) for interactive data visualization
+- [React Router](https://reactrouter.com/) for navigation
+- Hosted on [Vercel](https://vercel.com/), deployed automatically on every push to `main`
+
+## How this was built
+
+Built and iterated using [Claude Code](https://claude.com/claude-code), directing the implementation while making the actual editorial, design, and content decisions — what to publish, how to source it, what the site should say and shouldn't. The research itself, including all sourcing and analysis, is my own work.
+
+## Running locally
+
+```bash
+npm install
+npm run dev
+```
+
+## About this repo
+
+This is a personal, non-commercial portfolio project, not an open-source library — it isn't set up to accept external contributions, but feel free to look around.
