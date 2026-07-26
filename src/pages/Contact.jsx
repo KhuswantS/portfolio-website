@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MailIcon, LinkedInIcon, GitHubIcon, TwitterIcon } from "../components/icons";
 
 const initialForm = { name: "", email: "", message: "" };
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mrenrpgd";
 
 const contactLinks = [
   {
@@ -32,17 +33,36 @@ const contactLinks = [
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | submitting | success | error
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setForm(initialForm);
+    setStatus("submitting");
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setForm(initialForm);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -127,14 +147,25 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="hover-lift rounded-md bg-navy px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-navy-light"
+            disabled={status === "submitting"}
+            className="hover-lift rounded-md bg-navy px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-navy-light disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Send Message
+            {status === "submitting" ? "Sending..." : "Send Message"}
           </button>
 
-          {submitted && (
+          {status === "success" && (
             <p className="text-sm font-medium text-navy">
               Thanks for reaching out - I&rsquo;ll get back to you shortly.
+            </p>
+          )}
+
+          {status === "error" && (
+            <p className="text-sm font-medium text-ink-soft">
+              Something went wrong sending that. Please email me directly at{" "}
+              <a href="mailto:sharmakhuswant16@gmail.com" className="font-semibold text-navy hover:underline">
+                sharmakhuswant16@gmail.com
+              </a>{" "}
+              instead.
             </p>
           )}
         </form>
