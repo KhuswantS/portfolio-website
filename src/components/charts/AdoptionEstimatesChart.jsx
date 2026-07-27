@@ -13,19 +13,19 @@ const data = [
     name: 'KYC-verified,\ndomestic platforms',
     value: 39.3,
     source: 'RBI, via FIU-IND registrations',
-    fill: 'var(--color-accent, #16223D)',
+    fill: 'var(--color-accent, #5C2333)',
   },
   {
     name: 'Modelled estimate\n(Chainalysis)',
     value: 119,
     source: 'Grassroots Adoption Index, disputed by RBI',
-    fill: 'var(--color-accent-2, #4C5877)',
+    fill: 'var(--color-accent-2, #8B5A63)',
   },
   {
     name: 'Estimated offshore\nplatform users',
     value: 120,
     source: 'Cited by MP Raghav Chadha, Budget 2026-27 debate',
-    fill: 'var(--color-muted-strong, #A6ADBF)',
+    fill: 'var(--color-muted-strong, #D4B8BD)',
   },
 ];
 

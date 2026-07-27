@@ -41,7 +41,7 @@ export default function CBDCvsUPIChart() {
               <XAxis type="number" scale="log" domain={[1, 500]} tick={{ fontSize: 11 }} tickLine={false} axisLine={{ stroke: 'var(--color-border, #DCD5C4)' }} />
               <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={140} />
               <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #DCD5C4)', opacity: 0.35 }} />
-              <Bar dataKey="value" radius={[0, 4, 4, 0]} maxBarSize={36} fill="var(--color-accent, #16223D)" animationDuration={900} animationEasing="ease-out">
+              <Bar dataKey="value" radius={[0, 4, 4, 0]} maxBarSize={36} fill="var(--color-accent, #5C2333)" animationDuration={900} animationEasing="ease-out">
                 <LabelList
                   dataKey="value"
                   position="right"

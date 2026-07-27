@@ -39,7 +39,7 @@ function ReportBlock({ block, index }) {
       return (
         <blockquote
           key={index}
-          className="my-10 border-l-2 border-navy pl-6 font-serif text-xl italic leading-snug text-ink"
+          className="pullquote my-10 border-l-2 border-navy pl-6 font-serif text-xl leading-snug text-ink"
         >
           {block.text}
         </blockquote>

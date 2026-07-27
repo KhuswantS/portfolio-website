@@ -23,7 +23,7 @@ export default function RegulatoryTimeline() {
   return (
     <div
       className="w-full py-8"
-      style={{ '--rt-line': 'var(--color-border, #DCD5C4)', '--rt-accent': 'var(--color-accent, #16223D)', '--rt-text': 'var(--color-text, #231F1B)', '--rt-muted': 'var(--color-muted, #5B564E)' }}
+      style={{ '--rt-line': 'var(--color-border, #DCD5C4)', '--rt-accent': 'var(--color-accent, #5C2333)', '--rt-text': 'var(--color-text, #231F1B)', '--rt-muted': 'var(--color-muted, #5B564E)' }}
     >
       <div className="relative pl-6 sm:pl-8">
         <div
