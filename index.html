@@ -4,6 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preload the two most-used-above-the-fold font files (headline weight
+         + body weight, latin subset) so text renders in its final font
+         sooner instead of swapping in after CSS/JS parse. Hashed filenames
+         come from @fontsource/newsreader and @fontsource/ibm-plex-sans;
+         re-check these after bumping either package's version. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/newsreader-latin-600-normal-30OJ_TG_.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/ibm-plex-sans-latin-400-normal-CDDApCn2.woff2"
+      crossorigin
+    />
     <title>Khuswant Sharma | Investment Analyst</title>
     <meta
       name="description"
