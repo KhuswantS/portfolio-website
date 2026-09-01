@@ -40,13 +40,6 @@ const researchProjects = [
   { text: "Awareness & Understanding of Cryptocurrency Among Retail Investors" },
 ];
 
-const gallery = [
-  "/images/gallery/gallery-1.svg",
-  "/images/gallery/gallery-2.svg",
-  "/images/gallery/gallery-3.svg",
-  "/images/gallery/gallery-4.svg",
-];
-
 function ToolBadge({ label, Icon }) {
   return (
     <div className="hover-lift flex items-center gap-3 rounded-lg border border-navy/10 bg-white px-4 py-3 shadow-sm">
@@ -117,17 +110,12 @@ export default function About() {
 
         <div className="sm:col-span-3">
           <p className="text-lg leading-relaxed text-ink-soft">
-            I&rsquo;m an early-career finance professional building toward a career on
-            the buy-side - private equity, venture capital, and eventually a
-            fund-principal role. Right now, I&rsquo;m a PE Fellow at the Indian Venture
-            and Alternate Capital Association (IVCA), India&rsquo;s apex industry body
-            for private equity and venture capital, where I&rsquo;m gaining hands-on
-            exposure to fund structures, capital deployment trends, and the dynamics
-            between LPs, GPs, and regulators, while conducting sector research on
-            India&rsquo;s private markets. I hold a BMS (Hons.) from St. Xavier&rsquo;s
-            University, Kolkata, and am currently preparing for the CFA Level I exam
-            (November 2026); on the educational side, an MBA from a top institution is
-            a longer-term milestone I&rsquo;m working toward.
+            My work sits at the intersection of institutional relationship management
+            and independent research. During my fellowship at IVCA, I engaged directly
+            with PE, VC, and AIF fund leadership on positioning, categorization, and
+            market themes. Alongside that, I publish original, sourced research on
+            regulatory and market-structure questions shaping Indian private capital
+            &mdash; the discipline I&rsquo;m building toward an analyst role.
           </p>
         </div>
       </div>
@@ -191,34 +179,29 @@ export default function About() {
         <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Experience</h2>
 
         <div className="hover-lift mt-8 rounded-lg border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
-          <div className="flex flex-wrap items-center gap-4">
-            <img src="/images/IVCA-Logo.png" alt="IVCA" className="h-14 w-14 rounded-lg object-contain" />
+          <div className="flex items-start gap-4">
+            <img
+              src="/images/IVCA-Logo.png"
+              alt="IVCA logo"
+              className="h-11 w-11 flex-shrink-0 rounded-md border border-navy/10 bg-white object-contain p-1"
+            />
             <div>
               <h3 className="font-serif text-lg font-semibold text-ink">PE Fellow</h3>
               <p className="text-sm text-ink-soft">
                 Indian Venture and Alternate Capital Association (IVCA)
               </p>
-              <p className="text-xs uppercase tracking-wide text-ink-soft/60">Feb 2026 - Present</p>
+              <p className="text-xs uppercase tracking-wide text-ink-soft/60">Feb 2026 - Aug 2026</p>
             </div>
           </div>
 
           <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-ink-soft">
-            <li>&bull; Coordinate day-to-day communication and follow-ups with IVCA&rsquo;s network of PE/VC member funds, institutional LPs, and industry stakeholders</li>
-            <li>&bull; Support investor relations for the association, helping member firms stay engaged with IVCA&rsquo;s initiatives, research, and events</li>
-            <li>&bull; Assist with sector research and market tracking, building working exposure to fund structures, capital deployment trends, and private market dynamics</li>
-            <li>&bull; Help coordinate IVCA&rsquo;s flagship platform (IVCA Conclave), supporting stakeholder outreach and post-event follow-through</li>
+            <li>&bull; Served as primary relationship point of contact for 490+ PE, VC, and AIF member funds across India&rsquo;s largest private capital industry body, managing fund categorization, renewals, and direct engagement with fund leadership</li>
+            <li>&bull; Drove partner and speaker strategy for IVCA&rsquo;s flagship industry platforms, including the IVCA Private Credit Summit and Chennai Circles, working with asset managers, institutional investors, and law firms on panel construction and programming</li>
+            <li>&bull; Engaged directly with GPs and LPs on institutional investment themes spanning private credit, growth equity, and family office allocation, gaining direct exposure to how India&rsquo;s leading funds position strategy in market</li>
+            <li>&bull; Supported IVCA&rsquo;s thought leadership output, coordinating with member and partner firms on market commentary and sector perspectives published across IVCA platforms</li>
+            <li>&bull; Tracked fund-level data across the membership base, including AUM, strategy classification, and vehicle structure, to support ecosystem mapping and engagement priorities</li>
+            <li>&bull; Publish independent research on regulatory and market-structure developments in Indian private capital, most recently on the RBI and Parliamentary Standing Committee positions on virtual digital asset regulation</li>
           </ul>
-
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {gallery.map((src, i) => (
-              <img
-                key={src}
-                src={src}
-                alt={`IVCA gallery ${i + 1}`}
-                className="hover-lift aspect-[4/3] w-full rounded-md object-cover shadow-sm"
-              />
-            ))}
-          </div>
         </div>
       </div>
 
