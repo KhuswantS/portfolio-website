@@ -114,8 +114,8 @@ export default function About() {
             and independent research. During my fellowship at IVCA, I engaged directly
             with PE, VC, and AIF fund leadership on positioning, categorization, and
             market themes. Alongside that, I publish original, sourced research on
-            regulatory and market-structure questions shaping Indian private capital
-            &mdash; the discipline I&rsquo;m building toward an analyst role.
+            regulatory and market-structure questions shaping Indian private capital:
+            the discipline I&rsquo;m building toward an analyst role.
           </p>
         </div>
       </div>
@@ -190,7 +190,7 @@ export default function About() {
               <p className="text-sm text-ink-soft">
                 Indian Venture and Alternate Capital Association (IVCA)
               </p>
-              <p className="text-xs uppercase tracking-wide text-ink-soft/60">Feb 2026 - Aug 2026</p>
+              <p className="text-xs uppercase tracking-wide text-ink-soft/60">Feb 2026 - Present</p>
             </div>
           </div>
 
@@ -200,7 +200,6 @@ export default function About() {
             <li>&bull; Engaged directly with GPs and LPs on institutional investment themes spanning private credit, growth equity, and family office allocation, gaining direct exposure to how India&rsquo;s leading funds position strategy in market</li>
             <li>&bull; Supported IVCA&rsquo;s thought leadership output, coordinating with member and partner firms on market commentary and sector perspectives published across IVCA platforms</li>
             <li>&bull; Tracked fund-level data across the membership base, including AUM, strategy classification, and vehicle structure, to support ecosystem mapping and engagement priorities</li>
-            <li>&bull; Publish independent research on regulatory and market-structure developments in Indian private capital, most recently on the RBI and Parliamentary Standing Committee positions on virtual digital asset regulation</li>
           </ul>
         </div>
       </div>
