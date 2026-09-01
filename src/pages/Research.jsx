@@ -43,7 +43,7 @@ export default function Research() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search reports..."
-          className="w-full rounded-md border border-navy/15 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft/50 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15 sm:max-w-xs"
+          className="w-full rounded-md border border-navy/15 bg-paper-dim px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft/50 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15 sm:max-w-xs"
         />
 
         <div className="flex flex-wrap gap-2">
@@ -54,8 +54,8 @@ export default function Research() {
               onClick={() => setCategory(cat)}
               className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                 category === cat
-                  ? "bg-navy text-white"
-                  : "bg-white text-ink-soft ring-1 ring-inset ring-navy/15 hover:bg-navy/5"
+                  ? "bg-navy-dark text-white"
+                  : "bg-paper-dim text-ink-soft ring-1 ring-inset ring-navy/15 hover:bg-navy/5"
               }`}
             >
               {cat}

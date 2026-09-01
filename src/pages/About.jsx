@@ -42,7 +42,7 @@ const researchProjects = [
 
 function ToolBadge({ label, Icon }) {
   return (
-    <div className="hover-lift flex items-center gap-3 rounded-lg border border-navy/10 bg-white px-4 py-3 shadow-sm">
+    <div className="hover-lift flex items-center gap-3 rounded-lg border border-navy/10 bg-paper-dim px-4 py-3 shadow-sm">
       <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md bg-navy/8 text-navy">
         <Icon className="h-5 w-5" />
       </span>
@@ -53,7 +53,7 @@ function ToolBadge({ label, Icon }) {
 
 function CompetencyChip({ label }) {
   return (
-    <div className="hover-lift flex items-center rounded-full border border-navy/10 bg-white px-5 py-3 shadow-sm">
+    <div className="hover-lift flex items-center rounded-full border border-navy/10 bg-paper-dim px-5 py-3 shadow-sm">
       <span className="text-sm font-medium text-ink">{label}</span>
     </div>
   );
@@ -111,11 +111,13 @@ export default function About() {
         <div className="sm:col-span-3">
           <p className="text-lg leading-relaxed text-ink-soft">
             My work sits at the intersection of institutional relationship management
-            and independent research. During my fellowship at IVCA, I engage directly
-            with PE, VC, and AIF fund leadership on positioning, categorization, and
-            market themes. Alongside that, I publish original, sourced research on
-            regulatory and market-structure questions shaping Indian private capital:
-            the discipline I&rsquo;m building toward an analyst role.
+            and independent research. As a Private Equity Fellow at IVCA, I engage
+            directly with PE, VC, and AIF fund leadership on positioning,
+            categorization, and market themes. Alongside this, I publish original,
+            research-driven insights on regulatory and market-structure developments
+            shaping Indian private capital. Through this work, I am building the
+            analytical foundation for a career in investment research and financial
+            analysis.
           </p>
         </div>
       </div>
@@ -178,12 +180,14 @@ export default function About() {
       <div className="mt-16 border-t border-hairline pt-16">
         <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Experience</h2>
 
-        <div className="hover-lift mt-8 rounded-lg border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
+        <div className="hover-lift mt-8 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:p-8">
           <div className="flex items-start gap-4">
+            {/* Light chip is deliberate: the IVCA wordmark is dark ink on
+                transparent and would vanish on the dark card without it. */}
             <img
               src="/images/IVCA-Logo.png"
               alt="IVCA logo"
-              className="h-11 w-11 flex-shrink-0 rounded-md border border-navy/10 bg-white object-contain p-1"
+              className="h-11 w-11 flex-shrink-0 rounded-md bg-white object-contain p-1"
             />
             <div>
               <h3 className="font-serif text-lg font-semibold text-ink">PE Fellow</h3>
@@ -211,7 +215,7 @@ export default function About() {
         <a
           href="/cv/Khuswant_Sharma.pdf"
           download
-          className="hover-lift inline-flex items-center gap-2.5 rounded-md bg-navy px-10 py-4 text-base font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy-light"
+          className="hover-lift inline-flex items-center gap-2.5 rounded-md bg-navy-dark px-10 py-4 text-base font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy"
         >
           Download CV
           <span aria-hidden="true">&darr;</span>

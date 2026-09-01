@@ -5,7 +5,7 @@ export default function ReportCard({ report, className = "" }) {
   return (
     <Link
       to={`/research/${report.slug}`}
-      className={`hover-lift group flex flex-col overflow-hidden rounded-lg border border-navy/10 bg-white shadow-sm ${className}`}
+      className={`hover-lift group flex flex-col overflow-hidden rounded-lg border border-navy/10 bg-paper-dim shadow-sm ${className}`}
     >
       <div className="aspect-[4/3] w-full overflow-hidden bg-paper-dim">
         <img

@@ -11,21 +11,22 @@
   --font-serif: "Newsreader", "Georgia", serif;
   --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  /* Warm, editorial palette */
-  --color-paper: #faf8f3;
-  --color-paper-dim: #f1ece1;
-  --color-ink: #2a2a2a;
-  --color-ink-soft: #55534d;
-  --color-navy: #5c2333;
-  --color-navy-dark: #3d1722;
-  --color-navy-light: #8b5a63;
-  --color-hairline: #dcd6c8;
+  /* Dark editorial palette. --color-ink-soft is --color-ink at ~80% opacity
+     (0xCC), the same ink/ink-soft relationship the old light palette used. */
+  --color-paper: #0b0c0e;
+  --color-paper-dim: #131518;
+  --color-ink: #f6f7f9;
+  --color-ink-soft: #f6f7f9cc;
+  --color-navy: #4a7fe8;
+  --color-navy-dark: #315599;
+  --color-navy-light: #6b96ee;
+  --color-hairline: #24272c;
 
-  /* Chart categorical palette — validated for CVD separation (see dataviz skill) */
-  --color-chart-1: #3d5a99;
-  --color-chart-2: #0c9a8d;
-  --color-chart-3: #c08a20;
-  --color-chart-4: #8b3a6b;
+  /* Chart categorical palette — lightened for the dark ground, CVD separation preserved */
+  --color-chart-1: #6e9bee;
+  --color-chart-2: #3fbfb0;
+  --color-chart-3: #e0a93c;
+  --color-chart-4: #c96fa6;
 }
 
 /*
@@ -38,7 +39,7 @@
   --color-bg: var(--color-paper);
   --color-text: var(--color-ink);
   --color-muted: var(--color-ink-soft);
-  --color-muted-strong: #d4b8bd;
+  --color-muted-strong: #a9c0f2;
   --color-border: var(--color-hairline);
   --color-accent: var(--color-navy);
   --color-accent-2: var(--color-navy-light);
@@ -80,5 +81,5 @@ h1, h2, h3, h4 {
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 28px -12px rgba(92, 35, 51, 0.28), 0 4px 10px -6px rgba(92, 35, 51, 0.12);
+  box-shadow: 0 14px 28px -12px rgba(0, 0, 0, 0.55), 0 4px 10px -6px rgba(0, 0, 0, 0.4);
 }

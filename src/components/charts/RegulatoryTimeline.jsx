@@ -23,7 +23,7 @@ export default function RegulatoryTimeline() {
   return (
     <div
       className="w-full py-8"
-      style={{ '--rt-line': 'var(--color-border, #DCD5C4)', '--rt-accent': 'var(--color-accent, #5C2333)', '--rt-text': 'var(--color-text, #231F1B)', '--rt-muted': 'var(--color-muted, #5B564E)' }}
+      style={{ '--rt-line': 'var(--color-border, #24272c)', '--rt-accent': 'var(--color-accent, #4a7fe8)', '--rt-text': 'var(--color-text, #f6f7f9)', '--rt-muted': 'var(--color-muted, #c6c8cb)' }}
     >
       <div className="relative pl-6 sm:pl-8">
         <div
@@ -41,11 +41,8 @@ export default function RegulatoryTimeline() {
               className="relative"
             >
               <span
-                className="absolute -left-6 sm:-left-8 top-1.5 h-3 w-3 rounded-full ring-4"
-                style={{
-                  backgroundColor: 'var(--rt-accent)',
-                  ringColor: 'var(--color-bg, #fff)',
-                }}
+                className="absolute -left-6 sm:-left-8 top-1.5 h-3 w-3 rounded-full ring-4 ring-[color:var(--color-bg,#0b0c0e)]"
+                style={{ backgroundColor: 'var(--rt-accent)' }}
               />
               <time
                 className="block text-xs uppercase tracking-wide font-medium"

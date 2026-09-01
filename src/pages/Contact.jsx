@@ -111,7 +111,7 @@ export default function Contact() {
               required
               value={form.name}
               onChange={handleChange}
-              className="mt-1.5 w-full rounded-md border border-navy/15 bg-white px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
+              className="mt-1.5 w-full rounded-md border border-navy/15 bg-paper-dim px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
             />
           </div>
 
@@ -126,7 +126,7 @@ export default function Contact() {
               required
               value={form.email}
               onChange={handleChange}
-              className="mt-1.5 w-full rounded-md border border-navy/15 bg-white px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
+              className="mt-1.5 w-full rounded-md border border-navy/15 bg-paper-dim px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
             />
           </div>
 
@@ -141,14 +141,14 @@ export default function Contact() {
               required
               value={form.message}
               onChange={handleChange}
-              className="mt-1.5 w-full rounded-md border border-navy/15 bg-white px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
+              className="mt-1.5 w-full rounded-md border border-navy/15 bg-paper-dim px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
             />
           </div>
 
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="hover-lift rounded-md bg-navy px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-navy-light disabled:cursor-not-allowed disabled:opacity-60"
+            className="hover-lift rounded-md bg-navy-dark px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-navy disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === "submitting" ? "Sending..." : "Send Message"}
           </button>

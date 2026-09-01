@@ -19,12 +19,21 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-hairline bg-paper/90 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <NavLink
-          to="/"
-          className="font-serif text-lg font-semibold tracking-[0.01em] text-ink"
-          end
-        >
-          Khuswant Sharma
+        <NavLink to="/" end className="flex items-center gap-3">
+          <img
+            src="/images/logo-monogram-white.png"
+            alt="Khuswant Sharma logo"
+            className="h-10 w-auto flex-shrink-0"
+          />
+          <span className="h-9 w-px flex-shrink-0 bg-hairline" aria-hidden="true" />
+          <span className="flex flex-col leading-tight">
+            <span className="font-serif text-lg font-semibold tracking-[0.01em] text-ink">
+              Khuswant Sharma
+            </span>
+            <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.16em] text-ink-soft">
+              Independent Investment Research
+            </span>
+          </span>
         </NavLink>
 
         <ul className="hidden items-center gap-8 md:flex">

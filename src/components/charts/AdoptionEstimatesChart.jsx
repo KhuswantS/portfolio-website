@@ -13,19 +13,19 @@ const data = [
     name: 'KYC-verified,\ndomestic platforms',
     value: 39.3,
     source: 'RBI, via FIU-IND registrations',
-    fill: 'var(--color-accent, #5C2333)',
+    fill: 'var(--color-accent, #4a7fe8)',
   },
   {
     name: 'Modelled estimate\n(Chainalysis)',
     value: 119,
     source: 'Grassroots Adoption Index, disputed by RBI',
-    fill: 'var(--color-accent-2, #8B5A63)',
+    fill: 'var(--color-accent-2, #6b96ee)',
   },
   {
     name: 'Estimated offshore\nplatform users',
     value: 120,
     source: 'Cited by MP Raghav Chadha, Budget 2026-27 debate',
-    fill: 'var(--color-muted-strong, #D4B8BD)',
+    fill: 'var(--color-muted-strong, #a9c0f2)',
   },
 ];
 
@@ -35,7 +35,7 @@ function WrappedAxisTick({ x, y, payload }) {
   const lines = String(payload.value).split('\n');
   return (
     <g transform={`translate(${x},${y})`}>
-      <text textAnchor="middle" fontSize={11} fill="var(--color-muted, #5B564E)">
+      <text textAnchor="middle" fontSize={11} fill="var(--color-muted, #c6c8cb)">
         {lines.map((line, i) => (
           <tspan key={i} x={0} dy={i === 0 ? 12 : 12}>
             {line}
@@ -52,7 +52,7 @@ function CustomTooltip({ active, payload }) {
   return (
     <div
       className="rounded-md px-3 py-2 text-xs shadow-md"
-      style={{ backgroundColor: 'var(--color-bg, #F7F3EA)', border: '1px solid var(--color-border, #DCD5C4)' }}
+      style={{ backgroundColor: 'var(--color-bg, #0b0c0e)', border: '1px solid var(--color-border, #24272c)' }}
     >
       <p className="font-semibold">{d.value}M</p>
       <p className="mt-0.5 opacity-70">{d.source}</p>
@@ -74,16 +74,16 @@ export default function AdoptionEstimatesChart() {
                 dataKey="name"
                 tick={<WrappedAxisTick />}
                 tickLine={false}
-                axisLine={{ stroke: 'var(--color-border, #DCD5C4)' }}
+                axisLine={{ stroke: 'var(--color-border, #24272c)' }}
                 interval={0}
               />
               <YAxis
-                tick={{ fontSize: 11 }}
+                tick={{ fontSize: 11, fill: 'var(--color-muted, #c6c8cb)' }}
                 tickLine={false}
                 axisLine={false}
-                label={{ value: 'Million users', angle: -90, position: 'insideLeft', fontSize: 11 }}
+                label={{ value: 'Million users', angle: -90, position: 'insideLeft', fontSize: 11, fill: 'var(--color-muted, #c6c8cb)' }}
               />
-              <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #DCD5C4)', opacity: 0.35 }} />
+              <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #24272c)', opacity: 0.35 }} />
               <Bar dataKey="value" radius={[4, 4, 0, 0]} maxBarSize={72} animationDuration={900} animationEasing="ease-out">
                 {data.map((d, i) => (
                   <Cell key={i} fill={d.fill} />
@@ -94,7 +94,7 @@ export default function AdoptionEstimatesChart() {
           </ResponsiveContainer>
         )}
       </div>
-      <figcaption className="mt-3 text-xs leading-relaxed" style={{ color: 'var(--color-muted, #5B564E)' }}>
+      <figcaption className="mt-3 text-xs leading-relaxed" style={{ color: 'var(--color-muted, #c6c8cb)' }}>
         These three figures are not measuring the same thing and should not be averaged or
         compared directly. The 39.3 million figure is a count of verified accounts on
         registered domestic platforms. The 119 million figure is a modelled estimate from

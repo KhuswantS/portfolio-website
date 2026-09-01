@@ -144,7 +144,7 @@ export default function ResearchArticle() {
 
       <a
         href={report.pdf || `/reports/${report.slug}.pdf`}
-        className="hover-lift mt-6 inline-flex items-center gap-2 rounded-md bg-navy px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy-light"
+        className="hover-lift mt-6 inline-flex items-center gap-2 rounded-md bg-navy-dark px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy"
         download
       >
         Download PDF

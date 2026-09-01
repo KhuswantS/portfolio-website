@@ -20,7 +20,7 @@ function CustomTooltip({ active, payload }) {
   return (
     <div
       className="rounded-md px-3 py-2 text-xs shadow-md"
-      style={{ backgroundColor: 'var(--color-bg, #F7F3EA)', border: '1px solid var(--color-border, #DCD5C4)' }}
+      style={{ backgroundColor: 'var(--color-bg, #0b0c0e)', border: '1px solid var(--color-border, #24272c)' }}
     >
       <p className="font-semibold">{d.value}{d.name.startsWith('UPI') ? '+' : ''} {d.unit}</p>
       <p className="mt-0.5 opacity-70">{d.detail}</p>
@@ -38,10 +38,10 @@ export default function CBDCvsUPIChart() {
         {isInView && (
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data} layout="vertical" margin={{ top: 8, right: 40, left: 16, bottom: 8 }}>
-              <XAxis type="number" scale="log" domain={[1, 500]} tick={{ fontSize: 11 }} tickLine={false} axisLine={{ stroke: 'var(--color-border, #DCD5C4)' }} />
-              <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={140} />
-              <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #DCD5C4)', opacity: 0.35 }} />
-              <Bar dataKey="value" radius={[0, 4, 4, 0]} maxBarSize={36} fill="var(--color-accent, #5C2333)" animationDuration={900} animationEasing="ease-out">
+              <XAxis type="number" scale="log" domain={[1, 500]} tick={{ fontSize: 11, fill: 'var(--color-muted, #c6c8cb)' }} tickLine={false} axisLine={{ stroke: 'var(--color-border, #24272c)' }} />
+              <YAxis type="category" dataKey="name" tick={{ fontSize: 12, fill: 'var(--color-muted, #c6c8cb)' }} tickLine={false} axisLine={false} width={140} />
+              <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #24272c)', opacity: 0.35 }} />
+              <Bar dataKey="value" radius={[0, 4, 4, 0]} maxBarSize={36} fill="var(--color-accent, #4a7fe8)" animationDuration={900} animationEasing="ease-out">
                 <LabelList
                   dataKey="value"
                   position="right"
@@ -54,7 +54,7 @@ export default function CBDCvsUPIChart() {
           </ResponsiveContainer>
         )}
       </div>
-      <figcaption className="mt-3 text-xs leading-relaxed" style={{ color: 'var(--color-muted, #5B564E)' }}>
+      <figcaption className="mt-3 text-xs leading-relaxed" style={{ color: 'var(--color-muted, #c6c8cb)' }}>
         Log scale. After three and a half years, the e-rupee pilot has reached roughly 3% of
         UPI's user base. Figures are order-of-magnitude comparisons, not audited to the same
         reporting period. Source: see Section 6.

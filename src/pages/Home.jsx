@@ -96,7 +96,7 @@ export default function Home() {
         >
           <Link
             to="/research"
-            className="hover-lift inline-flex items-center gap-2 rounded-md bg-navy px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy-light"
+            className="hover-lift inline-flex items-center gap-2 rounded-md bg-navy-dark px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy"
           >
             Read My Research
             <span aria-hidden="true">&rarr;</span>
@@ -165,7 +165,7 @@ export default function Home() {
           </p>
           <Link
             to="/research"
-            className="hover-lift mt-8 inline-flex items-center gap-2 rounded-md border border-navy px-8 py-3 text-sm font-semibold uppercase tracking-wide text-navy hover:bg-navy hover:text-white"
+            className="hover-lift mt-8 inline-flex items-center gap-2 rounded-md border border-navy px-8 py-3 text-sm font-semibold uppercase tracking-wide text-navy hover:bg-navy-dark hover:text-white"
           >
             Browse the Library
             <span aria-hidden="true">&rarr;</span>
