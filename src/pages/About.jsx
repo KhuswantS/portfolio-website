@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { SiPython, SiClaude } from "react-icons/si";
+import { SiPython, SiClaude, SiGithub } from "react-icons/si";
 import { IoLogoTableau, IoLogoMicrosoft } from "react-icons/io5";
 import { RiFileExcel2Fill, RiFilePpt2Fill, RiFileWord2Fill, RiOpenaiFill } from "react-icons/ri";
 import { TbDatabase } from "react-icons/tb";
 
 // Excel, Power BI, PowerPoint, Word form one office-tools cluster and stay in
-// this exact order as the first row; the rest follow in the same grid.
+// this exact order as the first row; data/dev tools follow, then AI assistants
+// last. All render through the same ToolBadge, so the grid stays uniform.
 const technicalTools = [
   { label: "Excel (Advanced)", Icon: RiFileExcel2Fill },
   { label: "Power BI (learning)", Icon: IoLogoMicrosoft },
   { label: "PowerPoint", Icon: RiFilePpt2Fill },
   { label: "Word", Icon: RiFileWord2Fill },
   { label: "Tableau", Icon: IoLogoTableau },
-  { label: "Python", Icon: SiPython },
-  { label: "SQL", Icon: TbDatabase },
+  { label: "Python (Basic)", Icon: SiPython },
+  { label: "SQL (Basic)", Icon: TbDatabase },
+  { label: "Git/GitHub", Icon: SiGithub },
   { label: "Claude & Claude Code", Icon: SiClaude },
   { label: "ChatGPT", Icon: RiOpenaiFill },
 ];
