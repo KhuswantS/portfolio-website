@@ -192,7 +192,7 @@ export default function About() {
               className="h-11 w-11 flex-shrink-0 rounded-md bg-white object-contain p-1"
             />
             <div>
-              <h3 className="font-serif text-lg font-semibold text-ink">PE Fellow</h3>
+              <h3 className="font-serif text-lg font-semibold text-ink">Private Equity Fellow</h3>
               <p className="text-sm text-ink-soft">
                 Indian Venture and Alternate Capital Association (IVCA)
               </p>
