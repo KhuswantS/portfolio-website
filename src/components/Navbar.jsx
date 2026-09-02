@@ -21,9 +21,9 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <NavLink to="/" end className="flex items-center gap-3">
           <img
-            src="/images/logo-monogram-white.png"
+            src="/images/logo-monogram-white-centered.png"
             alt="Khuswant Sharma logo"
-            className="h-10 w-auto flex-shrink-0"
+            className="h-9 w-auto flex-shrink-0"
           />
           <span className="h-9 w-px flex-shrink-0 bg-hairline" aria-hidden="true" />
           <span className="flex flex-col leading-tight">
