@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { reports } from "../data/reports";
 import { formatDate } from "../lib/format";
+import SEO from "../components/SEO";
 import ReportChart from "../components/charts/ReportChart";
 import AdoptionEstimatesChart from "../components/charts/AdoptionEstimatesChart";
 import RegulatoryTimeline from "../components/charts/RegulatoryTimeline";
@@ -124,6 +125,11 @@ export default function ResearchArticle() {
 
   return (
     <article className="mx-auto max-w-2xl px-6 py-16 sm:py-20">
+      <SEO
+        title={`${report.title} | Khuswant Sharma`}
+        description={report.hook}
+        path={`/research/${report.slug}`}
+      />
       <Link to="/research" className="text-sm font-semibold text-navy hover:underline">
         &larr; Back to Research
       </Link>

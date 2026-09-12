@@ -4,6 +4,7 @@ import { SiPython, SiClaude, SiGithub } from "react-icons/si";
 import { IoLogoTableau, IoLogoMicrosoft } from "react-icons/io5";
 import { RiFileExcel2Fill, RiFilePpt2Fill, RiFileWord2Fill, RiOpenaiFill } from "react-icons/ri";
 import { TbDatabase } from "react-icons/tb";
+import SEO from "../components/SEO";
 
 // Excel, Power BI, PowerPoint, Word form one office-tools cluster and stay in
 // this exact order as the first row; data/dev tools follow, then AI assistants
@@ -68,6 +69,11 @@ export default function About() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <SEO
+        title="About | Khuswant Sharma"
+        description="Professional background, skills, and experience of Khuswant Sharma, Private Equity Fellow at IVCA and CFA Level I candidate building toward a buy-side career."
+        path="/about"
+      />
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">About</p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ink sm:text-4xl">
         Professional Summary

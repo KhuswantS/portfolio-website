@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import ReportCard from "../components/ReportCard";
+import SEO from "../components/SEO";
 import { reports, categories } from "../data/reports";
 
 const searchableText = (report) =>
@@ -28,6 +29,11 @@ export default function Research() {
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20">
+      <SEO
+        title="Research | Khuswant Sharma"
+        description="Browse independent equity research, startup deep-dives, and sector reports on emerging markets and fintech from Khuswant Sharma."
+        path="/research"
+      />
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">Research</p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ink sm:text-4xl">
         The Research Library

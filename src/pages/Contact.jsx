@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MailIcon, LinkedInIcon, GitHubIcon, TwitterIcon } from "../components/icons";
+import SEO from "../components/SEO";
 
 const initialForm = { name: "", email: "", message: "" };
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mrenrpgd";
@@ -67,6 +68,11 @@ export default function Contact() {
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+      <SEO
+        title="Contact | Khuswant Sharma"
+        description="Get in touch with Khuswant Sharma for research ideas, corrections, or investment discussions - reach out directly or via the contact form."
+        path="/contact"
+      />
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">Contact</p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ink sm:text-4xl">
         Get in Touch

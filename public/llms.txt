@@ -1,0 +1,17 @@
+# Khuswant Sharma
+
+> Independent investment research on emerging markets and fintech, published by Khuswant Sharma - Private Equity Fellow at the Indian Venture and Alternate Capital Association (IVCA) and CFA Level I candidate.
+
+Khuswant Sharma is an early-career finance professional building toward a career on the buy-side. He holds a BMS (Hons.) from St. Xavier's University, Kolkata, and is a CFA Level I candidate (appearing November 2026). He is currently a Private Equity Fellow at IVCA, India's apex industry body for private equity and venture capital, and independently publishes original, sourced research on regulatory and market-structure questions in Indian private capital.
+
+This site contains his professional background, published research reports, and contact information. It does not contain investment advice.
+
+## Research
+
+- [Tax Without Recognition](https://khuswantsharma.com/research/tax-without-recognition): India's Virtual Digital Asset Regime and the July 2026 Rupture - a report on India's tax and regulatory treatment of virtual digital assets, and the divergence between the RBI and the Parliamentary Standing Committee on Finance.
+
+## Pages
+
+- [Research library](https://khuswantsharma.com/research): all published research.
+- [About](https://khuswantsharma.com/about): background, skills, and experience.
+- [Contact](https://khuswantsharma.com/contact): how to get in touch.

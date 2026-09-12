@@ -32,8 +32,12 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <Analytics />
-      <SpeedInsights />
+      {typeof window !== "undefined" && (
+        <>
+          <Analytics />
+          <SpeedInsights />
+        </>
+      )}
     </div>
   );
 }

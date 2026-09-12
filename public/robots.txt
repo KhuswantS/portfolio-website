@@ -1,0 +1,18 @@
+# All crawlers welcome, including AI/LLM crawlers - discoverability is the
+# goal. Nothing on this site is disallowed.
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://khuswantsharma.com/sitemap.xml

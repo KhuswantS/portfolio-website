@@ -23,7 +23,7 @@ export default function AnimatedCounter({ value, suffix = "", className = "" }) 
 
   return (
     <motion.span ref={ref} className={className}>
-      <span ref={displayRef}>0{suffix}</span>
+      <span ref={displayRef}>{value}{suffix}</span>
     </motion.span>
   );
 }

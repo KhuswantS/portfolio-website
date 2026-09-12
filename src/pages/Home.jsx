@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReportCard from "../components/ReportCard";
 import AnimatedCounter from "../components/AnimatedCounter";
+import SEO from "../components/SEO";
 import { reports, categories } from "../data/reports";
 
 const NAME = "Khuswant Sharma";
@@ -39,6 +40,11 @@ const stats = [
 export default function Home() {
   return (
     <div>
+      <SEO
+        title="Khuswant Sharma | Independent Investment Research"
+        description="Independent investment research on emerging markets and fintech, combining primary due diligence, financial modeling, and clear-eyed risk analysis."
+        path="/"
+      />
       <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-28 text-center sm:py-36">
         <motion.p
           initial={{ opacity: 0, y: 8 }}

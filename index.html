@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Preload the two most-used-above-the-fold font files (headline weight
          + body weight, latin subset) so text renders in its final font
@@ -23,10 +26,13 @@
       href="/assets/ibm-plex-sans-latin-400-normal-CDDApCn2.woff2"
       crossorigin
     />
-    <title>Khuswant Sharma | Investment Analyst</title>
+    <!-- Fallback only: scripts/prerender.mjs strips this and injects the
+         real per-route <SEO> tags into every generated dist/**/index.html.
+         This copy only shows during `vite dev` before React mounts. -->
+    <title>Khuswant Sharma | Independent Investment Research</title>
     <meta
       name="description"
-      content="Independent investment research on emerging markets and fintech by Khuswant Sharma."
+      content="Independent investment research on emerging markets and fintech, combining primary due diligence, financial modeling, and clear-eyed risk analysis."
     />
   </head>
   <body>
