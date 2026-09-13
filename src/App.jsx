@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Research from "./pages/Research";
 import ResearchArticle from "./pages/ResearchArticle";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   useEffect(() => {
@@ -29,6 +31,8 @@ export default function App() {
           <Route path="/research" element={<Research />} />
           <Route path="/research/:slug" element={<ResearchArticle />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

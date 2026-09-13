@@ -1,4 +1,4 @@
-const SITE_URL = "https://khuswantsharma.com";
+export const SITE_URL = "https://khuswantsharma.com";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 // Renders <title>/<meta>/<link> directly in the tree. React 19 hoists these

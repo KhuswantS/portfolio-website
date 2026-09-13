@@ -5,6 +5,8 @@ import { IoLogoTableau, IoLogoMicrosoft } from "react-icons/io5";
 import { RiFileExcel2Fill, RiFilePpt2Fill, RiFileWord2Fill, RiOpenaiFill } from "react-icons/ri";
 import { TbDatabase } from "react-icons/tb";
 import SEO from "../components/SEO";
+import JsonLd from "../components/JsonLd";
+import { personSchema } from "../data/person";
 
 // Excel, Power BI, PowerPoint, Word form one office-tools cluster and stay in
 // this exact order as the first row; data/dev tools follow, then AI assistants
@@ -74,6 +76,7 @@ export default function About() {
         description="Professional background, skills, and experience of Khuswant Sharma, Private Equity Fellow at IVCA and CFA Level I candidate building toward a buy-side career."
         path="/about"
       />
+      <JsonLd data={personSchema} />
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">About</p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ink sm:text-4xl">
         Professional Summary

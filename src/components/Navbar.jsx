@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { CloseIcon } from "./icons";
 
 const links = [
   { to: "/", label: "Home" },
@@ -15,6 +17,26 @@ export default function Navbar() {
     `text-sm font-medium tracking-wide transition-colors ${
       isActive ? "text-navy" : "text-ink-soft hover:text-navy"
     }`;
+
+  const close = () => setOpen(false);
+
+  // Lock background scroll while the drawer is open, and let Escape close it.
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") close();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-hairline bg-paper/90 backdrop-blur">
@@ -48,35 +70,71 @@ export default function Navbar() {
 
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setOpen(true)}
           className="flex flex-col gap-1.5 md:hidden"
-          aria-label="Toggle menu"
+          aria-label="Open menu"
           aria-expanded={open}
         >
-          <span className={`h-0.5 w-6 bg-ink transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
-          <span className={`h-0.5 w-6 bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`h-0.5 w-6 bg-ink transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+          <span className="h-0.5 w-6 bg-ink" />
+          <span className="h-0.5 w-6 bg-ink" />
+          <span className="h-0.5 w-6 bg-ink" />
         </button>
       </nav>
 
-      {open && (
-        <ul className="flex flex-col gap-1 border-t border-hairline bg-paper px-6 pb-4 md:hidden">
-          {links.map((link) => (
-            <li key={link.to}>
-              <NavLink
-                to={link.to}
-                end={link.to === "/"}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `block py-2 text-sm font-medium ${isActive ? "text-navy" : "text-ink-soft"}`
-                }
-              >
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      )}
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={close}
+              className="fixed inset-0 z-[60] bg-black/50 md:hidden"
+              aria-hidden="true"
+            />
+            <motion.div
+              key="drawer"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.28, ease: "easeOut" }}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Site menu"
+              className="fixed inset-y-0 right-0 z-[70] flex w-72 max-w-[80vw] flex-col border-l border-hairline bg-paper px-6 py-4 md:hidden"
+            >
+              <div className="flex items-center justify-end">
+                <button
+                  type="button"
+                  onClick={close}
+                  aria-label="Close menu"
+                  className="flex h-9 w-9 items-center justify-center rounded-md text-ink-soft transition-colors hover:text-navy"
+                >
+                  <CloseIcon className="h-5 w-5" />
+                </button>
+              </div>
+              <ul className="mt-6 flex flex-col gap-1">
+                {links.map((link) => (
+                  <li key={link.to}>
+                    <NavLink
+                      to={link.to}
+                      end={link.to === "/"}
+                      onClick={close}
+                      className={({ isActive }) =>
+                        `block py-2.5 text-base font-medium ${isActive ? "text-navy" : "text-ink-soft"}`
+                      }
+                    >
+                      {link.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

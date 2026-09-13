@@ -21,7 +21,12 @@ const routes = [
   { url: "/research", out: "research/index.html" },
   { url: "/about", out: "about/index.html" },
   { url: "/contact", out: "contact/index.html" },
+  { url: "/privacy", out: "privacy/index.html" },
   { url: "/research/tax-without-recognition", out: "research/tax-without-recognition/index.html" },
+  // "*" (NotFound) is intentionally not prerendered - it has no fixed path.
+  // Unmatched URLs fall through vercel.json's rewrite to this file (Vercel
+  // checks the filesystem before rewrites, so every route above still wins),
+  // then React Router matches path="*" client-side.
 ];
 
 async function buildSsrBundle() {

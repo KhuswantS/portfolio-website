@@ -1,7 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { reports } from "../data/reports";
 import { formatDate } from "../lib/format";
-import SEO from "../components/SEO";
+import SEO, { SITE_URL } from "../components/SEO";
+import JsonLd from "../components/JsonLd";
+import { personSchema } from "../data/person";
 import ReportChart from "../components/charts/ReportChart";
 import AdoptionEstimatesChart from "../components/charts/AdoptionEstimatesChart";
 import RegulatoryTimeline from "../components/charts/RegulatoryTimeline";
@@ -123,6 +125,17 @@ export default function ResearchArticle() {
     );
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: report.title,
+    description: report.hook,
+    datePublished: report.date,
+    author: { "@type": "Person", name: personSchema.name, url: personSchema.url },
+    image: `${SITE_URL}/og-image.png`,
+    mainEntityOfPage: `${SITE_URL}/research/${report.slug}`,
+  };
+
   return (
     <article className="mx-auto max-w-2xl px-6 py-16 sm:py-20">
       <SEO
@@ -130,6 +143,7 @@ export default function ResearchArticle() {
         description={report.hook}
         path={`/research/${report.slug}`}
       />
+      <JsonLd data={articleSchema} />
       <Link to="/research" className="text-sm font-semibold text-navy hover:underline">
         &larr; Back to Research
       </Link>
