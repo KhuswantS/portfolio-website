@@ -4,7 +4,7 @@ import { ArrowUpIcon } from "./icons";
 import { socialLinks } from "../data/social";
 
 const BACK_TO_TOP_THRESHOLD = 480;
-const BUTTON_SIZE = 72;
+const BUTTON_SIZE = 60;
 
 function BackToTopButton() {
   const [visible, setVisible] = useState(false);
@@ -26,14 +26,16 @@ function BackToTopButton() {
         visible ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
-      {/* Curved "BACK TO TOP" label along the top third of the circle, plus a
-          centered up arrow. Plain CSS can't bend text along a path, so this
-          is an inline SVG <textPath> riding a dome-shaped arc (not a full
-          circle - text on the bottom half of a circle renders upside down). */}
+      {/* Curved "BACK TO TOP" label spanning ~130 degrees of the circle's
+          top (well under the ~150 degree point where text starts curving
+          below horizontal and becomes hard to read), plus a centered up
+          arrow. Plain CSS can't bend text along a path, so this is an
+          inline SVG <textPath> riding a dome-shaped arc (not a full circle
+          - text on the bottom half of a circle renders upside down). */}
       <svg viewBox={`0 0 ${BUTTON_SIZE} ${BUTTON_SIZE}`} className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <path id="backToTopArc" d="M 12.6,22.5 A 27,27 0 0 1 59.4,22.5" fill="none" />
-        <text fontSize="6.5" fontWeight="700" style={{ letterSpacing: "0.3px" }} className="fill-navy uppercase">
-          <textPath href="#backToTopArc" startOffset="50%" textAnchor="middle" lengthAdjust="spacingAndGlyphs" textLength="48">
+        <path id="backToTopArc" d="M 9.16,20.28 A 23,23 0 0 1 50.84,20.28" fill="none" />
+        <text fontSize="7" fontWeight="700" style={{ letterSpacing: "0.3px" }} className="fill-navy uppercase">
+          <textPath href="#backToTopArc" startOffset="50%" textAnchor="middle" lengthAdjust="spacingAndGlyphs" textLength="44">
             Back to top
           </textPath>
         </text>

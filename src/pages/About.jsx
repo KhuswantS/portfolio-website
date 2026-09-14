@@ -212,7 +212,7 @@ export default function About() {
           <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-ink-soft">
             <li>&bull; Serve as primary relationship point of contact for 490+ PE, VC, and AIF member funds across India&rsquo;s largest private capital industry body, managing fund categorization, renewals, and direct engagement with fund leadership</li>
             <li>&bull; Drive partner and speaker strategy for IVCA&rsquo;s flagship industry platforms, including the IVCA Private Credit Summit and Chennai Circles, working with asset managers, institutional investors, and law firms on panel construction and programming</li>
-            <li>&bull; Engage directly with GPs and LPs on institutional investment themes spanning private credit, growth equity, and family office allocation, gaining direct exposure to how India&rsquo;s leading funds position strategy in market</li>
+            <li>&bull; Engage directly with GPs and LPs on institutional investment themes spanning private credit, growth equity, and family office allocation, gaining direct exposure to how India&rsquo;s leading funds position their strategy in the market</li>
             <li>&bull; Support IVCA&rsquo;s thought leadership output, coordinating with member and partner firms on market commentary and sector perspectives published across IVCA platforms</li>
             <li>&bull; Track fund-level data across the membership base, including AUM, strategy classification, and vehicle structure, to support ecosystem mapping and engagement priorities</li>
           </ul>

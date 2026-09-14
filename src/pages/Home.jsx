@@ -90,8 +90,8 @@ export default function Home() {
         >
           I research high-growth investment opportunities in emerging markets, with a
           focus on India&rsquo;s fintech and technology ecosystem - fundamental
-          due diligence, investment theses, and the companies worth watching before the
-          market catches on.
+          due diligence, investment theses, and the discipline of independent
+          analysis, built one report at a time.
         </motion.p>
 
         <motion.div
@@ -138,9 +138,9 @@ export default function Home() {
           <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">What I Do</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
             I conduct independent due diligence on emerging-market companies and
-            sectors, building falsifiable investment theses rather than hot takes.
-            Each report combines primary research, financial modeling, and a
-            clear-eyed view of the risks that could break the thesis.
+            sectors, building evidence-based, testable investment theses rather than
+            hot takes. Each report combines primary research, financial modeling, and
+            a clear-eyed view of the risks that could break the thesis.
           </p>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-3">

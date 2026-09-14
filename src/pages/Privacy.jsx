@@ -10,67 +10,30 @@ export default function Privacy() {
       />
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">Privacy</p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ink sm:text-4xl">Privacy Policy</h1>
-      <p className="mt-4 text-sm text-ink-soft/70">Last updated: September 13, 2026</p>
+      <p className="mt-4 text-sm text-ink-soft/70">Last updated: September 14, 2026</p>
 
       <div className="mt-10 space-y-10">
         <section>
           <h2 className="font-serif text-xl font-semibold text-ink">Overview</h2>
           <p className="mt-3 leading-relaxed text-ink-soft">
-            This is a personal research and portfolio site. It has no user accounts, no
-            e-commerce, and no advertising. This page describes, plainly, the only two
-            ways any data about you touches this site.
+            This website belongs to Khuswant Sharma. It shares independent investment
+            research and contact details. There are no user accounts, nothing is sold
+            here, and there are no ads.
+          </p>
+          <p className="mt-3 leading-relaxed text-ink-soft">
+            This page explains, in plain terms, what happens to your information when
+            you visit.
           </p>
         </section>
 
         <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">What is collected</h2>
-          <ul className="mt-3 space-y-3 leading-relaxed text-ink-soft">
-            <li>
-              <span className="font-medium text-ink">Contact form submissions.</span> If you
-              fill out and submit the form on the{" "}
-              <a href="/contact" className="text-navy hover:underline">Contact</a> page, the
-              name, email address, and message you provide are sent to Khuswant Sharma via{" "}
-              <a
-                href="https://formspree.io/legal/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-navy hover:underline"
-              >
-                Formspree
-              </a>
-              , a third-party form backend. Nothing is submitted unless you actively fill
-              out and send the form.
-            </li>
-            <li>
-              <span className="font-medium text-ink">Anonymous, cookieless analytics.</span>{" "}
-              This site uses Vercel Web Analytics and Vercel Speed Insights to see
-              aggregate traffic and page-performance data - page views, general location,
-              device type, and load times. Both are cookieless by design: visitors are
-              identified only by a hash of the request that cannot be used to track you
-              across other sites, no personal identifiers are collected, and the data
-              cannot be used to reconstruct an individual browsing session.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">What is not collected</h2>
-          <ul className="mt-3 space-y-2 leading-relaxed text-ink-soft">
-            <li>&bull; No user accounts, logins, or profiles</li>
-            <li>&bull; No tracking cookies of any kind</li>
-            <li>&bull; No advertising or retargeting networks</li>
-            <li>&bull; No sale or sharing of your data with anyone other than Formspree, and only for the message you choose to send</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">How contact form data is used</h2>
+          <h2 className="font-serif text-xl font-semibold text-ink">What this website collects</h2>
           <p className="mt-3 leading-relaxed text-ink-soft">
-            Contact form submissions are used only to read and respond to your message.
-            They are processed by Formspree and delivered to Khuswant Sharma's email
-            inbox; they are not added to a mailing list, used for marketing, or shared
-            with any other party. Formspree's own handling of that data is governed by
-            their{" "}
+            If you use the{" "}
+            <a href="/contact" className="text-navy hover:underline">Contact</a> form:
+            your name, email address, and message are sent through Formspree, a
+            third-party service, so they reach my inbox. Formspree also keeps its own
+            copy of these messages. You can read their{" "}
             <a
               href="https://formspree.io/legal/privacy-policy"
               target="_blank"
@@ -78,15 +41,34 @@ export default function Privacy() {
               className="text-navy hover:underline"
             >
               privacy policy
-            </a>
-            .
+            </a>{" "}
+            for more detail.
           </p>
+          <p className="mt-3 leading-relaxed text-ink-soft">
+            If you just browse the website: Vercel Analytics records basic, anonymous
+            information, like which pages are visited and how fast they load, so I can
+            understand how the website is being used. This does not use cookies, and it
+            cannot identify you personally.
+          </p>
+          <p className="mt-3 font-medium leading-relaxed text-ink">
+            That is the complete list. Nothing else is collected.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-serif text-xl font-semibold text-ink">What this website does not do</h2>
+          <ul className="mt-3 space-y-2 leading-relaxed text-ink-soft">
+            <li>&bull; No user accounts or logins</li>
+            <li>&bull; No cookies that track you across visits</li>
+            <li>&bull; No advertising of any kind</li>
+            <li>&bull; Your information is never sold or shared beyond what is stated above</li>
+          </ul>
         </section>
 
         <section>
           <h2 className="font-serif text-xl font-semibold text-ink">Questions</h2>
           <p className="mt-3 leading-relaxed text-ink-soft">
-            For any question about this policy or your data, email{" "}
+            If you have any questions about your data, write to{" "}
             <a href="mailto:sharmakhuswant16@gmail.com" className="text-navy hover:underline">
               sharmakhuswant16@gmail.com
             </a>
