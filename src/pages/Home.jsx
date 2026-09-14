@@ -7,22 +7,6 @@ import { reports, categories } from "../data/reports";
 
 const NAME = "Khuswant Sharma";
 
-const nameContainer = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.045, delayChildren: 0.15 },
-  },
-};
-
-const nameChar = {
-  hidden: { opacity: 0, filter: "blur(10px)" },
-  visible: {
-    opacity: 1,
-    filter: "blur(0px)",
-    transition: { duration: 0.55, ease: "easeOut" },
-  },
-};
-
 const featured = [...reports]
   .sort((a, b) => new Date(b.date) - new Date(a.date))
   .slice(0, 5);
@@ -55,23 +39,20 @@ export default function Home() {
           Independent Investment Research
         </motion.p>
 
+        {/* Full opacity from frame one - a hero heading that starts hidden
+            (opacity:0, blur, etc.) delays Chrome's LCP paint measurement,
+            which is exactly what was showing up in Speed Insights (LCP
+            3.27s). Only scale animates here, via transform, which is
+            compositor-only: the pixels are already painted and it doesn't
+            affect layout, so it can't push LCP back or cause layout shift. */}
         <motion.h1
-          variants={nameContainer}
-          initial="hidden"
-          animate="visible"
+          initial={{ scale: 1.04 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
           className="mt-6 font-serif text-5xl font-semibold text-ink sm:text-6xl md:text-7xl"
           style={{ letterSpacing: "0.015em" }}
         >
-          {NAME.split(" ").map((word, wi, words) => (
-            <span key={wi} className="inline-block whitespace-nowrap">
-              {word.split("").map((char, ci) => (
-                <motion.span key={ci} variants={nameChar} style={{ display: "inline-block" }}>
-                  {char}
-                </motion.span>
-              ))}
-              {wi < words.length - 1 && " "}
-            </span>
-          ))}
+          {NAME}
         </motion.h1>
 
         <motion.div
@@ -97,7 +78,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           className="mt-8"
         >
           <Link
