@@ -42,7 +42,7 @@ export default function Home() {
     <div>
       <SEO
         title="Khuswant Sharma | Independent Investment Research"
-        description="Independent investment research on emerging markets and fintech, combining primary due diligence, financial modeling, and clear-eyed risk analysis."
+        description="Independent investment research combining primary due diligence, financial modeling, and clear-eyed risk analysis, across sectors and geographies."
         path="/"
       />
       <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-28 text-center sm:py-36">
@@ -88,10 +88,10 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 1.2 }}
           className="mt-7 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg"
         >
-          I research high-growth investment opportunities in emerging markets, with a
-          focus on India&rsquo;s fintech and technology ecosystem - fundamental
-          due diligence, investment theses, and the discipline of independent
-          analysis, built one report at a time.
+          I research the market and regulatory questions that matter, across
+          sectors and geographies - fundamental due diligence, investment
+          theses, and the discipline of independent analysis, built one
+          report at a time.
         </motion.p>
 
         <motion.div
