@@ -39,6 +39,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
+    <>
     <header className="sticky top-0 z-50 border-b border-hairline bg-paper/90 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <NavLink to="/" end className="flex items-center gap-3">
@@ -80,61 +81,66 @@ export default function Navbar() {
           <span className="h-0.5 w-6 bg-ink" />
         </button>
       </nav>
-
-      <AnimatePresence>
-        {open && (
-          <>
-            <motion.div
-              key="backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={close}
-              className="fixed inset-0 z-[60] bg-black/50 md:hidden"
-              aria-hidden="true"
-            />
-            <motion.div
-              key="drawer"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.28, ease: "easeOut" }}
-              role="dialog"
-              aria-modal="true"
-              aria-label="Site menu"
-              className="fixed inset-y-0 right-0 z-[70] flex w-72 max-w-[80vw] flex-col border-l border-hairline bg-paper px-6 py-4 md:hidden"
-            >
-              <div className="flex items-center justify-end">
-                <button
-                  type="button"
-                  onClick={close}
-                  aria-label="Close menu"
-                  className="flex h-9 w-9 items-center justify-center rounded-md text-ink-soft transition-colors hover:text-navy"
-                >
-                  <CloseIcon className="h-5 w-5" />
-                </button>
-              </div>
-              <ul className="mt-6 flex flex-col gap-1">
-                {links.map((link) => (
-                  <li key={link.to}>
-                    <NavLink
-                      to={link.to}
-                      end={link.to === "/"}
-                      onClick={close}
-                      className={({ isActive }) =>
-                        `block py-2.5 text-base font-medium ${isActive ? "text-navy" : "text-ink-soft"}`
-                      }
-                    >
-                      {link.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </header>
+
+    {/* Rendered as a sibling of <header>, not a child - the header's own
+        backdrop-blur was creating a compositing/containing-block context
+        that let page content bleed through the drawer's own background on
+        real mobile browsers, even though the drawer's fill was opaque. */}
+    <AnimatePresence>
+      {open && (
+        <>
+          <motion.div
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={close}
+            className="fixed inset-0 z-[60] bg-black/50 md:hidden"
+            aria-hidden="true"
+          />
+          <motion.div
+            key="drawer"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.28, ease: "easeOut" }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
+            className="fixed inset-y-0 right-0 z-[70] flex w-72 max-w-[80vw] flex-col border-l border-hairline bg-paper-dim px-6 py-4 md:hidden"
+          >
+            <div className="flex items-center justify-end">
+              <button
+                type="button"
+                onClick={close}
+                aria-label="Close menu"
+                className="flex h-9 w-9 items-center justify-center rounded-md text-ink-soft transition-colors hover:text-navy"
+              >
+                <CloseIcon className="h-5 w-5" />
+              </button>
+            </div>
+            <ul className="mt-6 flex flex-col gap-1">
+              {links.map((link) => (
+                <li key={link.to}>
+                  <NavLink
+                    to={link.to}
+                    end={link.to === "/"}
+                    onClick={close}
+                    className={({ isActive }) =>
+                      `block py-2.5 text-base font-medium ${isActive ? "text-navy" : "text-ink-soft"}`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+    </>
   );
 }
