@@ -15,14 +15,13 @@ export const C = {
   negative: "#e0705c",
 };
 
-// Company marks: our own initial badges, not the companies' trademark logos.
-// To use an official logo instead, drop the file in /public/logos/ and set
-// `logo` here (e.g. logo: "/logos/satvu.svg").
+// Company marks. If an official logo file sits in src/assets/logos/ (named by
+// `slug`, .svg or .png), it is used; otherwise an initials badge is shown.
 export const COMPANIES = {
-  SatVu: { initials: "SV", color: "#3fbfb0" },
-  constellr: { initials: "c", color: "#c96fa6" },
-  OroraTech: { initials: "OT", color: "#6e9bee" },
-  Hydrosat: { initials: "H", color: "#58b26d" },
-  "Aistech Space": { initials: "AS", color: "#9a7fe0" },
-  SatLeo: { initials: "SL", color: "#f2c14e" },
+  SatVu: { slug: "satvu", initials: "SV", color: "#3fbfb0" },
+  constellr: { slug: "constellr", initials: "C", color: "#c96fa6" },
+  OroraTech: { slug: "ororatech", initials: "OT", color: "#6e9bee" },
+  Hydrosat: { slug: "hydrosat", initials: "H", color: "#58b26d" },
+  "Aistech Space": { slug: "aistech-space", initials: "AS", color: "#9a7fe0" },
+  SatLeo: { slug: "satleo", initials: "SL", color: "#f2c14e" },
 };

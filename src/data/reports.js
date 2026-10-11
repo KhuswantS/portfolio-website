@@ -408,6 +408,7 @@ export const reports = [
   },
   {
     slug: "satleo-labs-investment-memo",
+    wide: true,
     title: "SatLeo Labs",
     subtitle: "Investment memo on India's thermal earth observation opportunity",
     author: "Khuswant Sharma",

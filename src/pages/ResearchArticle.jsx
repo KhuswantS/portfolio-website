@@ -34,18 +34,16 @@ const CUSTOM_COMPONENTS = {
 const VIZ = {
   CompetitorFunding: {
     graphic: CompetitorFundingGraphic,
-    defaultView: "graphic",
     marks: true,
-    title: "Equity raised by thermal imaging companies",
+    title: "The three leading rivals have raised 11 to 22 times more than SatLeo",
     headers: ["Company", "Total equity raised, US$ million (Tracxn)", "Multiple of SatLeo's $5.5 million"],
     rows: FUNDING.map((r) => [r.name, `$${r.usd}M`, r.name === "SatLeo" ? "1x" : `${Math.round(r.usd / 5.5)}x`]),
   },
-  ThermalCompanies: { graphic: ThermalCompaniesGraphic, marks: true },
+  ThermalCompanies: { graphic: ThermalCompaniesGraphic, marks: true, widths: [16, 16, 24, 20, 24] },
   RevenueAccounts: { graphic: RevenueGraphic },
   ValuationSeries: {
     graphic: ValuationGraphic,
-    defaultView: "graphic",
-    title: "Valuation series",
+    title: "SatLeo's valuation series rose about 3.9 times in 17 months",
     headers: ["Share allotment", "Valuation (Rs crore)"],
     rows: VALUATION.map((p) => [p.label, String(p.cr)]),
   },
@@ -156,8 +154,8 @@ function ReportBlock({ block, index }) {
     }
     case "richtable":
       return (
-        <div key={index} className="my-8 lg:-mx-16">
-          <DataTable headers={block.headers} rows={block.rows} />
+        <div key={index} className="my-8">
+          <DataTable headers={block.headers} rows={block.rows} widths={block.widths} />
         </div>
       );
     case "viz": {
@@ -167,12 +165,12 @@ function ReportBlock({ block, index }) {
       return (
         <VizBlock
           key={index}
-          title={block.title || v.title}
+          title={v.title || block.title}
           caption={block.caption}
           headers={block.headers || v.headers}
           rows={block.rows || v.rows}
           marks={v.marks}
-          defaultView={v.defaultView || "table"}
+          widths={v.widths}
         >
           <Suspense fallback={<div className="h-64" aria-hidden="true" />}>
             <Graphic />
@@ -227,7 +225,7 @@ export default function ResearchArticle() {
   };
 
   return (
-    <article className="mx-auto max-w-2xl px-6 py-16 sm:py-20">
+    <article className={`mx-auto ${report.wide ? "max-w-3xl" : "max-w-2xl"} px-6 py-16 sm:py-20`}>
       <SEO
         title={`${report.title} | Khuswant Sharma`}
         description={report.hook}

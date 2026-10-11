@@ -21,14 +21,21 @@ function ChartIcon() {
   );
 }
 
-export function DataTable({ headers, rows, marks = false, className = "" }) {
+export function DataTable({ headers, rows, marks = false, widths, className = "" }) {
   return (
     <div className={`overflow-x-auto rounded-lg border border-navy/15 ${className}`}>
-      <table className="w-full min-w-[520px] border-collapse text-left text-sm">
+      <table className={`w-full min-w-[560px] border-collapse text-left text-sm ${widths ? "table-fixed" : ""}`}>
+        {widths && (
+          <colgroup>
+            {widths.map((w, i) => (
+              <col key={i} style={{ width: `${w}%` }} />
+            ))}
+          </colgroup>
+        )}
         <thead>
           <tr className="bg-navy/10">
             {headers.map((h, i) => (
-              <th key={i} scope="col" className="border-b border-navy/15 px-4 py-3 font-semibold text-ink">
+              <th key={i} scope="col" className="hyphens-auto border-b border-navy/15 px-3 py-3 align-bottom font-semibold text-ink sm:px-4">
                 {h}
               </th>
             ))}
@@ -40,7 +47,7 @@ export function DataTable({ headers, rows, marks = false, className = "" }) {
               {row.map((cell, c) => {
                 const key = marks && c === 0 ? companyKey(cell) : null;
                 return (
-                  <td key={c} className="px-4 py-3 align-top leading-relaxed text-ink-soft">
+                  <td key={c} className="hyphens-auto px-3 py-3 align-top leading-relaxed text-ink-soft sm:px-4">
                     {key ? (
                       <span className="inline-flex items-center gap-2">
                         <CompanyMark name={key} />
@@ -63,7 +70,7 @@ export function DataTable({ headers, rows, marks = false, className = "" }) {
 // A table that can flip into a graphic. Both views carry the same numbers;
 // the graphic never adds data the table does not have. While the graphic is
 // showing, the table stays in the page for screen readers and search engines.
-export default function VizBlock({ title, caption, headers, rows, marks = false, defaultView = "table", graphicLabel, children }) {
+export default function VizBlock({ title, caption, headers, rows, marks = false, widths, defaultView = "graphic", graphicLabel, children }) {
   const [view, setView] = useState(defaultView);
   const id = useId();
 
@@ -83,7 +90,7 @@ export default function VizBlock({ title, caption, headers, rows, marks = false,
   );
 
   return (
-    <section className="my-10 lg:-mx-16" aria-label={title || graphicLabel}>
+    <section className="my-10" aria-label={title || graphicLabel}>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
         {title ? <h3 className="font-sans text-base font-semibold text-ink">{title}</h3> : <span />}
         <div role="group" aria-label="Choose view" className="inline-flex rounded-lg border border-navy/20 bg-paper-dim p-0.5">
@@ -96,7 +103,7 @@ export default function VizBlock({ title, caption, headers, rows, marks = false,
         <AnimatePresence mode="wait" initial={false}>
           {view === "table" ? (
             <motion.div key="t" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.22 }}>
-              <DataTable headers={headers} rows={rows} marks={marks} />
+              <DataTable headers={headers} rows={rows} marks={marks} widths={widths} />
             </motion.div>
           ) : (
             <motion.div

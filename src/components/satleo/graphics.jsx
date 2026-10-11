@@ -19,13 +19,12 @@ export function CompetitorFundingGraphic() {
   const base = FUNDING.at(-1).usd;
   return (
     <div ref={ref} role="img" aria-label="Equity raised: SatVu $122M, constellr $89.1M, OroraTech $63.2M, Aistech Space $15M, SatLeo $5.5M">
-      <p className="text-sm font-semibold text-ink">The three leading rivals have raised 11 to 22 times more than SatLeo</p>
-      <p className="mt-1 text-xs text-ink-soft/70">Total equity funding, US$ million (Tracxn), with each rival's multiple of SatLeo</p>
+      <p className="text-xs text-ink-soft/70">Total equity funding, US$ million (Tracxn), with each rival's multiple of SatLeo</p>
       <ul className="mt-5 space-y-3">
         {FUNDING.map((r, i) => {
           const isS = r.name === "SatLeo";
           return (
-            <li key={r.name} className="grid grid-cols-[7.5rem_1fr] items-center gap-3 sm:grid-cols-[9rem_1fr]">
+            <li key={r.name} className="grid grid-cols-[8.75rem_1fr] items-center gap-3 sm:grid-cols-[9.5rem_1fr]">
               <span className={`flex items-center gap-2 text-sm ${isS ? "font-semibold text-ink" : "text-ink-soft"}`}>
                 <CompanyMark name={r.name} />
                 <span className="truncate">{r.name}</span>
@@ -46,7 +45,6 @@ export function CompetitorFundingGraphic() {
                 >
                   ${r.usd}M{!isS && <span className="text-ink-soft/60">{`  ${Math.round(r.usd / base)}x`}</span>}
                 </motion.span>
-                {isS && <PulseDot color={C.satleo} size={9} />}
               </span>
             </li>
           );
@@ -77,8 +75,7 @@ export function ThermalCompaniesGraphic() {
   const { ref, play, reduce } = usePlay();
   return (
     <div ref={ref}>
-      <p className="text-sm font-semibold text-ink">Who flies what: satellites in orbit and thermal sharpness</p>
-      <p className="mt-1 text-xs text-ink-soft/70">Status in October 2026. Each square is one satellite or payload listed in the table.</p>
+      <p className="text-xs text-ink-soft/70">Status in October 2026. Each square is one satellite or payload listed in the table.</p>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {THERMAL.map((r, i) => {
@@ -214,14 +211,13 @@ export function RevenueGraphic() {
   return (
     <div ref={ref} role="img" aria-label="FY2024 revenue Rs 27.86 lakh, FY2025 Rs 3.4 lakh. FY2025 net loss Rs 36.77 lakh.">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <p className="text-sm font-semibold text-ink">Revenue fell 88% in FY2025 while costs rose</p>
+        <p className="text-xs text-ink-soft/70">Rs lakh, from public accounts. FY2024 ran from 29 May 2023 to March 2024.</p>
         <div className="flex gap-4 text-xs text-ink-soft">
           <span className="inline-flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm" style={{ background: C.blue }} />FY2024</span>
           <span className="inline-flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm" style={{ background: C.satleo }} />FY2025</span>
           <span className="inline-flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm" style={{ background: C.negative }} />Loss</span>
         </div>
       </div>
-      <p className="mt-1 text-xs text-ink-soft/70">Rs lakh, from public accounts. FY2024 ran from 29 May 2023 to March 2024.</p>
       <div className="mt-5 space-y-5">
         {ACCOUNTS.map((a, i) => (
           <div key={a.label} className="grid grid-cols-[7.5rem_1fr] items-center gap-3 sm:grid-cols-[10rem_1fr]">
@@ -241,13 +237,23 @@ export function RevenueGraphic() {
 /* 4. Valuation series                                                 */
 /* ------------------------------------------------------------------ */
 
+// Where each value label sits relative to its point, chosen so no label
+// touches the step line.
+const LABEL_POS = {
+  "Dec 2024": { dx: 8, dy: 20, anchor: "start" },
+  "Feb 2025": { dx: -8, dy: -10, anchor: "end" },
+  "Apr 2025": { dx: 8, dy: -12, anchor: "start" },
+  "Apr 2026": { dx: -10, dy: 22, anchor: "end" },
+  "May 2026": { dx: 0, dy: -16, anchor: "middle" },
+};
+
 export function ValuationGraphic() {
   const { ref, play, reduce } = usePlay();
   const [wRef, width] = useWidth(640);
   const W = Math.max(width, 280);
   const narrow = W < 480;
   const H = narrow ? 260 : 300;
-  const pad = { l: 36, r: narrow ? 56 : 70, t: 24, b: 34 };
+  const pad = { l: 36, r: narrow ? 40 : 48, t: 30, b: 34 };
   const x = (m) => pad.l + (m / 17) * (W - pad.l - pad.r);
   const y = (v) => pad.t + (1 - v / 170) * (H - pad.t - pad.b);
   let d = "";
@@ -255,10 +261,22 @@ export function ValuationGraphic() {
     d += i === 0 ? `M${x(p.m)},${y(p.cr)}` : ` H${x(p.m)} V${y(p.cr)}`;
   });
   const last = VALUATION.at(-1);
+  // Axis dates: keep the first and last, then add others only where they do
+  // not collide (dates two months apart would otherwise overlap).
+  const tw = (t) => t.length * 6.4;
+  const span = (t) => (t.anchor === "start" ? [t.x, t.x + tw(t.label)] : t.anchor === "end" ? [t.x - tw(t.label), t.x] : [t.x - tw(t.label) / 2, t.x + tw(t.label) / 2]);
+  const ticks = [
+    { label: VALUATION[0].label, x: x(VALUATION[0].m), anchor: "start" },
+    { label: last.label, x: x(last.m), anchor: "end" },
+  ];
+  VALUATION.slice(1, -1).forEach((p) => {
+    const t = { label: p.label, x: x(p.m), anchor: "middle" };
+    const [a, b] = span(t);
+    if (ticks.every((o) => { const [c, e] = span(o); return b + 12 < c || a > e + 12; })) ticks.push(t);
+  });
   return (
     <div ref={ref}>
-      <p className="text-sm font-semibold text-ink">SatLeo's valuation series rose about 3.9 times in 17 months</p>
-      <p className="mt-1 text-xs text-ink-soft/70">Valuation at each share allotment, Rs crore (Tracxn). Basis of the earlier points unconfirmed.</p>
+      <p className="text-xs text-ink-soft/70">Valuation at each share allotment, Rs crore (Tracxn). Basis of the earlier points unconfirmed.</p>
       <div ref={wRef} className="mt-4 w-full">
         <svg width={W} height={H} role="img" aria-label="Valuation: Rs 38.3 crore Dec 2024, 48.3 Feb 2025, 80 Apr 2025, 149 Apr 2026, 150 May 2026" className="block overflow-visible">
           {[0, 50, 100, 150].map((v) => (
@@ -281,9 +299,7 @@ export function ValuationGraphic() {
           />
           {VALUATION.map((p, i) => {
             const isLast = i === VALUATION.length - 1;
-            // On phones only the first and last dates fit on the axis; the table has the rest.
-            const showTick = narrow ? i === 0 || isLast : true;
-            const anchor = narrow ? (i === 0 ? "start" : "end") : p.label === "Apr 2026" ? "end" : p.label === "May 2026" ? "start" : "middle";
+            const lab = LABEL_POS[p.label];
             const showValue = !(narrow && p.label === "Feb 2025");
             return (
               <g key={p.label}>
@@ -296,33 +312,44 @@ export function ValuationGraphic() {
                   animate={{ opacity: play ? 1 : 0 }}
                   transition={{ delay: 0.25 + i * 0.3 }}
                 />
-                {isLast && play && (
-                  <circle cx={x(p.m)} cy={y(p.cr)} r="6" fill={C.satleo} className="pulse-svg" />
+                {isLast && play && !reduce && (
+                  <motion.circle
+                    cx={x(p.m)}
+                    cy={y(p.cr)}
+                    fill="none"
+                    stroke={C.satleo}
+                    strokeWidth="2"
+                    initial={{ r: 6, opacity: 0.8 }}
+                    animate={{ r: 20, opacity: 0 }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut", delay: 1.6 }}
+                  />
                 )}
-                {showValue && <motion.text
-                  x={x(p.m) + (p.label === "Apr 2026" ? -10 : 8)}
-                  y={y(p.cr) + (i === 0 ? 20 : -10)}
-                  textAnchor={p.label === "Apr 2026" ? "end" : "start"}
-                  fontSize={isLast ? 13 : 12}
-                  fontWeight={isLast ? 600 : 400}
-                  fill={C.text}
-                  initial={{ opacity: reduce ? 1 : 0 }}
-                  animate={{ opacity: play ? 1 : 0 }}
-                  transition={{ delay: 0.35 + i * 0.3 }}
-                >
-                  {`Rs ${p.cr} cr`}
-                </motion.text>}
-                {showTick && (
-                  <text x={narrow && isLast ? x(p.m) + 8 : x(p.m)} y={H - pad.b + 20} textAnchor={anchor} fontSize="11" fill={C.textSoft}>
-                    {p.label}
-                  </text>
+                {showValue && (
+                  <motion.text
+                    x={x(p.m) + lab.dx}
+                    y={y(p.cr) + lab.dy}
+                    textAnchor={lab.anchor}
+                    fontSize={isLast ? 13 : 12}
+                    fontWeight={isLast ? 600 : 400}
+                    fill={C.text}
+                    initial={{ opacity: reduce ? 1 : 0 }}
+                    animate={{ opacity: play ? 1 : 0 }}
+                    transition={{ delay: 0.35 + i * 0.3 }}
+                  >
+                    {`Rs ${p.cr} cr`}
+                  </motion.text>
                 )}
               </g>
             );
           })}
+          {ticks.map((t) => (
+            <text key={t.label} x={t.x} y={H - pad.b + 20} textAnchor={t.anchor} fontSize="11" fill={C.textSoft}>
+              {t.label}
+            </text>
+          ))}
           <motion.text
             x={x(10)}
-            y={y(118)}
+            y={y(narrow ? 104 : 118)}
             textAnchor="middle"
             fontSize="13"
             fontWeight="600"
@@ -353,8 +380,7 @@ export function FundingRoundsGraphic() {
   const { ref, play, reduce } = usePlay();
   return (
     <div ref={ref}>
-      <p className="text-sm font-semibold text-ink">Three allotment events, December 2024 to May 2026</p>
-      <p className="mt-1 text-xs text-ink-soft/70">Amounts as reported (press or filings). Filings total Rs 45.9 crore of equity.</p>
+      <p className="text-xs text-ink-soft/70">Amounts as reported (press or filings). Filings total Rs 45.9 crore of equity.</p>
       <ol className="relative mt-6 ml-2 border-l border-white/15">
         {ROUNDS.map((r, i) => (
           <motion.li
@@ -417,8 +443,7 @@ export function OwnershipGraphic() {
   const shown = active != null ? HOLDERS[active] : null;
   return (
     <div ref={ref}>
-      <p className="text-sm font-semibold text-ink">The founders still own 47.41%</p>
-      <p className="mt-1 text-xs text-ink-soft/70">Shareholding after the May 2026 round, including the ESOP pool. Tap or hover a holder to highlight it.</p>
+      <p className="text-xs text-ink-soft/70">Shareholding after the May 2026 round, including the ESOP pool. Tap or hover a holder to highlight it.</p>
       <div className="mt-5 grid items-center gap-6 sm:grid-cols-[220px_1fr]">
         <div className="relative mx-auto h-[220px] w-[220px]">
           <svg viewBox="0 0 220 220" width="220" height="220" role="img" aria-label="Ownership: founders 47.41%, Merak 12.5%, Unicorn India 10%, Huddle 6.57%, GVFL 4.38%, other funds 6.27%, angels 4.51%, ESOP 8.37%">

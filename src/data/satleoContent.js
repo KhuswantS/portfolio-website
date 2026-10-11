@@ -85,6 +85,11 @@ export const satleoContent = [
         "Merak Ventures (first round), Unicorn India Ventures (April 2026 seed)",
         "[Entrackr](https://entrackr.com/snippets/spacetech-startup-satleo-labs-raises-22-mn-in-seed-round-11457321)"
       ]
+    ],
+    "widths": [
+      17,
+      53,
+      30
     ]
   },
   {
@@ -241,6 +246,12 @@ export const satleoContent = [
         "IT services; ex-Zindra Technologies, Amnex, Wipro Infotech, Tulip Telecom",
         "9.48%"
       ]
+    ],
+    "widths": [
+      16,
+      18,
+      46,
+      20
     ]
   },
   {
@@ -360,6 +371,14 @@ export const satleoContent = [
         "**49 to 195**",
         "Indian public sector alone: 31 to 105"
       ]
+    ],
+    "widths": [
+      18,
+      18,
+      13,
+      14,
+      10,
+      27
     ]
   },
   {
@@ -808,6 +827,12 @@ export const satleoContent = [
         "Payload know-how may sit with a few people. Vesting and IP terms are not public",
         "Engineering leadership, succession, vesting and IP assignment"
       ]
+    ],
+    "widths": [
+      6,
+      16,
+      44,
+      34
     ]
   },
   {
