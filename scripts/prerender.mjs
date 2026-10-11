@@ -23,6 +23,7 @@ const routes = [
   { url: "/contact", out: "contact/index.html" },
   { url: "/privacy", out: "privacy/index.html" },
   { url: "/research/tax-without-recognition", out: "research/tax-without-recognition/index.html" },
+  { url: "/research/satleo-labs-investment-memo", out: "research/satleo-labs-investment-memo/index.html" },
   // "*" (NotFound) is intentionally not prerendered - it has no fixed path.
   // Unmatched URLs fall through vercel.json's rewrite to this file (Vercel
   // checks the filesystem before rewrites, so every route above still wins),

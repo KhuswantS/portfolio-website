@@ -8,6 +8,19 @@ import ReportChart from "../components/charts/ReportChart";
 import AdoptionEstimatesChart from "../components/charts/AdoptionEstimatesChart";
 import RegulatoryTimeline from "../components/charts/RegulatoryTimeline";
 import CBDCvsUPIChart from "../components/charts/CBDCvsUPIChart";
+import { renderInline } from "../lib/inline";
+import VizBlock, { DataTable } from "../components/satleo/VizBlock";
+import { FUNDING, VALUATION } from "../components/satleo/data";
+import { lazy, Suspense } from "react";
+
+// Graphics load only on report pages that use them, keeping the shared bundle small.
+const g = (name) => lazy(() => import("../components/satleo/graphics").then((m) => ({ default: m[name] })));
+const CompetitorFundingGraphic = g("CompetitorFundingGraphic");
+const ThermalCompaniesGraphic = g("ThermalCompaniesGraphic");
+const RevenueGraphic = g("RevenueGraphic");
+const ValuationGraphic = g("ValuationGraphic");
+const FundingRoundsGraphic = g("FundingRoundsGraphic");
+const OwnershipGraphic = g("OwnershipGraphic");
 
 const CUSTOM_COMPONENTS = {
   AdoptionEstimatesChart,
@@ -15,14 +28,32 @@ const CUSTOM_COMPONENTS = {
   CBDCvsUPIChart,
 };
 
-// Source paragraphs use markdown-style **bold** lead-ins; render those as <strong>
-// without pulling in a full markdown parser for one inline pattern.
-function renderInlineText(text) {
-  const parts = text.split(/\*\*(.+?)\*\*/g);
-  return parts.map((part, i) =>
-    i % 2 === 1 ? <strong key={i} className="font-semibold text-ink">{part}</strong> : part
-  );
-}
+// Table/graphic switches. Tables that came from the memo carry their own
+// headers/rows; the two former charts get a table built from the same data
+// the graphic draws, so both views always show identical numbers.
+const VIZ = {
+  CompetitorFunding: {
+    graphic: CompetitorFundingGraphic,
+    defaultView: "graphic",
+    marks: true,
+    title: "Equity raised by thermal imaging companies",
+    headers: ["Company", "Total equity raised, US$ million (Tracxn)", "Multiple of SatLeo's $5.5 million"],
+    rows: FUNDING.map((r) => [r.name, `$${r.usd}M`, r.name === "SatLeo" ? "1x" : `${Math.round(r.usd / 5.5)}x`]),
+  },
+  ThermalCompanies: { graphic: ThermalCompaniesGraphic, marks: true },
+  RevenueAccounts: { graphic: RevenueGraphic },
+  ValuationSeries: {
+    graphic: ValuationGraphic,
+    defaultView: "graphic",
+    title: "Valuation series",
+    headers: ["Share allotment", "Valuation (Rs crore)"],
+    rows: VALUATION.map((p) => [p.label, String(p.cr)]),
+  },
+  FundingRounds: { graphic: FundingRoundsGraphic },
+  Ownership: { graphic: OwnershipGraphic },
+};
+
+const renderInlineText = renderInline;
 
 function ReportBlock({ block, index }) {
   switch (block.type) {
@@ -90,6 +121,65 @@ function ReportBlock({ block, index }) {
           </div>
         </div>
       );
+    case "subheading":
+      return (
+        <h3 key={index} className="mt-10 mb-2 font-sans text-lg font-semibold text-ink">
+          {block.text}
+        </h3>
+      );
+    case "note":
+      return (
+        <p key={index} className="mt-3 text-xs leading-relaxed text-ink-soft/70">
+          {renderInlineText(block.text)}
+        </p>
+      );
+    case "list": {
+      const Tag = block.style === "ordered" ? "ol" : "ul";
+      const cls =
+        block.style === "ordered"
+          ? "list-decimal pl-6 marker:text-ink-soft/70"
+          : block.style === "check"
+            ? "list-none pl-0"
+            : "list-disc pl-6 marker:text-navy";
+      return (
+        <Tag key={index} className={`mt-4 space-y-2.5 text-base leading-relaxed text-ink-soft ${cls}`}>
+          {block.items.map((item, i) => (
+            <li key={i} className={block.style === "check" ? "flex gap-3" : "pl-1"}>
+              {block.style === "check" && (
+                <span aria-hidden="true" className="mt-1.5 inline-block h-4 w-4 shrink-0 rounded border border-navy-light/70" />
+              )}
+              <span>{renderInlineText(item)}</span>
+            </li>
+          ))}
+        </Tag>
+      );
+    }
+    case "richtable":
+      return (
+        <div key={index} className="my-8 lg:-mx-16">
+          <DataTable headers={block.headers} rows={block.rows} />
+        </div>
+      );
+    case "viz": {
+      const v = VIZ[block.name];
+      if (!v) return null;
+      const Graphic = v.graphic;
+      return (
+        <VizBlock
+          key={index}
+          title={block.title || v.title}
+          caption={block.caption}
+          headers={block.headers || v.headers}
+          rows={block.rows || v.rows}
+          marks={v.marks}
+          defaultView={v.defaultView || "table"}
+        >
+          <Suspense fallback={<div className="h-64" aria-hidden="true" />}>
+            <Graphic />
+          </Suspense>
+        </VizBlock>
+      );
+    }
     case "chart":
       return (
         <ReportChart
@@ -160,7 +250,18 @@ export default function ResearchArticle() {
       <p className="mt-3 text-sm text-ink-soft/70">
         {report.author && <span>{report.author} &middot; </span>}
         {formatDate(report.date)}
+        {report.dataAsOf && <span> &middot; Data as of {formatDate(report.dataAsOf)}</span>}
       </p>
+
+      {report.hero && (
+        <img
+          src={report.hero}
+          alt={report.heroAlt || ""}
+          width="800"
+          height="600"
+          className="mt-8 w-full rounded-lg border border-navy/10"
+        />
+      )}
 
       <a
         href={report.pdf || `/reports/${report.slug}.pdf`}

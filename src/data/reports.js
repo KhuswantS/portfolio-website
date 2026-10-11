@@ -1,3 +1,5 @@
+import { satleoContent } from "./satleoContent";
+
 // Single source of truth for every report on the site.
 // The homepage stat count, the Research library grid, and individual
 // report pages all read from this array - update it here only.
@@ -403,6 +405,23 @@ export const reports = [
         text: "**Corrections.** If you find an error in this report, I want to know. Contact details are on the site.",
       },
     ],
+  },
+  {
+    slug: "satleo-labs-investment-memo",
+    title: "SatLeo Labs",
+    subtitle: "Investment memo on India's thermal earth observation opportunity",
+    author: "Khuswant Sharma",
+    category: "Spacetech",
+    date: "2026-10-12",
+    dataAsOf: "2026-10-11",
+    thumbnail: "/images/reports/satleo-labs.svg",
+    hero: "/images/reports/satleo-labs.svg",
+    heroAlt: "Report 002 emblem: a satellite scanning a thermal heat map",
+    pdf: "/reports/SatLeo-Labs-Investment-Memo-Khuswant-Sharma.pdf",
+    // Distinct links in the memo's own "Main sources" list - update if that list changes.
+    sourceCount: 36,
+    hook: "SatLeo Labs put its first thermal payload in orbit in October 2026 and was valued at Rs 150 crore in May 2026. The public evidence does not yet support that price, but the company is worth tracking closely.",
+    content: satleoContent,
   },
 ];
 
