@@ -18,10 +18,10 @@ export const C = {
 // Company marks. If an official logo file sits in src/assets/logos/ (named by
 // `slug`, .svg or .png), it is used; otherwise an initials badge is shown.
 export const COMPANIES = {
-  SatVu: { slug: "satvu", initials: "SV", color: "#3fbfb0" },
-  constellr: { slug: "constellr", initials: "C", color: "#c96fa6" },
-  OroraTech: { slug: "ororatech", initials: "OT", color: "#6e9bee" },
-  Hydrosat: { slug: "hydrosat", initials: "H", color: "#58b26d" },
+  SatVu: { slug: "satvu", logoH: 15, initials: "SV", color: "#3fbfb0" },
+  constellr: { slug: "constellr", logoH: 24, initials: "C", color: "#c96fa6" },
+  OroraTech: { slug: "ororatech", logoH: 18, initials: "OT", color: "#6e9bee" },
+  Hydrosat: { slug: "hydrosat", logoH: 23, initials: "H", color: "#58b26d" },
   "Aistech Space": { slug: "aistech-space", initials: "AS", color: "#9a7fe0" },
-  SatLeo: { slug: "satleo", initials: "SL", color: "#f2c14e" },
+  SatLeo: { slug: "satleo", logoH: 18, initials: "SL", color: "#f2c14e" },
 };

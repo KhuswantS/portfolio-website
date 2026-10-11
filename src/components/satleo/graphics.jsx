@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { C } from "./theme";
-import CompanyMark from "./CompanyMark";
+import { CompanyLabel } from "./CompanyMark";
 import { PulseDot } from "./Pulse";
 import usePlay from "./usePlay";
 import useWidth from "./useWidth";
@@ -25,9 +25,8 @@ export function CompetitorFundingGraphic() {
           const isS = r.name === "SatLeo";
           return (
             <li key={r.name} className="grid grid-cols-[8.75rem_1fr] items-center gap-3 sm:grid-cols-[9.5rem_1fr]">
-              <span className={`flex items-center gap-2 text-sm ${isS ? "font-semibold text-ink" : "text-ink-soft"}`}>
-                <CompanyMark name={r.name} />
-                <span className="truncate">{r.name}</span>
+              <span className={`flex items-center text-sm ${isS ? "font-semibold text-ink" : "text-ink-soft"}`}>
+                <CompanyLabel name={r.name} bold={isS} fixed />
               </span>
               <span className="flex items-center gap-2">
                 <motion.span
@@ -89,12 +88,9 @@ export function ThermalCompaniesGraphic() {
               animate={{ opacity: play ? 1 : 0, y: play ? 0 : 10 }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
             >
-              <div className="flex items-center gap-2">
-                <CompanyMark name={r.name} size={26} />
-                <div>
-                  <p className="text-sm font-semibold text-ink">{r.name}</p>
-                  <p className="text-xs text-ink-soft/70">{r.country}</p>
-                </div>
+              <div className="flex items-center justify-between gap-2">
+                <CompanyLabel name={r.name} bold size={26} />
+                <p className="text-xs text-ink-soft/70">{r.country}</p>
               </div>
               <div className="mt-3 flex flex-wrap gap-1" aria-hidden="true">
                 {Array.from({ length: r.orbit }).map((_, k) => (

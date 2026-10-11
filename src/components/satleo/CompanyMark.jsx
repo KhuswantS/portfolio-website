@@ -45,3 +45,29 @@ export default function CompanyMark({ name, size = 22 }) {
     </span>
   );
 }
+
+// A company's name as shown in tables and charts: its official logo on a
+// white tile when we have the file (the logo already carries the name),
+// otherwise the initials badge followed by the name.
+export function CompanyLabel({ name, children, bold = false, size = 22, fixed = false }) {
+  const c = COMPANIES[name];
+  const logo = c && LOGOS[c.slug];
+  if (logo) {
+    // Logos differ in shape (wordmark only vs symbol + wordmark), so each has
+    // its own height to look the same size; `fixed` gives equal-width tiles.
+    return (
+      <span
+        className={`inline-flex h-8 shrink-0 items-center rounded-md bg-white px-2.5 shadow-sm ${fixed ? "w-[108px] justify-center" : ""}`}
+        title={name}
+      >
+        <img src={logo} alt={name} style={{ height: c.logoH || 16 }} className="w-auto max-w-[92px] object-contain" />
+      </span>
+    );
+  }
+  return (
+    <span className={`inline-flex items-center gap-2 ${bold ? "font-semibold text-ink" : ""}`}>
+      <CompanyMark name={name} size={size} />
+      <span>{children || name}</span>
+    </span>
+  );
+}

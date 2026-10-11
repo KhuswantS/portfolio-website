@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { renderInline } from "../../lib/inline";
-import CompanyMark, { companyKey } from "./CompanyMark";
+import { CompanyLabel, companyKey } from "./CompanyMark";
 
 function TableIcon() {
   return (
@@ -49,10 +49,7 @@ export function DataTable({ headers, rows, marks = false, widths, className = ""
                 return (
                   <td key={c} className="hyphens-auto px-3 py-3 align-top leading-relaxed text-ink-soft sm:px-4">
                     {key ? (
-                      <span className="inline-flex items-center gap-2">
-                        <CompanyMark name={key} />
-                        <span>{renderInline(cell)}</span>
-                      </span>
+                      <CompanyLabel name={key}>{renderInline(cell)}</CompanyLabel>
                     ) : (
                       renderInline(cell)
                     )}
