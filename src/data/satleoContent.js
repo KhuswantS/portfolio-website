@@ -6,6 +6,10 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
+    "text": "**In one line:** SatLeo Labs, an Ahmedabad startup, is building thermal-imaging satellites to sell heat data and analytics to Indian governments, defence and foreign buyers."
+  },
+  {
+    "type": "paragraph",
     "text": "**My view: I would not buy in at or above the May 2026 price of Rs 150 crore post-money. I would track SatLeo and test again against the milestones below.** The company has real customer interest and its first thermal payload is in orbit. But the evidence that would support this price is not public yet: working data from orbit, repeat paid demand, and a funded path to its main satellite."
   },
   {
@@ -586,6 +590,10 @@ export const satleoContent = [
     ]
   },
   {
+    "type": "paragraph",
+    "text": "**How it sells (go-to-market).** All three sales routes are early. First, city and state pilots (Ahmedabad, Tumakuru) and a state MoU (Rajasthan), where a working pilot becomes the reference for the next buyer. Second, foreign resellers and agencies, which make up about 60% of the claimed letters of intent. Third, defence, where the CSO says discussions are ongoing. No head of sales or defence business development is named publicly; the company advertised for a business and market development hire in August-September 2026. Government buyers move through slow procurement, so the time from pilot to paid contract is the number to watch."
+  },
+  {
     "type": "viz",
     "name": "RevenueAccounts",
     "title": "Revenue in public accounts",
@@ -632,6 +640,62 @@ export const satleoContent = [
   {
     "type": "paragraph",
     "text": "**Unit economics: what one satellite must cover.** SpaceX's rideshare price is $350,000 for the first 50 kg plus $7,000 per extra kg ([Satbase](https://satbase.com/articles/spacex-falcon-9-price-increase-2026)). For a 130 to 150 kg PYRO that is about $0.91 to 1.05 million per launch, a list-price estimate rather than a contracted budget. Over a 3 to 5 year life, each satellite must generate about $182,000 to $350,000 a year of cash after its operating costs just to recover the launch. Build cost, commissioning time, ground stations, insurance and the risk of a failed satellite come on top. SatLeo has not published a build cost per satellite, and that is the key number to ask for."
+  },
+  {
+    "type": "heading",
+    "text": "Next 12 to 18 months and use of funds"
+  },
+  {
+    "type": "paragraph",
+    "text": "The next year and a half decides whether SatLeo can raise a Series A on the strength of evidence rather than promise. These are the company's stated plans; none is a commitment, and the dates have moved before."
+  },
+  {
+    "type": "richtable",
+    "headers": [
+      "Milestone",
+      "Company's stated timing",
+      "Why it matters"
+    ],
+    "rows": [
+      [
+        "First data from TAPAS-1, then calibration",
+        "After launch; the team was \"waiting for the initial data\" on 6 Oct 2026",
+        "First proof that the camera and data chain work in space"
+      ],
+      [
+        "Series A",
+        "Planned after TAPAS-1",
+        "Pays for PYRO; its price tests the Rs 150 crore valuation"
+      ],
+      [
+        "Satellite factory near Ahmedabad",
+        "Planned",
+        "Needed to build a fleet; adds fixed cost"
+      ],
+      [
+        "TAPAS-2, with an onboard AI chip",
+        "Mid-2027",
+        "The company expects it to earn more than TAPAS-1"
+      ],
+      [
+        "PYRO launch-ready",
+        "End of 2027",
+        "The product the business case rests on"
+      ]
+    ],
+    "widths": [
+      32,
+      30,
+      38
+    ]
+  },
+  {
+    "type": "note",
+    "text": "Sources: [ETV Bharat, 6 Oct 2026](https://www.etvbharat.com/en/technology/exclusive-interview-satleo-labs-co-founder-urmil-bakhai-tapas-1-space-launch-future-plans-enn26100604772), [DQ India](https://www.dqindia.com/dqdeeptech/satleo-labs-tapas-1-launch-series-a-satellite-manufacturing-12613286)."
+  },
+  {
+    "type": "paragraph",
+    "text": "**What the next round must pay for.** PYRO design, build and testing; launch (about $0.91 to 1.05 million per satellite at list price); the factory; and hires in sales and engineering. SatLeo has not published a budget or the size of its Series A, so whether the round covers the first PYRO, the first few, or more cannot be checked from outside."
   },
   {
     "type": "heading",
@@ -683,11 +747,11 @@ export const satleoContent = [
   },
   {
     "type": "note",
-    "text": "Sources: MCA filings as compiled by Tracxn (accessed 8 Oct 2026); [Entrackr](https://entrackr.com/snippets/satleo-labs-raises-33-mn-in-pre-seed-round-led-by-merak-ventures-9016898); [Entrackr](https://entrackr.com/snippets/spacetech-startup-satleo-labs-raises-22-mn-in-seed-round-11457321). The press figures for the first two rounds already add up to $5.5 million before the May top-up. It is not clear whether the Rs 1.4 crore May top-up is extra money, part of an announced round, or a later allotment of money committed earlier. I use the rupee total from the filings (Rs 45.9 crore) and leave the reconciliation open."
+    "text": "Sources: MCA filings as compiled by Tracxn (accessed 8 Oct 2026); [Entrackr](https://entrackr.com/snippets/satleo-labs-raises-33-mn-in-pre-seed-round-led-by-merak-ventures-9016898); [Entrackr](https://entrackr.com/snippets/spacetech-startup-satleo-labs-raises-22-mn-in-seed-round-11457321). How the press figures reconcile with the filings is set out in the Appendix."
   },
   {
     "type": "paragraph",
-    "text": "**A gap to ask about.** SatLeo says it has raised $6.7 million, including a $1.2 million pre-Series A ([DQ India](https://www.dqindia.com/dqdeeptech/satleo-labs-tapas-1-launch-series-a-satellite-manufacturing-12613286)). That money is not in the share records up to 29 May 2026. It may have come later, or may not be equity."
+    "text": "**A gap to ask about.** The company says it has raised $6.7 million, but share records up to 29 May 2026 show about $5.5 million (see Appendix)."
   },
   {
     "type": "viz",
@@ -764,75 +828,87 @@ export const satleoContent = [
       "#",
       "Risk",
       "What could go wrong",
-      "What to check"
+      "What to check",
+      "What would reduce it"
     ],
     "rows": [
       [
         "1",
         "Funding",
-        "Launch alone for 12 to 15 PYRO satellites of 130 to 150 kg costs about $10.9 to 15.75 million at list prices, 2 to 3 times all equity raised, before build costs. Current cash, burn, runway and the factory budget are unknown. A staged plan (fewer satellites first, hosted payloads, customer-funded missions) could reduce the need, but none is public",
-        "Dated cash position; PYRO unit cost; size and lead of the Series A; funding plan for the first satellite, the first few, and the full fleet"
+        "Launch alone for 12 to 15 PYRO satellites of 130 to 150 kg costs about $10.9 to 15.75 million at list prices, 2 to 3 times all equity raised, before build costs. Current cash, burn, runway and the factory budget are unknown",
+        "Dated cash position; PYRO unit cost; size and lead of the Series A; funding plan for the first satellite, the first few, and the full fleet",
+        "A staged plan (fewer satellites first, hosted payloads, customer-funded missions); a Series A lead with follow-on capacity; government support such as the Antariksh fund or Gujarat's launch subsidy"
       ],
       [
         "2",
         "Technology",
         "No data from TAPAS-1 has been announced yet (nine days after launch, which is not unusual). The 1 Kelvin target is unproven. PYRO is a much harder step than TAPAS. Cloud blocks thermal sensing in the monsoon",
-        "Commissioning timetable; first calibrated data and accuracy against ground readings; PYRO design and test milestones"
+        "Commissioning timetable; first calibrated data and accuracy against ground readings; PYRO design and test milestones",
+        "Calibrated TAPAS-1 data checked against ground stations; independent review of the PYRO design"
       ],
       [
         "3",
         "Host dependence",
         "TAPAS-1 rides on Dhruva Space's satellite, so pointing, data download and fault handling depend on the host",
-        "Hosting agreement: who controls what, data ownership, remedies"
+        "Hosting agreement: who controls what, data ownership, remedies",
+        "Clear hosting terms on data ownership and control; SatLeo's own satellite (PYRO)"
       ],
       [
         "4",
         "Demand",
         "Buyers are mostly governments that pay slowly. No paid contract or binding pre-order is public, and letters of intent are not binding",
-        "Customer-level revenue, renewals, contract terms and collections"
+        "Customer-level revenue, renewals, contract terms and collections",
+        "Paid, renewed contracts; multi-year government or defence orders"
       ],
       [
         "5",
         "Valuation",
         "The next round could be flat or lower than Rs 150 crore. A lower price on similar terms can make hiring and later fundraising harder",
-        "Series A price and terms compared with May 2026"
+        "Series A price and terms compared with May 2026",
+        "Data and revenue milestones reached before the next round"
       ],
       [
         "6",
         "Free data",
         "If TRISHNA (57 m, every 2 to 3 days, planned 2027) is free, raw 60 m data will be hard to sell in India",
-        "TRISHNA launch date and data policy"
+        "TRISHNA launch date and data policy",
+        "Paid services free data cannot offer: tasking, chosen times of day, fast delivery, ready-made alerts"
       ],
       [
         "7",
         "Competition",
         "If PYRO sells from mid-2028 (my assumption), SatVu will have sold 3.5 m data for about two years, and constellr plans under 5 m",
-        "Rival launches and prices in India"
+        "Rival launches and prices in India",
+        "A clear price or local-supplier advantage with Indian buyers"
       ],
       [
         "8",
         "Defence route",
         "India's own SBS-III fleet could reduce demand for bought data, though it could also create supplier roles. Foreign defence sales face export rules",
-        "Any defence order, iDEX award or export licence"
+        "Any defence order, iDEX award or export licence",
+        "A supplier role in Indian programmes; early export approvals"
       ],
       [
         "9",
         "Disclosure gaps",
         "Funding ($6.7 million claimed vs Rs 45.9 crore in filings) and headline letters of intent are not reconciled",
-        "Whether FY2026 filings and the Series A announcement reconcile them"
+        "Whether FY2026 filings and the Series A announcement reconcile them",
+        "FY2026 filings and a clear funding announcement"
       ],
       [
         "10",
         "Key people",
         "Payload know-how may sit with a few people. Vesting and IP terms are not public",
-        "Engineering leadership, succession, vesting and IP assignment"
+        "Engineering leadership, succession, vesting and IP assignment",
+        "Founder vesting, IP assigned to the company, and a second layer of engineering leads"
       ]
     ],
     "widths": [
-      6,
-      16,
-      44,
-      34
+      4,
+      12,
+      32,
+      26,
+      26
     ]
   },
   {
@@ -886,6 +962,10 @@ export const satleoContent = [
     ]
   },
   {
+    "type": "paragraph",
+    "text": "**How an investor could exit (possibilities, not forecasts).** The realistic routes are a sale of early shares to new investors in a later round, a sale of the company to a larger space, defence or earth-observation business that wants thermal capability, or, much later, a public listing if the company reaches scale. None is likely before PYRO satellites are working and selling. The exit values in my 10x test (Rs 1,500 to 2,500 crore) assume revenue of Rs 150 to 500 crore first."
+  },
+  {
     "type": "subheading",
     "text": "Questions I would ask the founders"
   },
@@ -903,6 +983,20 @@ export const satleoContent = [
     ]
   },
   {
+    "type": "subheading",
+    "text": "What I would verify with an expert"
+  },
+  {
+    "type": "list",
+    "style": "bullet",
+    "items": [
+      "A thermal remote-sensing scientist: is about 1 Kelvin accuracy realistic for this class of payload, and how should it be tested?",
+      "A satellite engineer: a realistic build cost and schedule for a 130 to 150 kg thermal satellite.",
+      "A city or state official who buys data: how heat data is budgeted and bought.",
+      "A lawyer who handles export controls: what approvals foreign defence sales of thermal data need."
+    ]
+  },
+  {
     "type": "paragraph",
     "text": "This is my independent analysis, not investment advice."
   },
@@ -913,6 +1007,10 @@ export const satleoContent = [
   {
     "type": "paragraph",
     "text": "**Method.** Desk research between 4 and 11 October 2026. Company figures (revenue, valuation, shareholding) are from MCA filings (AOC-4 accounts and PAS-3 share allotments) as compiled by Tracxn, accessed 8 October 2026, and cross-checked against free company-data sites where possible. Every other figure is linked to the page it came from. Where sources disagree, both figures are shown. Market prices are my assumptions and are labelled as such. Current revenue, cash, burn and PYRO costs are not public and are treated as unknown, not estimated. There were no interviews."
+  },
+  {
+    "type": "paragraph",
+    "text": "**Version.** Version 1.1, 12 October 2026. Added a one-line summary, go-to-market, the next 12 to 18 months and use of funds, exit paths, what would reduce each risk, and expert checks; moved the funding reconciliation to the Appendix. No figures changed."
   },
   {
     "type": "paragraph",
@@ -935,8 +1033,26 @@ export const satleoContent = [
       "Launch and rivals: [Space.com](https://www.space.com/space-exploration/satellites/spacex-google-project-suncatcher-ai-satellite-transporter-18-mission), [Satbase](https://satbase.com/articles/spacex-falcon-9-price-increase-2026), [SatNews](https://satnews.com/2026/06/29/satvu-initiates-commercial-operations-for-hotsat-2-thermal-satellite/), [EU-Startups (SatVu)](https://www.eu-startups.com/2026/02/uk-thermal-intelligence-startup-satvu-secures-e34-million-to-scale-multi-satellite-constellation/), [European Spaceflight](https://europeanspaceflight.com/earth-observation-data-provider-constellr-closes-e37-million-series-a/), [GlobeNewswire](https://www.globenewswire.com/news-release/2026/10/02/3373854/0/en/ororatech-launches-forest-20-as-thermal-constellation-reaches-20-satellites-in-orbit.html), [EU-Startups (Hydrosat)](https://www.eu-startups.com/2026/01/hydrosats-thermal-satellite-tech-targets-water-scarcity-and-agricultural-risk-backed-by-e51-million/), [ObservationData](https://www.observationdata.com/providers/thermal-satellite-imagery/)",
       "Free data: [NASA](https://science.nasa.gov/mission/landsat-9/), [NASA Earthdata](https://www.earthdata.nasa.gov/data/catalog/lpcloud-eco-l2t-lste-003), [CEOS EO Handbook](https://database.eohandbook.com/database/missionsummary.aspx?missionID=866), [IASPoint](https://iaspoint.com/indias-first-commercial-thermal-imaging-cubesat/)",
       "Demand: [Metropolis](https://use.metropolis.org/case-studies/ahmedabad-heat-action-plan), [Down To Earth](https://www.downtoearth.org.in/climate-change/indias-heat-plans-are-growing-but-the-real-test-lies-beyond-policy-experts), [Climate Fact Checks](https://climatefactchecks.org/india-heat-action-plans-will-alerts-trigger-in-time/), [RIS](https://ris.org.in/newsletter/dakshin/feb/news2.pdf), [Vajiram and Ravi (SBS-III)](https://vajiramandravi.com/current-affairs/space-based-surveillance-iii-programme/)",
-      "Capital: [Business Standard (Unicorn India Fund III)](https://www.business-standard.com/companies/start-ups/unicorn-india-ventures-fund-iii-closing-december-2025-125102401104_1.html), [Entrackr (Antariksh)](https://entrackr.com/snippets/sidbi-hits-first-close-of-antariksh-fund-at-rs-1005-cr-10784331), [Business Standard (Antariksh terms)](https://www.business-standard.com/amp/companies/news/sidbi-vc-to-manage-rs-1-000-crore-venture-capital-fund-for-space-sector-125032100446_1.html), [Business Standard (FDI)](https://www.business-standard.com/industry/news/govt-eases-fdi-norms-in-space-sector-100-in-satellites-components-124022101243_1.html), [Ascendants](https://ascendants.in/industry_events/india-space-tech-startups-funding-2025/)",
+      "Capital: [Business Standard (Unicorn India Fund III)](https://www.business-standard.com/companies/start-ups/unicorn-india-ventures-fund-iii-closing-december-2025-125102401104_1.html), [Entrackr (Antariksh)](https://entrackr.com/snippets/sidbi-hits-first-close-of-antariksh-fund-at-rs-1005-cr-10784331), [Business Standard (Antariksh terms)](https://www.business-standard.com/amp/companies/news/sidbi-vc-to-manage-rs-1-000-crore-venture-capital-fund-for-space-sector-125032100446_1.html), [Business Standard (FDI)](https://www.business-standard.com/industry/news/govt-eases-fdi-norms-in-space-sector-100-in-satellites-components-124022101243_1.html), [Ascendants](https://ascendants.in/industry_events/india-space-tech-startups-funding-2025/)"
+    ]
+  },
+  {
+    "type": "list",
+    "style": "bullet",
+    "items": [
       "Launch status and plans: [Dhruva Space (LEAP-2 mission)](https://www.dhruvaspace.com/leap-2-mission), [ETV Bharat, 6 Oct 2026](https://www.etvbharat.com/en/technology/exclusive-interview-satleo-labs-co-founder-urmil-bakhai-tapas-1-space-launch-future-plans-enn26100604772); rivals and investors: [Hydrosat, 21 Sep 2026](https://hydrosat.com/2026/09/21/hydrosat-secures-10m-investment-from-suma-capital-in-series-b-extension/), [Merak Ventures](https://www.merakventures.com/), [Indian Defence News (Gujarat policy)](https://www.indiandefensenews.in/2025/04/gujarat-becomes-1st-indian-state-to.html). All pages accessed between 4 and 11 Oct 2026."
+    ]
+  },
+  {
+    "type": "heading",
+    "text": "Appendix: how the funding figures reconcile"
+  },
+  {
+    "type": "list",
+    "style": "bullet",
+    "items": [
+      "**Press vs filings.** The press figures for the first two rounds ($3.3 million and $2.2 million) already add up to $5.5 million before the May 2026 top-up. It is not clear whether the Rs 1.4 crore May top-up is extra money, part of an announced round, or a later allotment of money committed earlier. I use the rupee total from the filings (Rs 45.9 crore) and leave the reconciliation open.",
+      "**The $1.2 million gap.** SatLeo says it has raised $6.7 million, including a $1.2 million pre-Series A ([DQ India](https://www.dqindia.com/dqdeeptech/satleo-labs-tapas-1-launch-series-a-satellite-manufacturing-12613286)). That money is not in the share records up to 29 May 2026. It may have come later, or may not be equity."
     ]
   }
 ];

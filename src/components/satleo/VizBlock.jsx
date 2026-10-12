@@ -63,21 +63,26 @@ export function DataTable({ headers, rows, marks = false, widths, className = ""
       </div>
 
       <ul className="space-y-3 sm:hidden">
-        {rows.map((row, r) => (
+        {rows.map((row, r) => {
+          // A numbered table ("#", then a name) uses "1. Name" as the card title.
+          const numbered = headers[0] === "#";
+          const skip = numbered ? 2 : 1;
+          return (
           <li key={r} className="rounded-lg border border-navy/15 bg-white/[0.02] p-4 text-sm">
-            <div className="font-semibold text-ink">{first(row[0])}</div>
+            <div className="font-semibold text-ink">{numbered ? `${row[0]}. ${row[1]}` : first(row[0])}</div>
             <dl className="mt-2 space-y-1.5">
-              {row.slice(1).map((cell, c) =>
+              {row.slice(skip).map((cell, c) =>
                 String(cell).trim() ? (
                   <div key={c}>
-                    <dt className="text-xs uppercase tracking-wide text-ink-soft/60">{headers[c + 1]}</dt>
+                    <dt className="text-xs uppercase tracking-wide text-ink-soft/60">{headers[c + skip]}</dt>
                     <dd className="leading-relaxed text-ink-soft [overflow-wrap:anywhere]">{renderInline(cell)}</dd>
                   </div>
                 ) : null
               )}
             </dl>
           </li>
-        ))}
+          );
+        })}
       </ul>
     </div>
   );

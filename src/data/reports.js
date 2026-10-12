@@ -419,6 +419,7 @@ export const reports = [
     hero: "/images/reports/satleo-labs.svg",
     heroAlt: "Report 002 emblem: a satellite scanning a thermal heat map",
     pdf: "/reports/SatLeo-Labs-Investment-Memo-Khuswant-Sharma.pdf",
+    summaryPdf: "/reports/SatLeo-Labs-Two-Page-Summary-Khuswant-Sharma.pdf",
     // Distinct links in the memo's own "Main sources" list - update if that list changes.
     sourceCount: 36,
     hook: "SatLeo Labs put its first thermal payload in orbit in October 2026 and was valued at Rs 150 crore in May 2026. The public evidence does not yet support that price, but the company is worth tracking closely.",

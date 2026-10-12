@@ -245,14 +245,26 @@ export default function ResearchArticle() {
         />
       )}
 
-      <a
-        href={report.pdf || `/reports/${report.slug}.pdf`}
-        className="hover-lift mt-6 inline-flex items-center gap-2 rounded-md bg-navy-dark px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy"
-        download
-      >
-        Download PDF
-        <span aria-hidden="true">&darr;</span>
-      </a>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <a
+          href={report.pdf || `/reports/${report.slug}.pdf`}
+          className="hover-lift inline-flex items-center gap-2 rounded-md bg-navy-dark px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-navy"
+          download
+        >
+          Download PDF
+          <span aria-hidden="true">&darr;</span>
+        </a>
+        {report.summaryPdf && (
+          <a
+            href={report.summaryPdf}
+            className="hover-lift inline-flex items-center gap-2 rounded-md border border-navy/40 px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-navy-light hover:border-navy-light"
+            download
+          >
+            2-page summary
+            <span aria-hidden="true">&darr;</span>
+          </a>
+        )}
+      </div>
 
       <div className="mt-10 border-t border-hairline pt-10 [&>*:first-child]:mt-0">
         {report.content.map((block, i) => (
