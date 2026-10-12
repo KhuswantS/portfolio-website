@@ -18,8 +18,8 @@ export function CompetitorFundingGraphic() {
   const max = FUNDING[0].usd;
   const base = FUNDING.at(-1).usd;
   return (
-    <div ref={ref} role="img" aria-label="Equity raised: SatVu $122M, constellr $89.1M, OroraTech $63.2M, SatLeo $5.5M">
-      <p className="text-xs text-ink-soft/70">Total equity funding, US$ million (Tracxn), with each rival's multiple of SatLeo</p>
+    <div ref={ref} role="img" aria-label="Equity raised: SatVu $122M, constellr $89.1M, Hydrosat at least $70M, OroraTech $63.2M, SatLeo $5.5M">
+      <p className="text-xs text-ink-soft/70">Total equity funding, US$ million (Tracxn; Hydrosat from its own announcements), with each rival's multiple of SatLeo</p>
       <ul className="mt-5 space-y-3">
         {FUNDING.map((r, i) => {
           const isS = r.name === "SatLeo";
@@ -42,7 +42,8 @@ export function CompetitorFundingGraphic() {
                   animate={{ opacity: play ? 1 : 0 }}
                   transition={{ delay: 0.5 + i * 0.12 }}
                 >
-                  ${r.usd}M{!isS && <span className="text-ink-soft/60">{`  ${Math.round(r.usd / base)}x`}</span>}
+                  ${r.usd}M{r.atLeast ? "+" : ""}
+                  {!isS && <span className="text-ink-soft/60">{`  ${Math.round(r.usd / base)}x${r.atLeast ? "+" : ""}`}</span>}
                 </motion.span>
               </span>
             </li>

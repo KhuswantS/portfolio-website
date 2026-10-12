@@ -3,6 +3,9 @@
 export const FUNDING = [
   { name: "SatVu", usd: 122 },
   { name: "constellr", usd: 89.1 },
+  // Hydrosat is not in the Tracxn data; its figure is its Series B only
+  // ($60M, Jan 2026, plus a $10M extension, Sep 2026), so it is a minimum.
+  { name: "Hydrosat", usd: 70, atLeast: true, source: "Series B only (Hydrosat, EU-Startups)" },
   { name: "OroraTech", usd: 63.2 },
   { name: "SatLeo", usd: 5.5 },
 ];

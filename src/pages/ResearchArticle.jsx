@@ -35,10 +35,17 @@ const VIZ = {
   CompetitorFunding: {
     graphic: CompetitorFundingGraphic,
     marks: true,
-    title: "The three leading rivals have raised 11 to 22 times more than SatLeo",
-    note: "Hydrosat does not appear in the Tracxn competitor data used here, so it is not shown.",
-    headers: ["Company", "Total equity raised, US$ million (Tracxn)", "Multiple of SatLeo's $5.5 million"],
-    rows: FUNDING.map((r) => [r.name, `$${r.usd}M`, r.name === "SatLeo" ? "1x" : `${Math.round(r.usd / 5.5)}x`]),
+    title: "SatLeo's rivals have raised at least 11 times more than it has",
+    note: "Hydrosat is not in the Tracxn data used here. Its figure is its Series B only: $60 million in January 2026 plus a $10 million extension on 21 September 2026 (Hydrosat, EU-Startups). Earlier rounds are not included, so its true total is higher.",
+    headers: ["Company", "Total equity raised, US$ million", "Multiple of SatLeo's $5.5 million", "Source"],
+    rows: FUNDING.map((r) => [
+      r.name,
+      `$${r.usd}M${r.atLeast ? "+" : ""}`,
+      r.name === "SatLeo" ? "1x" : `${Math.round(r.usd / 5.5)}x${r.atLeast ? "+" : ""}`,
+      r.name === "Hydrosat"
+        ? "[Hydrosat](https://hydrosat.com/2026/09/21/hydrosat-secures-10m-investment-from-suma-capital-in-series-b-extension/), [EU-Startups](https://www.eu-startups.com/2026/01/hydrosats-thermal-satellite-tech-targets-water-scarcity-and-agricultural-risk-backed-by-e51-million/) (Series B only)"
+        : "Tracxn",
+    ]),
   },
   ThermalCompanies: { graphic: ThermalCompaniesGraphic, marks: true, widths: [16, 16, 24, 20, 24] },
   RevenueAccounts: { graphic: RevenueGraphic },
