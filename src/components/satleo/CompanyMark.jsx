@@ -53,14 +53,12 @@ export function CompanyLabel({ name, children, bold = false, size = 22, fixed = 
   const c = COMPANIES[name];
   const logo = c && LOGOS[c.slug];
   if (logo) {
+    // Light versions of each logo sit straight on the dark page, no box.
     // Logos differ in shape (wordmark only vs symbol + wordmark), so each has
-    // its own height to look the same size; `fixed` gives equal-width tiles.
+    // its own height to look the same size; `fixed` keeps a column aligned.
     return (
-      <span
-        className={`inline-flex h-8 shrink-0 items-center rounded-md bg-white px-2.5 shadow-sm ${fixed ? "w-[108px] justify-center" : ""}`}
-        title={name}
-      >
-        <img src={logo} alt={name} style={{ height: c.logoH || 16 }} className="w-auto max-w-[92px] object-contain" />
+      <span className={`inline-flex h-8 shrink-0 items-center ${fixed ? "w-[108px]" : ""}`} title={name}>
+        <img src={logo} alt={name} style={{ height: c.logoH || 16 }} className="w-auto max-w-[108px] object-contain" />
       </span>
     );
   }

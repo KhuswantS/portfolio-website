@@ -18,7 +18,7 @@ export function CompetitorFundingGraphic() {
   const max = FUNDING[0].usd;
   const base = FUNDING.at(-1).usd;
   return (
-    <div ref={ref} role="img" aria-label="Equity raised: SatVu $122M, constellr $89.1M, OroraTech $63.2M, Aistech Space $15M, SatLeo $5.5M">
+    <div ref={ref} role="img" aria-label="Equity raised: SatVu $122M, constellr $89.1M, OroraTech $63.2M, SatLeo $5.5M">
       <p className="text-xs text-ink-soft/70">Total equity funding, US$ million (Tracxn), with each rival's multiple of SatLeo</p>
       <ul className="mt-5 space-y-3">
         {FUNDING.map((r, i) => {

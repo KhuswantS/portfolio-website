@@ -7,7 +7,6 @@ Each file automatically replaces that company's initials badge on the report pag
 - constellr.svg
 - ororatech.svg
 - hydrosat.svg
-- aistech-space.svg
 - satleo.svg
 
 Use only the official files from each company's own website or press/media page.

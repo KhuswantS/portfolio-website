@@ -4,7 +4,6 @@ export const FUNDING = [
   { name: "SatVu", usd: 122 },
   { name: "constellr", usd: 89.1 },
   { name: "OroraTech", usd: 63.2 },
-  { name: "Aistech Space", usd: 15 },
   { name: "SatLeo", usd: 5.5 },
 ];
 
