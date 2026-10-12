@@ -88,7 +88,7 @@ export function ThermalCompaniesGraphic() {
               animate={{ opacity: play ? 1 : 0, y: play ? 0 : 10 }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
             >
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex flex-col items-start gap-1.5">
                 <CompanyLabel name={r.name} bold size={26} />
                 <p className="text-xs text-ink-soft/70">{r.country}</p>
               </div>
@@ -121,7 +121,7 @@ export function ThermalCompaniesGraphic() {
       {/* Shared sharpness scale */}
       <div className="mt-8">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink-soft/70">Thermal resolution, metres (log scale; further left is sharper)</p>
-        <div className="relative mt-14 mb-8 h-px bg-white/20">
+        <div className="relative mt-20 mb-8 h-px bg-white/20">
           {[3, 10, 30, 100, 300].map((t) => (
             <span key={t} className={`absolute top-2 whitespace-nowrap text-[11px] text-ink-soft/50 ${t === 300 ? "-translate-x-full" : "-translate-x-1/2"}`} style={{ left: `${pos(t)}%` }}>
               {t} m
@@ -184,8 +184,8 @@ export function RevenueGraphic() {
   const { ref, play, reduce } = usePlay();
   const negMax = 36.77;
   const posMax = 40.17;
-  const zero = 9 + (negMax / (negMax + posMax)) * 82;
-  const span = (v) => (Math.abs(v) / (negMax + posMax)) * 82; // leave room for labels
+  const zero = 13 + (negMax / (negMax + posMax)) * 74;
+  const span = (v) => (Math.abs(v) / (negMax + posMax)) * 74; // leave room for labels
   const Bar = ({ v, color, delay }) => (
     <div className="relative h-5">
       <span className="absolute inset-y-0 w-px bg-white/25" style={{ left: `${zero}%` }} />
@@ -302,23 +302,18 @@ export function ValuationGraphic() {
                 <motion.circle
                   cx={x(p.m)}
                   cy={y(p.cr)}
-                  r={isLast ? 6 : 4.5}
+                  r={isLast ? 6.5 : 4.5}
                   fill={C.satleo}
+                  className={isLast && play ? "blink-dot" : undefined}
                   initial={{ opacity: reduce ? 1 : 0 }}
                   animate={{ opacity: play ? 1 : 0 }}
                   transition={{ delay: 0.25 + i * 0.3 }}
                 />
-                {isLast && play && !reduce && (
-                  <motion.circle
-                    cx={x(p.m)}
-                    cy={y(p.cr)}
-                    fill="none"
-                    stroke={C.satleo}
-                    strokeWidth="2"
-                    initial={{ r: 6, opacity: 0.8 }}
-                    animate={{ r: 20, opacity: 0 }}
-                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut", delay: 1.6 }}
-                  />
+                {isLast && play && (
+                  <>
+                    <circle cx={x(p.m)} cy={y(p.cr)} r="6.5" fill="none" stroke={C.satleo} strokeWidth="2" className="pulse-svg" />
+                    <circle cx={x(p.m)} cy={y(p.cr)} r="6.5" fill="none" stroke={C.satleo} strokeWidth="2" className="pulse-svg pulse-svg-late" />
+                  </>
                 )}
                 {showValue && (
                   <motion.text

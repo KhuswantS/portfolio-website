@@ -64,6 +64,14 @@ export function CompanyLabel({ name, children, bold = false, size = 22, fixed = 
       </span>
     );
   }
+  if (fixed) {
+    // No logo file yet: a matching white tile with the name, so rows line up.
+    return (
+      <span className="inline-flex h-8 w-[108px] shrink-0 items-center justify-center rounded-md bg-white px-2 text-center text-[12px] font-semibold leading-tight text-[#111]" title={name}>
+        {children || name}
+      </span>
+    );
+  }
   return (
     <span className={`inline-flex items-center gap-2 ${bold ? "font-semibold text-ink" : ""}`}>
       <CompanyMark name={name} size={size} />

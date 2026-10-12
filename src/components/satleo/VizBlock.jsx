@@ -21,45 +21,64 @@ function ChartIcon() {
   );
 }
 
+// One table, two layouts. From tablet width up it is a normal table whose
+// columns size to their content (the widths are only hints, so no browser
+// can push a column past the edge). On phones each row becomes a small card
+// with "Header: value" lines, so nothing needs sideways scrolling.
 export function DataTable({ headers, rows, marks = false, widths, className = "" }) {
+  const first = (cell) => {
+    const key = marks ? companyKey(cell) : null;
+    return key ? <CompanyLabel name={key}>{renderInline(cell)}</CompanyLabel> : renderInline(cell);
+  };
   return (
-    <div className={`overflow-x-auto rounded-lg border border-navy/15 ${className}`}>
-      <table className={`w-full min-w-[560px] border-collapse text-left text-sm ${widths ? "table-fixed" : ""}`}>
-        {widths && (
-          <colgroup>
-            {widths.map((w, i) => (
-              <col key={i} style={{ width: `${w}%` }} />
-            ))}
-          </colgroup>
-        )}
-        <thead>
-          <tr className="bg-navy/10">
-            {headers.map((h, i) => (
-              <th key={i} scope="col" className="hyphens-auto border-b border-navy/15 px-3 py-3 align-bottom font-semibold text-ink sm:px-4">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, r) => (
-            <tr key={r} className="border-b border-navy/10 last:border-0 even:bg-white/[0.02]">
-              {row.map((cell, c) => {
-                const key = marks && c === 0 ? companyKey(cell) : null;
-                return (
-                  <td key={c} className="hyphens-auto px-3 py-3 align-top leading-relaxed text-ink-soft sm:px-4">
-                    {key ? (
-                      <CompanyLabel name={key}>{renderInline(cell)}</CompanyLabel>
-                    ) : (
-                      renderInline(cell)
-                    )}
-                  </td>
-                );
-              })}
+    <div className={className}>
+      <div className="hidden overflow-x-auto rounded-lg border border-navy/15 sm:block">
+        <table className="w-full border-collapse text-left text-sm">
+          <thead>
+            <tr className="bg-navy/10">
+              {headers.map((h, i) => (
+                <th
+                  key={i}
+                  scope="col"
+                  style={widths ? { width: `${widths[i]}%` } : undefined}
+                  className="border-b border-navy/15 px-3 py-3 align-bottom font-semibold text-ink md:px-4"
+                >
+                  {h}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((row, r) => (
+              <tr key={r} className="border-b border-navy/10 last:border-0 even:bg-white/[0.02]">
+                {row.map((cell, c) => (
+                  <td key={c} className="px-3 py-3 align-top leading-relaxed text-ink-soft [overflow-wrap:break-word] md:px-4">
+                    {c === 0 ? first(cell) : renderInline(cell)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <ul className="space-y-3 sm:hidden">
+        {rows.map((row, r) => (
+          <li key={r} className="rounded-lg border border-navy/15 bg-white/[0.02] p-4 text-sm">
+            <div className="font-semibold text-ink">{first(row[0])}</div>
+            <dl className="mt-2 space-y-1.5">
+              {row.slice(1).map((cell, c) =>
+                String(cell).trim() ? (
+                  <div key={c}>
+                    <dt className="text-xs uppercase tracking-wide text-ink-soft/60">{headers[c + 1]}</dt>
+                    <dd className="leading-relaxed text-ink-soft [overflow-wrap:anywhere]">{renderInline(cell)}</dd>
+                  </div>
+                ) : null
+              )}
+            </dl>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -67,7 +86,7 @@ export function DataTable({ headers, rows, marks = false, widths, className = ""
 // A table that can flip into a graphic. Both views carry the same numbers;
 // the graphic never adds data the table does not have. While the graphic is
 // showing, the table stays in the page for screen readers and search engines.
-export default function VizBlock({ title, caption, headers, rows, marks = false, widths, defaultView = "graphic", graphicLabel, children }) {
+export default function VizBlock({ title, caption, note, headers, rows, marks = false, widths, defaultView = "graphic", graphicLabel, children }) {
   const [view, setView] = useState(defaultView);
   const id = useId();
 
@@ -122,7 +141,8 @@ export default function VizBlock({ title, caption, headers, rows, marks = false,
         )}
       </div>
 
-      {caption && <p className="mt-3 text-xs leading-relaxed text-ink-soft/70">{renderInline(caption)}</p>}
+      {note && <p className="mt-3 text-xs leading-relaxed text-ink-soft/70">{note}</p>}
+      {caption && <p className="mt-2 text-xs leading-relaxed text-ink-soft/70">{renderInline(caption)}</p>}
     </section>
   );
 }

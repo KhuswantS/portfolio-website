@@ -36,6 +36,7 @@ const VIZ = {
     graphic: CompetitorFundingGraphic,
     marks: true,
     title: "The three leading rivals have raised 11 to 22 times more than SatLeo",
+    note: "Hydrosat does not appear in the Tracxn competitor data used here, so it is not shown.",
     headers: ["Company", "Total equity raised, US$ million (Tracxn)", "Multiple of SatLeo's $5.5 million"],
     rows: FUNDING.map((r) => [r.name, `$${r.usd}M`, r.name === "SatLeo" ? "1x" : `${Math.round(r.usd / 5.5)}x`]),
   },
@@ -89,34 +90,9 @@ function ReportBlock({ block, index }) {
       return (
         <div key={index} className="my-10">
           {block.title && (
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink-soft">
-              {block.title}
-            </p>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink-soft">{block.title}</p>
           )}
-          <div className="overflow-x-auto rounded-lg border border-navy/10">
-            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
-              <thead>
-                <tr className="bg-navy/5">
-                  {block.headers.map((h) => (
-                    <th key={h} className="border-b border-navy/10 px-4 py-3 font-semibold text-ink">
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {block.rows.map((row, rIdx) => (
-                  <tr key={rIdx} className="border-b border-navy/10 last:border-0">
-                    {row.map((cell, cIdx) => (
-                      <td key={cIdx} className="px-4 py-3 text-ink-soft">
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <DataTable headers={block.headers} rows={block.rows.map((row) => row.map(String))} />
         </div>
       );
     case "subheading":
@@ -167,6 +143,7 @@ function ReportBlock({ block, index }) {
           key={index}
           title={v.title || block.title}
           caption={block.caption}
+          note={v.note}
           headers={block.headers || v.headers}
           rows={block.rows || v.rows}
           marks={v.marks}
