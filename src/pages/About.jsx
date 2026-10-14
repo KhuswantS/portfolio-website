@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { SiPython, SiClaude, SiGithub } from "react-icons/si";
 import { IoLogoTableau, IoLogoMicrosoft } from "react-icons/io5";
 import { RiFileExcel2Fill, RiFilePpt2Fill, RiFileWord2Fill, RiOpenaiFill } from "react-icons/ri";
@@ -32,19 +31,22 @@ const coreCompetencies = [
   "Financial statement analysis (CFA Level I candidate)",
 ];
 
+// CFA first, then the degree. Drop a logo file into public/images/education/
+// and set its path here; until then a monogram chip shows in its place.
 const education = [
-  { school: "BMS (Hons.), St. Xavier's University, Kolkata", period: "2022 - 2025" },
-  { school: "CFA Level I, CFA Institute", period: "Candidate, appearing November 2026" },
-];
-
-const researchProjects = [
   {
-    text: "SatLeo Labs: investment memo on an Indian thermal-imaging satellite startup (Report 002, October 2026)",
-    href: "/research/satleo-labs-investment-memo",
+    title: "CFA Level I Candidate",
+    school: "CFA Institute",
+    period: "Appearing November 2026",
+    logo: null, // e.g. "/images/education/cfa-institute.png"
+    mono: "CFA",
   },
   {
-    text: "Tax Without Recognition: India's Virtual Digital Asset Regime (Report 001, July 2026)",
-    href: "/research/tax-without-recognition",
+    title: "Bachelor of Management Studies (Honours)",
+    school: "St. Xavier's University, Kolkata",
+    period: "2022 - 2025",
+    logo: null, // e.g. "/images/education/st-xaviers-kolkata.png"
+    mono: "SXU",
   },
 ];
 
@@ -125,20 +127,25 @@ export default function About() {
         <div className="sm:col-span-3">
           <div className="space-y-4 text-lg leading-relaxed text-ink-soft">
             <p>
-              I&rsquo;m a Private Equity Fellow at IVCA (Indian Venture and Alternate Capital
-              Association), India&rsquo;s apex body for 500+ private equity, venture capital and
-              alternate capital funds.
+              I research early-stage companies and private markets in India, and I publish the
+              work in full, with sources, so it can be checked.
             </p>
             <p>
-              At IVCA, I work with fund partners every week. I research PE, VC and private credit
-              funds and engage them on IVCA&rsquo;s platforms, curate #WhatsNext webinars with fund
-              partners as speakers, and design the websites for our summits.
+              My latest piece is an independent investment memo on SatLeo Labs, a thermal-imaging
+              satellite startup. I rebuilt its funding rounds and cap table from MCA filings, sized
+              its market bottom-up, compared it with better-funded global rivals, and tested what
+              its Rs 150 crore valuation would need to deliver. Before that, I wrote a
+              primary-source report on India&rsquo;s virtual digital asset tax regime.
             </p>
             <p>
-              Outside work, I publish independent investment research on this site: a report on
-              India&rsquo;s virtual digital asset tax regime, built from primary sources, and an
-              investment memo on SatLeo Labs, an Indian deep tech startup. I&rsquo;m a CFA Level I
-              candidate (November 2026), looking for analyst roles in VC, PE and private credit.
+              I&rsquo;m a Private Equity Fellow at IVCA, India&rsquo;s apex body for 500+ private
+              equity, venture capital and alternate capital funds. I research and engage PE, VC and
+              private credit funds, curate webinars with their partners and work on IVCA&rsquo;s
+              flagship summits, so I speak with fund partners every week.
+            </p>
+            <p>
+              I&rsquo;m a CFA Level I candidate (November 2026), looking for analyst roles in
+              venture capital, private equity and private credit.
             </p>
           </div>
         </div>
@@ -166,36 +173,32 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-16 grid gap-12 border-t border-hairline pt-16 sm:grid-cols-2">
-        <div>
-          <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Education</h2>
-          <ul className="mt-5 space-y-3">
-            {education.map((item) => (
-              <li key={item.school} className="text-sm leading-relaxed text-ink-soft">
-                <span className="font-medium text-ink">{item.school}</span>
-                <span className="block text-xs uppercase tracking-wide text-ink-soft/60">
-                  {item.period}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Research Projects</h2>
-          <ul className="mt-5 space-y-3">
-            {researchProjects.map((project) => (
-              <li key={project.text} className="text-sm leading-relaxed text-ink-soft">
-                {project.href ? (
-                  <Link to={project.href} className="font-medium text-navy hover:underline">
-                    {project.text}
-                  </Link>
+      <div className="mt-16 border-t border-hairline pt-16">
+        <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Education</h2>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {education.map((item) => (
+            <div
+              key={item.school}
+              className="hover-lift flex items-center gap-5 rounded-lg border border-navy/10 bg-paper-dim p-5 shadow-sm sm:p-6"
+            >
+              {/* White chip, as with the IVCA logo: most institution logos are
+                  dark ink on transparent and would vanish on the dark card. */}
+              <span className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1.5">
+                {item.logo ? (
+                  <img src={item.logo} alt={`${item.school} logo`} className="h-full w-full object-contain" />
                 ) : (
-                  project.text
+                  <span className="font-serif text-lg font-semibold text-navy-dark" aria-hidden="true">
+                    {item.mono}
+                  </span>
                 )}
-              </li>
-            ))}
-          </ul>
+              </span>
+              <div>
+                <h3 className="font-serif text-lg font-semibold leading-snug text-ink sm:text-xl">{item.title}</h3>
+                <p className="mt-0.5 text-sm text-ink-soft sm:text-base">{item.school}</p>
+                <p className="mt-1 text-xs uppercase tracking-wide text-ink-soft/60">{item.period}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

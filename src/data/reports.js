@@ -15,6 +15,7 @@ export const reports = [
     hero: "/images/reports/tax-without-recognition.svg",
     heroAlt: "Report 001 emblem: a digital asset coin drawn only in outline, with a solid 30% tax slice cut out of it",
     pdf: "/reports/Tax-Without-Recognition-Khuswant-Sharma.pdf",
+    summaryPdf: "/reports/Tax-Without-Recognition-Two-Page-Summary-Khuswant-Sharma.pdf",
     // Count of distinct citations in this report's own "Principal sources" line
     // (Method and sources section) - update if that list changes.
     sourceCount: 11,
