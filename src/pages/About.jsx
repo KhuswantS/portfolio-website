@@ -28,7 +28,7 @@ const coreCompetencies = [
   "Bottom-up market sizing",
   "Revenue-multiple valuation & scenarios",
   "Competitive benchmarking",
-  "Fund research (PE, VC, private credit)",
+  "Fund & ecosystem research (PE, VC, private credit)",
   "Investment memo writing",
   "Financial statement analysis (CFA Level I)",
 ];
@@ -136,9 +136,9 @@ export default function About() {
             </p>
             <p>
               At IVCA, India&rsquo;s apex body for 500+ PE, VC and alternate capital funds, I
-              research funds before partner calls, track a pipeline of 50+ funds and curate
-              webinars on live market themes. CFA Level I candidate (November 2026), looking for
-              analyst roles in VC, PE and private credit.
+              research funds and their strategies, work with their partners on IVCA&rsquo;s
+              platforms and pick the market themes for our webinars. CFA Level I candidate
+              (November 2026), looking for analyst roles in VC, PE and private credit.
             </p>
           </div>
         </div>
@@ -218,8 +218,8 @@ export default function About() {
 
           <p className="mt-6 text-xs uppercase tracking-wide text-ink-soft/60">Private Equity Ecosystem Team &middot; New Delhi</p>
           <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-ink-soft">
-            <li>&bull; <span className="font-medium text-ink">Fund research:</span> profile each fund&rsquo;s strategy, sector focus and portfolio before partner calls, draft the questions and minutes, and track a pipeline of 50+ PE, VC and private credit funds across IVCA&rsquo;s platforms; 15+ pieces published.</li>
-            <li>&bull; <span className="font-medium text-ink">Market themes:</span> curate #WhatsNext webinars on live market topics (private credit; growth capital in AIFs, November 2026). Reworked panel outreach (8 of 8 partners accepted vs 5 of 12 before), lifting registrations from 85 to 308 (3.6x).</li>
+            <li>&bull; <span className="font-medium text-ink">Fund and ecosystem research:</span> research PE, VC and private credit funds on strategy, sector focus and portfolio, and engage their partners on IVCA&rsquo;s platforms. Have worked with 50+ funds in various ways; 21 pieces published so far.</li>
+            <li>&bull; <span className="font-medium text-ink">Market themes:</span> identify live investment themes for IVCA&rsquo;s #WhatsNext webinars (private credit; growth capital in AIFs) and build panels of fund partners from firms such as Kotak Alternate, Neo, Stride Ventures and Aavishkaar.</li>
             <li>&bull; <span className="font-medium text-ink">Execution:</span> ran vendor sourcing and price negotiation for 3 flagship events (IVCA Conclave, Private Credit Summit, Buyouts Summit) and designed the structure and UI/UX of two summit websites.</li>
           </ul>
         </div>
