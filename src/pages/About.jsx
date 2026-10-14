@@ -33,21 +33,20 @@ const coreCompetencies = [
   "Financial statement analysis (CFA Level I)",
 ];
 
-// CFA first, then the degree. Drop a logo file into public/images/education/
-// and set its path here; until then a monogram chip shows in its place.
+// CFA first, then the degree. If a logo path is null, a monogram chip shows instead.
 const education = [
   {
     title: "CFA Level I Candidate",
     school: "CFA Institute",
     period: "Appearing November 2026",
-    logo: null, // e.g. "/images/education/cfa-institute.png"
+    logo: "/images/education/cfa-institute.png",
     mono: "CFA",
   },
   {
     title: "Bachelor of Management Studies (Honours)",
     school: "St. Xavier's University, Kolkata",
     period: "2022 - 2025",
-    logo: null, // e.g. "/images/education/st-xaviers-kolkata.png"
+    logo: "/images/education/st-xaviers-kolkata.png",
     mono: "SXU",
   },
 ];
@@ -176,7 +175,7 @@ export default function About() {
             >
               {/* White chip, as with the IVCA logo: most institution logos are
                   dark ink on transparent and would vanish on the dark card. */}
-              <span className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1.5">
+              <span className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
                 {item.logo ? (
                   <img src={item.logo} alt={`${item.school} logo`} className="h-full w-full object-contain" />
                 ) : (
