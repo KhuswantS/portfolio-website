@@ -24,11 +24,13 @@ const technicalTools = [
 ];
 
 const coreCompetencies = [
-  "Fund research & engagement (PE, VC, private credit)",
-  "Startup analysis: market sizing, unit economics, cap tables",
-  "Primary-source research & investment memos",
-  "Webinar & event programming with fund partners",
-  "Financial statement analysis (CFA Level I candidate)",
+  "Cap tables & dilution",
+  "Bottom-up market sizing",
+  "Revenue-multiple valuation & scenarios",
+  "Competitive benchmarking",
+  "Fund research (PE, VC, private credit)",
+  "Investment memo writing",
+  "Financial statement analysis (CFA Level I)",
 ];
 
 // CFA first, then the degree. Drop a logo file into public/images/education/
@@ -127,25 +129,16 @@ export default function About() {
         <div className="sm:col-span-3">
           <div className="space-y-4 text-lg leading-relaxed text-ink-soft">
             <p>
-              I research early-stage companies and private markets in India, and I publish the
-              work in full, with sources, so it can be checked.
+              I analyse Indian startups and private markets, and publish the work with full
+              sources. My latest memo, on SatLeo Labs, rebuilds the company&rsquo;s cap table from
+              MCA filings, sizes its market bottom-up and tests what its Rs 150 crore valuation
+              needs to return.
             </p>
             <p>
-              My latest piece is an independent investment memo on SatLeo Labs, a thermal-imaging
-              satellite startup. I rebuilt its funding rounds and cap table from MCA filings, sized
-              its market bottom-up, compared it with better-funded global rivals, and tested what
-              its Rs 150 crore valuation would need to deliver. Before that, I wrote a
-              primary-source report on India&rsquo;s virtual digital asset tax regime.
-            </p>
-            <p>
-              I&rsquo;m a Private Equity Fellow at IVCA, India&rsquo;s apex body for 500+ private
-              equity, venture capital and alternate capital funds. I research and engage PE, VC and
-              private credit funds, curate webinars with their partners and work on IVCA&rsquo;s
-              flagship summits, so I speak with fund partners every week.
-            </p>
-            <p>
-              I&rsquo;m a CFA Level I candidate (November 2026), looking for analyst roles in
-              venture capital, private equity and private credit.
+              At IVCA, India&rsquo;s apex body for 500+ PE, VC and alternate capital funds, I
+              research funds before partner calls, track a pipeline of 50+ funds and curate
+              webinars on live market themes. CFA Level I candidate (November 2026), looking for
+              analyst roles in VC, PE and private credit.
             </p>
           </div>
         </div>
@@ -225,11 +218,9 @@ export default function About() {
 
           <p className="mt-6 text-xs uppercase tracking-wide text-ink-soft/60">Private Equity Ecosystem Team &middot; New Delhi</p>
           <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-ink-soft">
-            <li>&bull; <span className="font-medium text-ink">Webinars:</span> curate topics for IVCA&rsquo;s #WhatsNext webinars and bring fund partners onto the panels, from first outreach to the live session. The June 2026 private credit webinar had partners from Kotak Alternate, Neo, Stride Ventures, Aavishkaar, Ascertis, Lighthouse Canton and Kroll, and drew 308 registrations and 205 peak live attendees.</li>
-            <li>&bull; <span className="font-medium text-ink">Fund research and engagement:</span> research PE, VC and private credit funds before every conversation and set up calls with their partners to engage them on IVCA&rsquo;s platforms (#TheContext, Fund in Focus, Private Equity Pulse, Milestone Makers). Keep 50+ funds in active discussion, with new pieces going live every week.</li>
-            <li>&bull; <span className="font-medium text-ink">Event websites:</span> designed the websites for IVCA Private Credit Summit 2026 and Secondaries Conference 2026, replacing the old single-page event template with new multi-page layouts. Planned the structure and UI/UX and briefed the build team.</li>
-            <li>&bull; <span className="font-medium text-ink">Events and vendors:</span> managed vendors for the IVCA Conclave, Private Credit Summit and Buyouts Summit, from sourcing and negotiation to delivery, and coordinated speakers and partners for flagship summits.</li>
-            <li>&bull; <span className="font-medium text-ink">Market exposure:</span> through calls, webinars and summits, work directly with fund partners, LPs, law firms and advisors on themes such as private credit, growth capital, secondaries and AIF regulation.</li>
+            <li>&bull; <span className="font-medium text-ink">Fund research:</span> profile each fund&rsquo;s strategy, sector focus and portfolio before partner calls, draft the questions and minutes, and track a pipeline of 50+ PE, VC and private credit funds across IVCA&rsquo;s platforms; 15+ pieces published.</li>
+            <li>&bull; <span className="font-medium text-ink">Market themes:</span> curate #WhatsNext webinars on live market topics (private credit; growth capital in AIFs, November 2026). Reworked panel outreach (8 of 8 partners accepted vs 5 of 12 before), lifting registrations from 85 to 308 (3.6x).</li>
+            <li>&bull; <span className="font-medium text-ink">Execution:</span> ran vendor sourcing and price negotiation for 3 flagship events (IVCA Conclave, Private Credit Summit, Buyouts Summit) and designed the structure and UI/UX of two summit websites.</li>
           </ul>
         </div>
       </div>
