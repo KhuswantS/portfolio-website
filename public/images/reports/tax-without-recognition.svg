@@ -1,19 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#131518"/>
-  <g stroke="#6E9BEE" stroke-opacity="0.12">
-    <line x1="0" y1="150" x2="800" y2="150"/>
-    <line x1="0" y1="300" x2="800" y2="300"/>
-    <line x1="0" y1="450" x2="800" y2="450"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d0f12"/><stop offset="1" stop-color="#151a22"/></linearGradient>
+    <radialGradient id="coin" cx="0.42" cy="0.38" r="0.75"><stop offset="0" stop-color="#22355c"/><stop offset="1" stop-color="#0f1729"/></radialGradient>
+    <linearGradient id="wedge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb08a"/><stop offset="1" stop-color="#f08a5d"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#f08a5d" stop-opacity="0.35"/><stop offset="1" stop-color="#f08a5d" stop-opacity="0"/></radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131518" stop-opacity="1"/><stop offset="0.5" stop-color="#131518" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g fill="#f6f7f9"><circle cx="463" cy="286" r="1" opacity="0.35"/><circle cx="520" cy="300" r="0.8" opacity="0.2"/><circle cx="524" cy="243" r="1.2" opacity="0.5"/><circle cx="190" cy="48" r="1" opacity="0.35"/><circle cx="145" cy="46" r="1.2" opacity="0.5"/><circle cx="649" cy="21" r="1.2" opacity="0.35"/><circle cx="463" cy="334" r="1.2" opacity="0.5"/><circle cx="665" cy="80" r="1.2" opacity="0.2"/><circle cx="541" cy="32" r="0.8" opacity="0.2"/><circle cx="194" cy="123" r="1.2" opacity="0.2"/><circle cx="796" cy="237" r="1" opacity="0.35"/><circle cx="605" cy="100" r="1.2" opacity="0.2"/><circle cx="655" cy="150" r="1" opacity="0.2"/><circle cx="678" cy="43" r="1" opacity="0.5"/><circle cx="284" cy="208" r="1.2" opacity="0.2"/><circle cx="724" cy="130" r="1" opacity="0.2"/><circle cx="525" cy="147" r="0.8" opacity="0.2"/><circle cx="576" cy="392" r="0.8" opacity="0.35"/><circle cx="110" cy="148" r="1" opacity="0.2"/><circle cx="17" cy="350" r="0.8" opacity="0.2"/><circle cx="214" cy="26" r="1" opacity="0.35"/><circle cx="725" cy="203" r="1" opacity="0.2"/><circle cx="579" cy="322" r="0.8" opacity="0.5"/><circle cx="276" cy="172" r="0.8" opacity="0.35"/><circle cx="340" cy="7" r="1" opacity="0.2"/><circle cx="137" cy="126" r="1.2" opacity="0.2"/><circle cx="11" cy="30" r="1" opacity="0.35"/><circle cx="181" cy="349" r="1.2" opacity="0.2"/><circle cx="458" cy="260" r="0.8" opacity="0.5"/><circle cx="787" cy="67" r="1" opacity="0.5"/><circle cx="392" cy="59" r="1" opacity="0.35"/><circle cx="217" cy="0" r="1" opacity="0.5"/><circle cx="311" cy="10" r="0.8" opacity="0.2"/><circle cx="403" cy="308" r="1.2" opacity="0.5"/><circle cx="102" cy="21" r="0.8" opacity="0.2"/><circle cx="452" cy="132" r="0.8" opacity="0.5"/><circle cx="336" cy="151" r="1" opacity="0.2"/><circle cx="76" cy="46" r="0.8" opacity="0.5"/><circle cx="651" cy="124" r="0.8" opacity="0.5"/><circle cx="377" cy="190" r="1.2" opacity="0.35"/></g>
+  <g stroke="#6e9bee" stroke-width="1"><line x1="0" y1="430.0" x2="800" y2="430.0" stroke-opacity="0.08"/><line x1="0" y1="435.0" x2="800" y2="435.0" stroke-opacity="0.10"/><line x1="0" y1="446.1" x2="800" y2="446.1" stroke-opacity="0.12"/><line x1="0" y1="462.1" x2="800" y2="462.1" stroke-opacity="0.15"/><line x1="0" y1="482.3" x2="800" y2="482.3" stroke-opacity="0.17"/><line x1="0" y1="506.5" x2="800" y2="506.5" stroke-opacity="0.19"/><line x1="0" y1="534.2" x2="800" y2="534.2" stroke-opacity="0.22"/><line x1="0" y1="565.5" x2="800" y2="565.5" stroke-opacity="0.24"/><line x1="0" y1="600.0" x2="800" y2="600.0" stroke-opacity="0.26"/><line x1="64.0" y1="430" x2="-1040.0" y2="600" stroke-opacity="0.14"/><line x1="92.0" y1="430" x2="-920.0" y2="600" stroke-opacity="0.14"/><line x1="120.0" y1="430" x2="-800.0" y2="600" stroke-opacity="0.14"/><line x1="148.0" y1="430" x2="-680.0" y2="600" stroke-opacity="0.14"/><line x1="176.0" y1="430" x2="-560.0" y2="600" stroke-opacity="0.14"/><line x1="204.0" y1="430" x2="-440.0" y2="600" stroke-opacity="0.14"/><line x1="232.0" y1="430" x2="-320.0" y2="600" stroke-opacity="0.14"/><line x1="260.0" y1="430" x2="-200.0" y2="600" stroke-opacity="0.14"/><line x1="288.0" y1="430" x2="-80.0" y2="600" stroke-opacity="0.14"/><line x1="316.0" y1="430" x2="40.0" y2="600" stroke-opacity="0.14"/><line x1="344.0" y1="430" x2="160.0" y2="600" stroke-opacity="0.14"/><line x1="372.0" y1="430" x2="280.0" y2="600" stroke-opacity="0.14"/><line x1="400.0" y1="430" x2="400.0" y2="600" stroke-opacity="0.14"/><line x1="428.0" y1="430" x2="520.0" y2="600" stroke-opacity="0.14"/><line x1="456.0" y1="430" x2="640.0" y2="600" stroke-opacity="0.14"/><line x1="484.0" y1="430" x2="760.0" y2="600" stroke-opacity="0.14"/><line x1="512.0" y1="430" x2="880.0" y2="600" stroke-opacity="0.14"/><line x1="540.0" y1="430" x2="1000.0" y2="600" stroke-opacity="0.14"/><line x1="568.0" y1="430" x2="1120.0" y2="600" stroke-opacity="0.14"/><line x1="596.0" y1="430" x2="1240.0" y2="600" stroke-opacity="0.14"/><line x1="624.0" y1="430" x2="1360.0" y2="600" stroke-opacity="0.14"/><line x1="652.0" y1="430" x2="1480.0" y2="600" stroke-opacity="0.14"/><line x1="680.0" y1="430" x2="1600.0" y2="600" stroke-opacity="0.14"/><line x1="708.0" y1="430" x2="1720.0" y2="600" stroke-opacity="0.14"/><line x1="736.0" y1="430" x2="1840.0" y2="600" stroke-opacity="0.14"/></g>
+  <rect x="0" y="430" width="800" height="170" fill="url(#fade)"/>
+  <ellipse cx="560" cy="530" rx="160" ry="14" fill="#000" opacity="0.45"/>
+  <!-- the asset: taxed, but drawn only in dashed outline because the law never defines it -->
+  <path d="M 560.0 350.0 L 702.7 396.4 A 150 150 0 1 1 560.0 200.0 Z" fill="url(#coin)"/>
+  <circle cx="560" cy="350" r="150" fill="none" stroke="#6e9bee" stroke-width="3" stroke-dasharray="12 9" stroke-opacity="0.9"/>
+  <circle cx="560" cy="350" r="128" fill="none" stroke="#6e9bee" stroke-width="1.5" stroke-dasharray="4 7" stroke-opacity="0.5"/>
+  <g stroke="#6e9bee" stroke-opacity="0.55" stroke-width="2"><line x1="542.0" y1="364.0" x2="488.3" y2="395.0"/><line x1="542.0" y1="364.0" x2="488.3" y2="333.0"/><line x1="542.0" y1="364.0" x2="542.0" y2="302.0"/><line x1="542.0" y1="364.0" x2="595.7" y2="333.0"/><line x1="542.0" y1="364.0" x2="595.7" y2="395.0"/><line x1="542.0" y1="364.0" x2="542.0" y2="426.0"/><line x1="488.3" y1="395.0" x2="488.3" y2="333.0"/><line x1="488.3" y1="333.0" x2="542.0" y2="302.0"/><line x1="542.0" y1="302.0" x2="595.7" y2="333.0"/><line x1="595.7" y1="333.0" x2="595.7" y2="395.0"/><line x1="595.7" y1="395.0" x2="542.0" y2="426.0"/><line x1="542.0" y1="426.0" x2="488.3" y2="395.0"/></g>
+  <g fill="#a9c0f2"><circle cx="542.0" cy="364.0" r="7"/><circle cx="488.3" cy="395.0" r="5"/><circle cx="488.3" cy="333.0" r="5"/><circle cx="542.0" cy="302.0" r="5"/><circle cx="595.7" cy="333.0" r="5"/><circle cx="595.7" cy="395.0" r="5"/><circle cx="542.0" cy="426.0" r="5"/></g>
+  <!-- the 30% tax: the only solid, defined part -->
+  <circle cx="657.1" cy="279.5" r="120" fill="url(#glow)"/>
+  <path d="M 579.4 335.9 L 579.4 185.9 A 150 150 0 0 1 722.1 382.2 Z" fill="url(#wedge)" stroke="#ffd2bd" stroke-width="1.5"/>
+  <text x="657.1" y="285.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="800" fill="#1a0f0a" text-anchor="middle">30%</text>
+  <text x="657.1" y="307.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2.5" fill="#1a0f0a" fill-opacity="0.8" text-anchor="middle">TAX</text>
+  <g transform="translate(352 470)">
+    <rect width="96" height="32" rx="16" fill="#131518" stroke="#f08a5d" stroke-width="1.5"/>
+    <text x="48" y="21" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#f08a5d" text-anchor="middle">1% TDS</text>
   </g>
-  <rect x="230" y="120" width="260" height="360" rx="6" fill="none" stroke="#6E9BEE" stroke-opacity="0.8" stroke-width="3"/>
-  <g stroke="#6E9BEE" stroke-opacity="0.4" stroke-width="6" stroke-linecap="round">
-    <line x1="270" y1="190" x2="450" y2="190"/>
-    <line x1="270" y1="230" x2="450" y2="230"/>
-    <line x1="270" y1="270" x2="410" y2="270"/>
-    <line x1="270" y1="380" x2="450" y2="380"/>
-    <line x1="270" y1="420" x2="390" y2="420"/>
+  <g font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <text x="48" y="74" font-size="15" font-weight="600" letter-spacing="3.5" fill="#f6f7f9" fill-opacity="0.6">REPORT 001</text>
+    <text x="48" y="118" font-size="40" font-weight="700" letter-spacing="0.5" fill="#f6f7f9">Tax Without</text>
+    <text x="48" y="164" font-size="40" font-weight="700" letter-spacing="0.5" fill="#f6f7f9">Recognition</text>
+    <text x="48" y="198" font-size="16" font-weight="500" letter-spacing="2.5" fill="#f08a5d">INDIA'S VIRTUAL DIGITAL ASSETS</text>
   </g>
-  <circle cx="530" cy="360" r="95" fill="none" stroke="#6E9BEE" stroke-opacity="0.95" stroke-width="4" stroke-dasharray="10 8"/>
-  <text x="530" y="352" font-family="Georgia, serif" font-size="34" fill="#F6F7F9" fill-opacity="0.95" text-anchor="middle">30%</text>
-  <text x="530" y="382" font-family="Georgia, serif" font-size="13" letter-spacing="2" fill="#F6F7F9" fill-opacity="0.75" text-anchor="middle">VDA TAX</text>
 </svg>

@@ -25,24 +25,27 @@ const technicalTools = [
 ];
 
 const coreCompetencies = [
-  "PE/VC ecosystem & industry mapping",
-  "Stakeholder engagement & partner relations",
-  "Qualitative & regulatory research",
-  "Financial modeling (in progress - CFA Level I candidate)",
-  "Presentation & investor-facing content development",
+  "Fund research & engagement (PE, VC, private credit)",
+  "Startup analysis: market sizing, unit economics, cap tables",
+  "Primary-source research & investment memos",
+  "Webinar & event programming with fund partners",
+  "Financial statement analysis (CFA Level I candidate)",
 ];
 
 const education = [
-  { school: "BMS (Hons.), St. Xavier's University, Kolkata", period: "2025" },
+  { school: "BMS (Hons.), St. Xavier's University, Kolkata", period: "2022 - 2025" },
   { school: "CFA Level I, CFA Institute", period: "Candidate, appearing November 2026" },
 ];
 
 const researchProjects = [
   {
-    text: "Tax Without Recognition: India's Virtual Digital Asset Regime and the July 2026 Rupture (published research report)",
+    text: "SatLeo Labs: investment memo on an Indian thermal-imaging satellite startup (Report 002, October 2026)",
+    href: "/research/satleo-labs-investment-memo",
+  },
+  {
+    text: "Tax Without Recognition: India's Virtual Digital Asset Regime (Report 001, July 2026)",
     href: "/research/tax-without-recognition",
   },
-  { text: "Awareness & Understanding of Cryptocurrency Among Retail Investors" },
 ];
 
 function ToolBadge({ label, Icon }) {
@@ -73,7 +76,7 @@ export default function About() {
     <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <SEO
         title="About | Khuswant Sharma"
-        description="Professional background, skills, and experience of Khuswant Sharma, Private Equity Fellow at IVCA and CFA Level I candidate building toward a buy-side career."
+        description="Khuswant Sharma is a Private Equity Fellow at IVCA and a CFA Level I candidate. He researches and engages PE, VC and private credit funds and publishes independent investment research."
         path="/about"
       />
       <JsonLd data={personSchema} />
@@ -120,16 +123,24 @@ export default function About() {
         </div>
 
         <div className="sm:col-span-3">
-          <p className="text-lg leading-relaxed text-ink-soft">
-            My work sits at the intersection of institutional relationship management
-            and independent research. As a Private Equity Fellow at IVCA, I engage
-            directly with PE, VC, and AIF fund leadership on positioning,
-            categorization, and market themes. Alongside this, I publish original,
-            research-driven insights on regulatory and market-structure developments
-            shaping Indian private capital. Through this work, I am building the
-            analytical foundation for a career in investment research and financial
-            analysis.
-          </p>
+          <div className="space-y-4 text-lg leading-relaxed text-ink-soft">
+            <p>
+              I&rsquo;m a Private Equity Fellow at IVCA (Indian Venture and Alternate Capital
+              Association), India&rsquo;s apex body for 500+ private equity, venture capital and
+              alternate capital funds.
+            </p>
+            <p>
+              At IVCA, I work with fund partners every week. I research PE, VC and private credit
+              funds and engage them on IVCA&rsquo;s platforms, curate #WhatsNext webinars with fund
+              partners as speakers, and design the websites for our summits.
+            </p>
+            <p>
+              Outside work, I publish independent investment research on this site: a report on
+              India&rsquo;s virtual digital asset tax regime, built from primary sources, and an
+              investment memo on SatLeo Labs, an Indian deep tech startup. I&rsquo;m a CFA Level I
+              candidate (November 2026), looking for analyst roles in VC, PE and private credit.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -209,12 +220,13 @@ export default function About() {
             </div>
           </div>
 
-          <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-ink-soft">
-            <li>&bull; Serve as primary relationship point of contact for 490+ PE, VC, and AIF member funds across India&rsquo;s largest private capital industry body, managing fund categorization, renewals, and direct engagement with fund leadership</li>
-            <li>&bull; Drive partner and speaker strategy for IVCA&rsquo;s flagship industry platforms, including the IVCA Private Credit Summit and Chennai Circles, working with asset managers, institutional investors, and law firms on panel construction and programming</li>
-            <li>&bull; Engage directly with GPs and LPs on institutional investment themes spanning private credit, growth equity, and family office allocation, gaining direct exposure to how India&rsquo;s leading funds position their strategy in the market</li>
-            <li>&bull; Support IVCA&rsquo;s thought leadership output, coordinating with member and partner firms on market commentary and sector perspectives published across IVCA platforms</li>
-            <li>&bull; Track fund-level data across the membership base, including AUM, strategy classification, and vehicle structure, to support ecosystem mapping and engagement priorities</li>
+          <p className="mt-6 text-xs uppercase tracking-wide text-ink-soft/60">Private Equity Ecosystem Team &middot; New Delhi</p>
+          <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-ink-soft">
+            <li>&bull; <span className="font-medium text-ink">Webinars:</span> curate topics for IVCA&rsquo;s #WhatsNext webinars and bring fund partners onto the panels, from first outreach to the live session. The June 2026 private credit webinar had partners from Kotak Alternate, Neo, Stride Ventures, Aavishkaar, Ascertis, Lighthouse Canton and Kroll, and drew 308 registrations and 205 peak live attendees.</li>
+            <li>&bull; <span className="font-medium text-ink">Fund research and engagement:</span> research PE, VC and private credit funds before every conversation and set up calls with their partners to engage them on IVCA&rsquo;s platforms (#TheContext, Fund in Focus, Private Equity Pulse, Milestone Makers). Keep 50+ funds in active discussion, with new pieces going live every week.</li>
+            <li>&bull; <span className="font-medium text-ink">Event websites:</span> designed the websites for IVCA Private Credit Summit 2026 and Secondaries Conference 2026, replacing the old single-page event template with new multi-page layouts. Planned the structure and UI/UX and briefed the build team.</li>
+            <li>&bull; <span className="font-medium text-ink">Events and vendors:</span> managed vendors for the IVCA Conclave, Private Credit Summit and Buyouts Summit, from sourcing and negotiation to delivery, and coordinated speakers and partners for flagship summits.</li>
+            <li>&bull; <span className="font-medium text-ink">Market exposure:</span> through calls, webinars and summits, work directly with fund partners, LPs, law firms and advisors on themes such as private credit, growth capital, secondaries and AIF regulation.</li>
           </ul>
         </div>
       </div>

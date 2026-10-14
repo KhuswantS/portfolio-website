@@ -7,19 +7,19 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelL
 
 const data = [
   {
-    name: 'KYC-verified,\ndomestic platforms',
+    name: 'KYC-verified\ndomestic\nplatforms',
     value: 39.3,
     source: 'RBI, via FIU-IND registrations',
     fill: 'var(--color-accent, #4a7fe8)',
   },
   {
-    name: 'Modelled estimate\n(Chainalysis)',
+    name: 'Modelled\nestimate\n(Chainalysis)',
     value: 119,
     source: 'Grassroots Adoption Index, disputed by RBI',
     fill: 'var(--color-accent-2, #6b96ee)',
   },
   {
-    name: 'Estimated offshore\nplatform users',
+    name: 'Estimated\noffshore\nplatform users',
     value: 120,
     source: 'Cited by MP Raghav Chadha, Budget 2026-27 debate',
     fill: 'var(--color-muted-strong, #a9c0f2)',
@@ -32,9 +32,9 @@ function WrappedAxisTick({ x, y, payload }) {
   const lines = String(payload.value).split('\n');
   return (
     <g transform={`translate(${x},${y})`}>
-      <text textAnchor="middle" fontSize={11} fill="var(--color-muted, #c6c8cb)">
+      <text textAnchor="middle" fontSize={12} fill="var(--color-muted, #c6c8cb)">
         {lines.map((line, i) => (
-          <tspan key={i} x={0} dy={i === 0 ? 12 : 12}>
+          <tspan key={i} x={0} dy={i === 0 ? 14 : 14}>
             {line}
           </tspan>
         ))}
@@ -60,7 +60,7 @@ function CustomTooltip({ active, payload }) {
 export default function AdoptionEstimatesChartBody() {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data} margin={{ top: 24, right: 16, left: 0, bottom: 20 }}>
+      <BarChart data={data} margin={{ top: 24, right: 16, left: 0, bottom: 36 }}>
         <XAxis
           dataKey="name"
           tick={<WrappedAxisTick />}

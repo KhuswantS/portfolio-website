@@ -25,9 +25,23 @@ function CustomTooltip({ active, payload }) {
 export default function CBDCvsUPIChartBody() {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data} layout="vertical" margin={{ top: 8, right: 40, left: 16, bottom: 8 }}>
-        <XAxis type="number" scale="log" domain={[1, 500]} tick={{ fontSize: 11, fill: 'var(--color-muted, #c6c8cb)' }} tickLine={false} axisLine={{ stroke: 'var(--color-border, #24272c)' }} />
-        <YAxis type="category" dataKey="name" tick={{ fontSize: 12, fill: 'var(--color-muted, #c6c8cb)' }} tickLine={false} axisLine={false} width={140} />
+      <BarChart data={data} layout="vertical" margin={{ top: 8, right: 48, left: 8, bottom: 30 }}>
+        {/* Only four ticks: Recharts' default log ticks (1, 2, 3 ... 300, 500)
+            crowd together and become unreadable, especially on phones. */}
+        <XAxis
+          type="number"
+          scale="log"
+          domain={[1, 1000]}
+          ticks={[1, 10, 100, 1000]}
+          interval={0}
+          tickFormatter={(v) => (v >= 1000 ? '1B' : `${v}M`)}
+          tick={{ fontSize: 13, fontWeight: 500, fill: 'var(--color-muted, #c6c8cb)' }}
+          tickLine={{ stroke: 'var(--color-border, #24272c)' }}
+          tickMargin={6}
+          axisLine={{ stroke: 'var(--color-border, #24272c)' }}
+          label={{ value: 'Users, millions (log scale)', position: 'insideBottom', offset: -22, fontSize: 12, fill: 'var(--color-muted, #c6c8cb)' }}
+        />
+        <YAxis type="category" dataKey="name" tick={{ fontSize: 12, fill: 'var(--color-muted, #c6c8cb)' }} tickLine={false} axisLine={false} width={112} />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'var(--color-border, #24272c)', opacity: 0.35 }} />
         <Bar dataKey="value" radius={[0, 4, 4, 0]} maxBarSize={36} fill="var(--color-accent, #4a7fe8)" animationDuration={900} animationEasing="ease-out">
           <LabelList
