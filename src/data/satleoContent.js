@@ -10,7 +10,7 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "**My view: I would not buy in at or above the May 2026 price of Rs 150 crore post-money. I would track SatLeo and test again against the milestones below.** The company has real customer interest and its first thermal payload is in orbit. But the evidence that would support this price is not public yet: working data from orbit, repeat paid demand, and a funded path to its main satellite."
+    "text": "**The key question:** whether the evidence can catch up with the May 2026 price of Rs 150 crore post-money. The company has real customer interest and its first thermal payload is in orbit. Three things that would support this price are not public yet: working data from orbit, repeat paid demand, and a funded path to its main satellite."
   },
   {
     "type": "list",
@@ -18,9 +18,10 @@ export const satleoContent = [
     "items": [
       "**Price vs evidence.** Tracxn's valuation series runs from Rs 38.3 crore (December 2024) to Rs 150 crore (May 2026). The basis of the earlier figure is unconfirmed, so the roughly 3.9 times rise is indicative. The latest public accounts, for FY2025 (to March 2025), show revenue of Rs 3.4 lakh, down from Rs 27.86 lakh in FY2024. Revenue, cash and burn since then are not public.",
       "**The main satellite is still ahead.** TAPAS-1 is a test payload expected to give about 60 m data. PYRO, targeting about 10 m, is aimed to be launch-ready by the end of 2027. In mid-2025 the company had targeted Q4 2026.",
-      "**Public-sector demand looks modest.** In my scenario, Indian city and state spending on thermal services comes to about Rs 31 to 105 crore a year. A bull case that adds private, defence and export revenue can justify the price, but only if four uncertain things go right together.",
+      "**Public-sector demand looks modest.** In the scenario modelled here, Indian city and state spending on thermal services comes to about Rs 31 to 105 crore a year.",
+      "**Two illustrative outcomes.** In a neutral case (PYRO works but sales grow slowly, about Rs 100 crore of revenue by 2031), an investor at Rs 150 crore would get back about 1.2 to 2 times their money after later dilution. In a bull case (about Rs 300 crore of revenue), about 6 to 12 times, but only if four uncertain things go right together. Both use a simple revenue multiple, not a cash-flow (DCF) model.",
       "**The capital need is large but not yet measurable.** At list prices, launching 12 to 15 PYRO satellites of 130 to 150 kg would cost about $10.9 to 15.75 million, about 2 to 3 times all equity raised. Build cost, cash in hand and burn are not public.",
-      "**What would change my view:** calibrated data from TAPAS-1, repeat paid contracts, a disclosed PYRO unit cost, and a funded plan to the first PYRO satellites."
+      "**What to watch:** calibrated data from TAPAS-1, repeat paid contracts, a disclosed PYRO unit cost, and a funded plan to the first PYRO satellites."
     ]
   },
   {
@@ -294,11 +295,11 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "This is a spending scenario, not proven demand. On my assumptions, Indian city and state bodies could spend about Rs 31 to 105 crore a year on thermal services, and exports could add Rs 18 to 90 crore. Private Indian buyers, district administrations and defence are not sized, so this is not a ceiling on SatLeo's market. A bull case that includes them is tested below."
+    "text": "This is a spending scenario, not proven demand. On the assumptions below, Indian city and state bodies could spend about Rs 31 to 105 crore a year on thermal services, and exports could add Rs 18 to 90 crore. Private Indian buyers, district administrations and defence are not sized, so this is not a ceiling on SatLeo's market. A neutral case and a bull case that include them are tested below."
   },
   {
     "type": "paragraph",
-    "text": "The counts are sourced; whether each body has an active, funded plan to buy is my assumption. The spend per buyer is also my assumption: none of the thermal suppliers I checked (SatVu, constellr, OroraTech, Hydrosat) publishes prices ([ObservationData](https://www.observationdata.com/providers/thermal-satellite-imagery/), accessed 11 Oct 2026)."
+    "text": "The counts are sourced; whether each body has an active, funded plan to buy is an assumption. The spend per buyer is also an assumption: none of the thermal suppliers I checked (SatVu, constellr, OroraTech, Hydrosat) publishes prices ([ObservationData](https://www.observationdata.com/providers/thermal-satellite-imagery/), accessed 11 Oct 2026)."
   },
   {
     "type": "richtable",
@@ -349,7 +350,7 @@ export const satleoContent = [
         "Not counted",
         "Not counted",
         "Not sized",
-        "Tested in the bull case"
+        "Tested in the neutral and bull cases"
       ],
       [
         "Indian defence",
@@ -357,7 +358,7 @@ export const satleoContent = [
         "Not counted",
         "Not counted",
         "Not sized",
-        "Tested in the bull case"
+        "Tested in the neutral and bull cases"
       ],
       [
         "Exports",
@@ -391,7 +392,20 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "**What a 10x return would need (illustrative).** I use an EV/revenue multiple and assume zero net debt, so company value and equity value are the same. For an investor entering at Rs 150 crore post-money, 10x needs the company to be worth about Rs 1,500 crore at exit with no further dilution, or about Rs 2,500 crore if later rounds dilute holders by about 40%."
+    "text": "**How the outcomes are valued (method).** This memo does not use a discounted cash flow (DCF) or free cash flow model. SatLeo has almost no revenue, its costs are not public, and a five-year cash flow forecast would be guesswork. Instead it uses a simple revenue-multiple test in three steps:"
+  },
+  {
+    "type": "list",
+    "style": "ordered",
+    "items": [
+      "**Revenue in about 2031.** Assumed by segment, in the table below.",
+      "**Company value at exit = revenue x an EV/revenue multiple.** EV is enterprise value. Net debt is assumed to be zero, so company value and equity value are the same. The multiples are assumptions, not taken from a set of comparable deals: 5x to 10x in the bull case, and 3x to 5x in the neutral case, because slower growth usually earns a lower multiple.",
+      "**Investor return = company value at exit / Rs 150 crore entry value.** If later rounds dilute existing holders by about 40%, the investor keeps 60% of their stake, so the return is multiplied by 0.6."
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "**What a 10x return would need (illustrative).** For an investor entering at Rs 150 crore post-money, 10x needs the company to be worth about Rs 1,500 crore at exit with no further dilution, or about Rs 2,500 crore if later rounds dilute holders by about 40%."
   },
   {
     "type": "richtable",
@@ -415,50 +429,96 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "The multiples and dilution are assumptions. Real proceeds also depend on preference terms and exit timing, and this tests one investment, not a whole fund. Winning all of the Indian public-sector spending in my high case (about Rs 105 crore a year) would fall short of every revenue figure above."
+    "text": "Real proceeds also depend on preference terms and exit timing, and this tests one investment, not a whole fund. Winning all of the Indian public-sector spending in the high case (about Rs 105 crore a year) would fall short of every revenue figure above."
   },
   {
-    "type": "paragraph",
-    "text": "**A bull case (illustrative).** Suppose that by about 2031 SatLeo has several PYRO satellites working and sells across all segments:"
+    "type": "subheading",
+    "text": "Two illustrative outcomes by about 2031"
   },
   {
     "type": "richtable",
     "headers": [
-      "Segment",
-      "Revenue (Rs crore a year)",
-      "Assumption"
+      "Item",
+      "Neutral case",
+      "Bull case",
+      "What it assumes"
     ],
     "rows": [
       [
-        "Indian public sector",
+        "Indian public sector (Rs crore a year)",
+        "25",
         "50",
-        "About half of my high case"
+        "Neutral: a share of the low case (Rs 31 crore). Bull: about half of the high case (Rs 105 crore)"
       ],
       [
-        "Private Indian buyers",
+        "Private Indian buyers (Rs crore a year)",
+        "15",
         "50",
-        "For example, 100 enterprise customers at Rs 50 lakh each"
+        "Neutral: 50 enterprise customers at Rs 30 lakh each. Bull: 100 at Rs 50 lakh each"
       ],
       [
-        "Indian defence and security",
+        "Indian defence and security (Rs crore a year)",
+        "30",
         "100",
-        "A few multi-year data or payload contracts"
+        "Neutral: one or two data contracts. Bull: a few multi-year data or payload contracts"
       ],
       [
-        "Exports",
+        "Exports (Rs crore a year)",
+        "30",
         "100",
-        "About $11 million a year at Rs 90 per $"
+        "Neutral: about $3.3 million a year. Bull: about $11 million a year. Both at Rs 90 per $"
       ],
       [
-        "**Total**",
+        "**Total revenue (Rs crore a year)**",
+        "**100**",
         "**300**",
         ""
+      ],
+      [
+        "EV/revenue multiple",
+        "3x to 5x",
+        "5x to 10x",
+        "Assumed"
+      ],
+      [
+        "**Company value at exit (Rs crore)**",
+        "**300 to 500**",
+        "**1,500 to 3,000**",
+        "Revenue x multiple"
+      ],
+      [
+        "Return on Rs 150 crore, no dilution",
+        "2x to 3.3x",
+        "10x to 20x",
+        "Company value / 150"
+      ],
+      [
+        "Return after 40% dilution",
+        "1.2x to 2x",
+        "6x to 12x",
+        "x 0.6"
+      ],
+      [
+        "Yearly return over about 5 years, after dilution",
+        "About 4% to 15%",
+        "About 43% to 64%",
+        "May 2026 to about 2031"
       ]
+    ],
+    "widths": [
+      24,
+      16,
+      16,
+      44
     ]
   },
   {
     "type": "paragraph",
-    "text": "At 5x to 10x EV/revenue, that is a Rs 1,500 to 3,000 crore company: 10x to 20x on a Rs 150 crore entry before dilution, or roughly 6x to 12x after 40% dilution. So the price can work. But the bull case needs four things to go right together: PYRO performs, enough money is raised to build the fleet, defence and export interest turns into contracts, and all of it happens in about five years. There is early progress on each (money raised, a payload in orbit, pilots, letters of intent), but none of the four has yet been shown at the scale the bull case needs. That is the gap between the price and my view."
+    "text": "**Neutral case.** PYRO works, but SatLeo flies fewer satellites and sells more slowly than planned: government buyers take time, defence brings one or two contracts, and only a small part of the letters of intent turns into paid exports. An investor at Rs 150 crore roughly gets their money back with a modest gain: about 1.2 to 2 times after dilution, or about 4% to 15% a year. If slower growth means more rounds at flat prices, dilution would be higher and the return lower."
+  },
+  {
+    "type": "paragraph",
+    "text": "**Bull case.** Several PYRO satellites work and SatLeo sells across all segments. The price can work, but only if four things go right together: PYRO performs, enough money is raised to build the fleet, defence and export interest turns into contracts, and all of it happens in about five years. There is early progress on each (money raised, a payload in orbit, pilots, letters of intent), but none has yet been shown at the scale this case needs."
   },
   {
     "type": "heading",
@@ -471,7 +531,7 @@ export const satleoContent = [
   {
     "type": "viz",
     "name": "CompetitorFunding",
-    "caption": "Source: Tracxn competitor data, accessed 8 Oct 2026. Tracxn's totals can differ from company figures; SatVu itself reports GBP 60 million of equity."
+    "caption": "Source: Tracxn competitor data, accessed 8 Oct 2026. Tracxn's totals can differ from company figures; SatVu itself reports GBP 60 million of equity. Hydrosat is not in the Tracxn data; its figure is its Series B only ($60 million in January 2026 plus a $10 million extension in September 2026), per Hydrosat and EU-Startups, so its true total is higher."
   },
   {
     "type": "viz",
@@ -565,7 +625,7 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "**What this means.** Selling raw 60 m images in India will be hard if TRISHNA's data is made freely available, as Landsat's is. SatLeo could still charge for services such as tasking, faster delivery, chosen times of day and ready-made heat alerts, if its satellites and hosting terms allow them. Its collection and delivery specifications are not public. If PYRO launched at the end of 2027 and began selling by mid-2028 (my assumption, not a company date), SatVu would by then have sold 3.5 m data commercially for about two years, and constellr plans under-5 m satellites. SatLeo's case is that Indian buyers, especially government and defence, will prefer an Indian supplier with local data storage and possibly lower prices. That is plausible, but no paid contract proves it yet."
+    "text": "**What this means.** Selling raw 60 m images in India will be hard if TRISHNA's data is made freely available, as Landsat's is. SatLeo could still charge for services such as tasking, faster delivery, chosen times of day and ready-made heat alerts, if its satellites and hosting terms allow them. Its collection and delivery specifications are not public. If PYRO launched at the end of 2027 and began selling by mid-2028 (an assumption, not a company date), SatVu would by then have sold 3.5 m data commercially for about two years, and constellr plans under-5 m satellites. SatLeo's case is that Indian buyers, especially government and defence, will prefer an Indian supplier with local data storage and possibly lower prices. That is plausible, but no paid contract proves it yet."
   },
   {
     "type": "heading",
@@ -820,7 +880,7 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "The biggest open risk is funding: building the fleet will need much more money than SatLeo has raised, and the figures needed to size that gap are not public. The table runs from most to least serious, in my view."
+    "text": "The biggest open risk is funding: building the fleet will need much more money than SatLeo has raised, and the figures needed to size that gap are not public. The table is ordered from most to least serious, as assessed in this memo."
   },
   {
     "type": "richtable",
@@ -877,7 +937,7 @@ export const satleoContent = [
       [
         "7",
         "Competition",
-        "If PYRO sells from mid-2028 (my assumption), SatVu will have sold 3.5 m data for about two years, and constellr plans under 5 m",
+        "If PYRO sells from mid-2028 (an assumption), SatVu will have sold 3.5 m data for about two years, and constellr plans under 5 m",
         "Rival launches and prices in India",
         "A clear price or local-supplier advantage with Indian buyers"
       ],
@@ -913,29 +973,29 @@ export const satleoContent = [
   },
   {
     "type": "heading",
-    "text": "My view: not at Rs 150 crore today, but worth tracking closely"
+    "text": "Assessment at the May 2026 price"
   },
   {
     "type": "paragraph",
-    "text": "I am testing a hypothetical new investment at the May 2026 valuation of Rs 150 crore post-money. I assume plain equity with standard minority rights; the actual terms of the May round are not public. On that basis I would not invest today. I would follow the company closely and test again once the milestones below are met. A lower price, or terms that better protect the investor, could change the answer."
+    "text": "This section sets out what would need to be true for a new investment at the May 2026 valuation of Rs 150 crore post-money to work. It assumes plain equity with standard minority rights; the actual terms of the May round are not public. It is an analysis of the public evidence, not a recommendation to buy or sell. A lower price, or terms that better protect the investor, would change the numbers."
   },
   {
     "type": "subheading",
-    "text": "Why not yet"
+    "text": "What the price assumes that is not yet proven"
   },
   {
     "type": "list",
     "style": "ordered",
     "items": [
-      "**The price runs ahead of the public evidence.** Tracxn's valuation series rose about 3.9 times between December 2024 and May 2026, though the basis of the earlier figure is unconfirmed. The latest public accounts (FY2025) show revenue of Rs 3.4 lakh, and nothing later is public. The satellite that would carry the business, PYRO, is at least a year from launch-readiness.",
-      "**The public-sector segments I modelled are not enough on their own.** Even winning all of Indian city and state spending in my high case gives about Rs 105 crore a year, below the Rs 150 to 500 crore of revenue a 10x outcome would need under my assumptions.",
-      "**The larger markets are the least proven.** Private Indian buyers, defence and exports must carry the case. None has a public contract yet, and the export evidence is non-binding letters of intent. My bull case shows the price can work, but only if PYRO performs, the fleet is funded, and defence and export interest turns into contracts, all within about five years.",
+      "**The price is ahead of the public evidence.** Tracxn's valuation series rose about 3.9 times between December 2024 and May 2026, though the basis of the earlier figure is unconfirmed. The latest public accounts (FY2025) show revenue of Rs 3.4 lakh, and nothing later is public. PYRO, the satellite that would carry the business, is at least a year from launch-readiness.",
+      "**Indian public-sector demand alone is not enough.** Winning all of Indian city and state spending in the high case gives about Rs 105 crore a year, below the Rs 150 to 500 crore of revenue a 10x outcome would need under these assumptions.",
+      "**The larger markets are the least proven.** Private Indian buyers, defence and exports must carry the case. None has a public contract yet, and the export evidence is non-binding letters of intent. If they grow slowly (the neutral case), the return is about 1.2 to 2 times after dilution. The bull case needs PYRO to perform, the fleet to be funded, and defence and export interest to turn into contracts, all within about five years.",
       "**The capital need cannot be sized from outside.** Launch alone for the planned fleet is 2 to 3 times the equity raised, and build cost, cash and burn are not public."
     ]
   },
   {
     "type": "subheading",
-    "text": "What I like"
+    "text": "Strengths"
   },
   {
     "type": "list",
@@ -949,7 +1009,7 @@ export const satleoContent = [
   },
   {
     "type": "subheading",
-    "text": "What would change my mind"
+    "text": "Milestones to watch"
   },
   {
     "type": "list",
@@ -958,16 +1018,25 @@ export const satleoContent = [
       "Calibrated TAPAS-1 data with temperature accuracy close to the 1 Kelvin target.",
       "Paid contracts that show real budgets, for example one above Rs 1 crore or several that renew, with cash collected.",
       "A disclosed PYRO unit cost and a funded plan for the first 2 to 3 satellites.",
-      "A Series A lead with defence or strategic links, at a price I judge reasonable for these risks."
+      "A Series A lead with defence or strategic links, and how its price compares with Rs 150 crore."
     ]
   },
   {
     "type": "paragraph",
-    "text": "**How an investor could exit (possibilities, not forecasts).** The realistic routes are a sale of early shares to new investors in a later round, a sale of the company to a larger space, defence or earth-observation business that wants thermal capability, or, much later, a public listing if the company reaches scale. None is likely before PYRO satellites are working and selling. The exit values in my 10x test (Rs 1,500 to 2,500 crore) assume revenue of Rs 150 to 500 crore first."
+    "text": "**How an investor could exit (possibilities, not forecasts).** None of these routes is likely before PYRO satellites are working and selling."
+  },
+  {
+    "type": "list",
+    "style": "bullet",
+    "items": [
+      "**In the bull case:** a sale of the company to a larger space, defence or earth-observation business that wants thermal capability, or, much later, a public listing. This assumes revenue of about Rs 300 crore and a company value of Rs 1,500 to 3,000 crore.",
+      "**In the neutral case:** smaller routes are more likely. An investor could sell early shares to a new investor in a later round (a secondary sale, often at a discount to the round price), the company or its team and technology could be bought by a larger Indian space or defence firm, or the company or founders could buy back shares. At a company value of Rs 300 to 500 crore, this returns about 1.2 to 2 times after dilution.",
+      "**Downside protection:** a liquidation preference, a common venture term that pays investors back before founders in a sale, would protect the amount invested in a modest sale. SatLeo's actual terms are not public."
+    ]
   },
   {
     "type": "subheading",
-    "text": "Questions I would ask the founders"
+    "text": "Questions for the founders"
   },
   {
     "type": "list",
@@ -984,7 +1053,7 @@ export const satleoContent = [
   },
   {
     "type": "subheading",
-    "text": "What I would verify with an expert"
+    "text": "What to verify with experts"
   },
   {
     "type": "list",
@@ -998,7 +1067,7 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "This is my independent analysis, not investment advice."
+    "text": "This is independent analysis, not investment advice."
   },
   {
     "type": "heading",
@@ -1006,11 +1075,11 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "**Method.** Desk research between 4 and 11 October 2026. Company figures (revenue, valuation, shareholding) are from MCA filings (AOC-4 accounts and PAS-3 share allotments) as compiled by Tracxn, accessed 8 October 2026, and cross-checked against free company-data sites where possible. Every other figure is linked to the page it came from. Where sources disagree, both figures are shown. Market prices are my assumptions and are labelled as such. Current revenue, cash, burn and PYRO costs are not public and are treated as unknown, not estimated. There were no interviews."
+    "text": "**Method.** Desk research between 4 and 11 October 2026. Company figures (revenue, valuation, shareholding) are from MCA filings (AOC-4 accounts and PAS-3 share allotments) as compiled by Tracxn, accessed 8 October 2026, and cross-checked against free company-data sites where possible. Every other figure is linked to the page it came from. Where sources disagree, both figures are shown. Market prices and scenario figures are assumptions and are labelled as such. Outcomes are valued with a revenue multiple, not a discounted cash flow (DCF) or free cash flow model, because SatLeo has almost no revenue and its costs are not public (see Market). Current revenue, cash, burn and PYRO costs are not public and are treated as unknown, not estimated. There were no interviews."
   },
   {
     "type": "paragraph",
-    "text": "**Version.** Version 1.1, 12 October 2026. Added a one-line summary, go-to-market, the next 12 to 18 months and use of funds, exit paths, what would reduce each risk, and expert checks; moved the funding reconciliation to the Appendix. No figures changed."
+    "text": "**Version.** Version 1.2, 14 October 2026. Rewrote the conclusion as a neutral assessment instead of a personal view, added a neutral case and neutral exit routes, and explained how outcomes are valued. No sourced figures changed. Version 1.1, 12 October 2026, added a one-line summary, go-to-market, the next 12 to 18 months and use of funds, exit paths, what would reduce each risk, and expert checks, and moved the funding reconciliation to the Appendix."
   },
   {
     "type": "paragraph",

@@ -9,7 +9,7 @@ This site contains his professional background, published research reports, and 
 ## Research
 
 - [Tax Without Recognition](https://khuswantsharma.com/research/tax-without-recognition): India's Virtual Digital Asset Regime and the July 2026 Rupture - a report on India's tax and regulatory treatment of virtual digital assets, and the divergence between the RBI and the Parliamentary Standing Committee on Finance.
-- [SatLeo Labs](https://khuswantsharma.com/research/satleo-labs-investment-memo): Investment memo on India's thermal earth observation opportunity - an independent memo on SatLeo Labs, an Ahmedabad thermal imaging satellite startup, covering the problem, team, bottom-up market, competition, business model, funding, risks and an investment view.
+- [SatLeo Labs](https://khuswantsharma.com/research/satleo-labs-investment-memo): Investment memo on India's thermal earth observation opportunity - an independent memo on SatLeo Labs, an Ahmedabad thermal imaging satellite startup, covering the problem, team, bottom-up market, competition, business model, funding, risks, neutral and bull scenarios, and a neutral assessment at the latest valuation.
 
 ## Pages
 
