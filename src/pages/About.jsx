@@ -9,7 +9,7 @@ import { personSchema } from "../data/person";
 
 // Excel, Power BI, PowerPoint, Word form one office-tools cluster and stay in
 // this exact order as the first row; data/dev tools follow, then AI assistants
-// last. All render as the same small pill.
+// last. All render through the same ToolBadge, so the grid stays uniform.
 const technicalTools = [
   { label: "Excel (Advanced)", Icon: RiFileExcel2Fill },
   { label: "Power BI (learning)", Icon: IoLogoMicrosoft },
@@ -51,12 +51,22 @@ const education = [
   },
 ];
 
-function ToolPill({ label, Icon }) {
+function ToolBadge({ label, Icon }) {
   return (
-    <li className="flex items-center gap-2 rounded-full border border-hairline bg-paper px-3 py-1.5 text-sm text-ink">
-      <Icon className="h-4 w-4 flex-shrink-0 text-navy-light" aria-hidden="true" />
-      {label}
-    </li>
+    <div className="hover-lift flex items-center gap-3 rounded-lg border border-navy/10 bg-paper-dim px-4 py-3 shadow-sm">
+      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md bg-navy/8 text-navy">
+        <Icon className="h-5 w-5" />
+      </span>
+      <span className="text-sm font-medium text-ink">{label}</span>
+    </div>
+  );
+}
+
+function CompetencyChip({ label }) {
+  return (
+    <div className="hover-lift flex items-center rounded-full border border-navy/10 bg-paper-dim px-5 py-3 shadow-sm">
+      <span className="text-sm font-medium text-ink">{label}</span>
+    </div>
   );
 }
 
@@ -136,25 +146,21 @@ export default function About() {
       <div className="mt-16 space-y-8 border-t border-hairline pt-16">
         <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Skills</h2>
 
-        <div className="grid gap-8 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:grid-cols-5 sm:gap-10 sm:p-7">
-          <div className="sm:col-span-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">Core skills</p>
-            <ul className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-              {coreCompetencies.map((skill) => (
-                <li key={skill} className="flex items-start gap-2.5 text-sm leading-snug text-ink">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-navy" aria-hidden="true" />
-                  {skill}
-                </li>
-              ))}
-            </ul>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft">Technical Tools</p>
+          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {technicalTools.map((tool) => (
+              <ToolBadge key={tool.label} label={tool.label} Icon={tool.Icon} />
+            ))}
           </div>
-          <div className="sm:col-span-2 sm:border-l sm:border-hairline sm:pl-10">
-            <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">Tools</p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {technicalTools.map((tool) => (
-                <ToolPill key={tool.label} label={tool.label} Icon={tool.Icon} />
-              ))}
-            </ul>
+        </div>
+
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft">Core Competencies</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {coreCompetencies.map((skill) => (
+              <CompetencyChip key={skill} label={skill} />
+            ))}
           </div>
         </div>
       </div>
@@ -165,7 +171,7 @@ export default function About() {
           {education.map((item) => (
             <div
               key={item.school}
-              className="flex items-center gap-4 rounded-lg border border-navy/10 bg-paper-dim px-5 py-4 shadow-sm"
+              className="hover-lift flex items-center gap-4 rounded-lg border border-navy/10 bg-paper-dim px-5 py-4 shadow-sm"
             >
               {/* White chip, as with the IVCA logo: most institution logos are
                   dark ink on transparent and would vanish on the dark card. */}
@@ -196,7 +202,7 @@ export default function About() {
       <div className="mt-16 border-t border-hairline pt-16">
         <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Experience</h2>
 
-        <div className="mt-8 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:p-7">
+        <div className="hover-lift mt-8 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:p-7">
           <div className="flex items-center gap-4">
             {/* Light chip is deliberate: the IVCA wordmark is dark ink on
                 transparent and would vanish on the dark card without it. */}
@@ -219,9 +225,16 @@ export default function About() {
 
           <p className="mt-5 text-xs uppercase tracking-wide text-ink-soft/60">Private Equity Ecosystem Team &middot; New Delhi</p>
           <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-ink-soft">
-            <li>&bull; <span className="font-medium text-ink">Fund and ecosystem research:</span> research PE, VC and private credit funds on strategy, sector focus and portfolio, and engage their partners on IVCA&rsquo;s platforms. Have worked with 50+ funds in various ways; 21 pieces published so far.</li>
-            <li>&bull; <span className="font-medium text-ink">Market themes:</span> identify live investment themes for IVCA&rsquo;s #WhatsNext webinars (private credit; growth capital in AIFs) and build panels of fund partners from firms such as Kotak Alternate, Neo, Stride Ventures and Aavishkaar.</li>
-            <li>&bull; <span className="font-medium text-ink">Execution:</span> ran vendor sourcing and price negotiation for 3 flagship events (IVCA Conclave, Private Credit Summit, Buyouts Summit) and designed the structure and UI/UX of two summit websites.</li>
+            <li>&bull; <span className="font-medium text-ink">Fund research:</span> research PE, VC and private credit funds on strategy, sector focus and portfolio before every partner conversation.</li>
+            <li>&bull; <span className="font-medium text-ink">Partner engagement:</span> set up calls with fund partners, draft the questions, and write the minutes and follow-ups.</li>
+            <li>&bull; <span className="font-medium text-ink">Visibility platforms:</span> match each fund to the right IVCA platform (#TheContext, Fund in Focus, Private Equity Pulse, Capital News Digest, Milestone Makers) and take each piece through to publication. Have worked with 50+ funds in various ways; 21 pieces published so far.</li>
+            <li>&bull; <span className="font-medium text-ink">Pipeline tracking:</span> maintain one consolidated tracker of fund interest and status across all IVCA platforms.</li>
+            <li>&bull; <span className="font-medium text-ink">Market themes and webinars:</span> identify live investment themes for IVCA&rsquo;s #WhatsNext webinars (private credit; growth capital in AIFs, November 2026) and build panels of fund partners from firms such as Kotak Alternate, Neo, Stride Ventures and Aavishkaar.</li>
+            <li>&bull; <span className="font-medium text-ink">Market exposure:</span> through calls, webinars and summits, work directly with fund partners, LPs, law firms and advisors on private credit, growth capital, secondaries and AIF regulation.</li>
+            <li>&bull; <span className="font-medium text-ink">Flagship summits:</span> for the IVCA Private Credit Summit 2026 (St. Regis, Mumbai), coordinated speakers, moderators and RSVPs from funds, LPs and regulators.</li>
+            <li>&bull; <span className="font-medium text-ink">Sponsors and partners:</span> coordinate 30+ sponsors and partners for flagship events, managing deliverables, thought-leadership articles and publishing timelines.</li>
+            <li>&bull; <span className="font-medium text-ink">Event websites:</span> designed the websites for IVCA Private Credit Summit 2026 and Secondaries Conference 2026, replacing the old single-page template with multi-page layouts. Planned the structure and UI/UX, briefed the build team and kept speaker and partner details current. Now working on the IVCA Conclave 2027 website.</li>
+            <li>&bull; <span className="font-medium text-ink">Vendors:</span> ran vendor sourcing and price negotiation for 3 flagship events (IVCA Conclave, Private Credit Summit, Buyouts Summit), through to delivery.</li>
           </ul>
         </div>
       </div>
