@@ -171,15 +171,15 @@ export default function About() {
           {education.map((item) => (
             <div
               key={item.school}
-              className="hover-lift flex items-center gap-5 rounded-lg border border-navy/10 bg-paper-dim p-5 shadow-sm sm:p-6"
+              className="hover-lift flex items-start gap-4 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:p-8"
             >
               {/* White chip, as with the IVCA logo: most institution logos are
                   dark ink on transparent and would vanish on the dark card. */}
-              <span className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
+              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1">
                 {item.logo ? (
                   <img src={item.logo} alt={`${item.school} logo`} className="h-full w-full object-contain" />
                 ) : (
-                  <span className="font-serif text-lg font-semibold text-navy-dark" aria-hidden="true">
+                  <span className="font-serif text-sm font-semibold text-navy-dark" aria-hidden="true">
                     {item.mono}
                   </span>
                 )}
@@ -204,14 +204,14 @@ export default function About() {
             <img
               src="/images/IVCA-Logo.png"
               alt="IVCA logo"
-              className="h-11 w-11 flex-shrink-0 rounded-md bg-white object-contain p-1"
+              className="h-12 w-12 flex-shrink-0 rounded-md bg-white object-contain p-1"
             />
             <div>
-              <h3 className="font-serif text-lg font-semibold text-ink">Private Equity Fellow</h3>
-              <p className="text-sm text-ink-soft">
+              <h3 className="font-serif text-lg font-semibold leading-snug text-ink sm:text-xl">Private Equity Fellow</h3>
+              <p className="mt-0.5 text-sm text-ink-soft sm:text-base">
                 Indian Venture and Alternate Capital Association (IVCA)
               </p>
-              <p className="text-xs uppercase tracking-wide text-ink-soft/60">Feb 2026 - Present</p>
+              <p className="mt-1 text-xs uppercase tracking-wide text-ink-soft/60">Feb 2026 - Present</p>
             </div>
           </div>
 

@@ -62,8 +62,8 @@ export const satleoContent = [
       ],
       [
         "Data from orbit",
-        "Not announced as of 11 Oct 2026 on SatLeo's or its founders' LinkedIn pages or Dhruva Space's mission page. On 6 Oct the CSO said the team was \"waiting for the initial data\"",
-        "Same"
+        "Not announced as of 22 Oct 2026 on SatLeo's LinkedIn page (latest post: IN-SPACe authorisation for TAPAS-1) or Dhruva Space's mission page. On 6 Oct the CSO said the team was \"waiting for the initial data\"",
+        "Same; [SatLeo Labs on LinkedIn](https://www.linkedin.com/company/satleo-labs/)"
       ],
       [
         "Equity raised",
@@ -198,7 +198,7 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "**The timeline has moved.** In July 2025 the company targeted an experimental satellite in Q1 2026 and the main satellite in Q4 2026. TAPAS-1 flew in October 2026. TAPAS-2 is now aimed at mid-2027 and PYRO at launch-readiness by end-2027. Public statements on how many satellites follow have also varied. The reasons for the shifts are not public and are worth asking about."
+    "text": "**The timeline has moved.** In July 2025 the company targeted an experimental satellite in Q1 2026 and the main satellite in Q4 2026. TAPAS-1 flew in October 2026. TAPAS-2 is now aimed at mid-2027 and PYRO at launch-readiness by end-2027. A pre-launch [BW Businessworld, via TradingView](https://www.tradingview.com/news/moodys:2cf3acc186310:0-seeing-earth-in-a-different-light/) article gives TAPAS-2 in Q2 2027, the first PYRO satellite in Q1 2028 and a constellation of about 12 to 15 satellites by 2029. Public statements on how many satellites follow have also varied. The reasons for the shifts are not public and are worth asking about."
   },
   {
     "type": "paragraph",
@@ -695,7 +695,7 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "**Letters of intent.** Press reports put them at $42 million in April 2026 ([Entrackr](https://entrackr.com/snippets/spacetech-startup-satleo-labs-raises-22-mn-in-seed-round-11457321)), \"over $50 million\" in early October ([DQ India](https://www.dqindia.com/dqdeeptech/satleo-labs-tapas-1-launch-series-a-satellite-manufacturing-12613286)) and \"more than $52 million\" a few days later (StartupNxt, LinkedIn). These are press mentions, not dated pipeline snapshots. The number of counterparties, the period covered, pricing and conditions are not public, and letters of intent are not binding. For comparison, SatVu reported about GBP 6 million of pre-orders ahead of HotSat-2; their terms were not disclosed either."
+    "text": "**Letters of intent.** Press reports put them at $42 million in April 2026 ([Entrackr](https://entrackr.com/snippets/spacetech-startup-satleo-labs-raises-22-mn-in-seed-round-11457321)), \"over $50 million\" in early October ([DQ India](https://www.dqindia.com/dqdeeptech/satleo-labs-tapas-1-launch-series-a-satellite-manufacturing-12613286)) and \"more than $52 million\" a few days later (StartupNxt, LinkedIn). These are press mentions, not dated pipeline snapshots. A pre-launch [BW Businessworld, via TradingView](https://www.tradingview.com/news/moodys:2cf3acc186310:0-seeing-earth-in-a-different-light/) article says the about $52 million comes from seven to eight prospective customers, with individual commitments of $5 million to $10 million, and names Space42, Eartheye Space, BayWa and Cropin. The period covered, pricing and conditions are still not public, and letters of intent are not binding. For comparison, SatVu reported about GBP 6 million of pre-orders ahead of HotSat-2; their terms were not disclosed either."
   },
   {
     "type": "paragraph",
@@ -902,7 +902,7 @@ export const satleoContent = [
       [
         "2",
         "Technology",
-        "No data from TAPAS-1 has been announced yet (nine days after launch, which is not unusual). The 1 Kelvin target is unproven. PYRO is a much harder step than TAPAS. Cloud blocks thermal sensing in the monsoon",
+        "No data from TAPAS-1 has been announced yet (about three weeks after launch; commissioning a new payload can take weeks). The 1 Kelvin target is unproven. PYRO is a much harder step than TAPAS. Cloud blocks thermal sensing in the monsoon",
         "Commissioning timetable; first calibrated data and accuracy against ground readings; PYRO design and test milestones",
         "Calibrated TAPAS-1 data checked against ground stations; independent review of the PYRO design"
       ],
@@ -1075,15 +1075,15 @@ export const satleoContent = [
   },
   {
     "type": "paragraph",
-    "text": "**Method.** Desk research between 4 and 11 October 2026. Company figures (revenue, valuation, shareholding) are from MCA filings (AOC-4 accounts and PAS-3 share allotments) as compiled by Tracxn, accessed 8 October 2026, and cross-checked against free company-data sites where possible. Every other figure is linked to the page it came from. Where sources disagree, both figures are shown. Market prices and scenario figures are assumptions and are labelled as such. Outcomes are valued with a revenue multiple, not a discounted cash flow (DCF) or free cash flow model, because SatLeo has almost no revenue and its costs are not public (see Market). Current revenue, cash, burn and PYRO costs are not public and are treated as unknown, not estimated. There were no interviews."
+    "text": "**Method.** Desk research between 4 and 11 October 2026, with a check for new information on 22 October 2026. Company figures (revenue, valuation, shareholding) are from MCA filings (AOC-4 accounts and PAS-3 share allotments) as compiled by Tracxn, accessed 8 October 2026, and cross-checked against free company-data sites where possible. Every other figure is linked to the page it came from. Where sources disagree, both figures are shown. Market prices and scenario figures are assumptions and are labelled as such. Outcomes are valued with a revenue multiple, not a discounted cash flow (DCF) or free cash flow model, because SatLeo has almost no revenue and its costs are not public (see Market). Current revenue, cash, burn and PYRO costs are not public and are treated as unknown, not estimated. There were no interviews."
   },
   {
     "type": "paragraph",
-    "text": "**Version.** Version 1.2, 14 October 2026. Rewrote the conclusion as a neutral assessment instead of a personal view, added a neutral case and neutral exit routes, and explained how outcomes are valued. No sourced figures changed. Version 1.1, 12 October 2026, added a one-line summary, go-to-market, the next 12 to 18 months and use of funds, exit paths, what would reduce each risk, and expert checks, and moved the funding reconciliation to the Appendix."
+    "text": "**Version.** Version 1.3, 22 October 2026. Added details from a pre-launch BW Businessworld article (letter-of-intent counterparties, a $6.1 million funding figure and later satellite dates) and updated the data-from-orbit check to 22 October. No earlier figures changed. Version 1.2, 14 October 2026. Rewrote the conclusion as a neutral assessment instead of a personal view, added a neutral case and neutral exit routes, and explained how outcomes are valued. No sourced figures changed. Version 1.1, 12 October 2026, added a one-line summary, go-to-market, the next 12 to 18 months and use of funds, exit paths, what would reduce each risk, and expert checks, and moved the funding reconciliation to the Appendix."
   },
   {
     "type": "paragraph",
-    "text": "**Contact with the company.** SatLeo was emailed on 5 October 2026 and invited to correct any facts. No reply had been received by 11 October 2026."
+    "text": "**Contact with the company.** SatLeo was emailed on 5 October 2026 and invited to correct any facts. No reply had been received by 22 October 2026."
   },
   {
     "type": "paragraph",
@@ -1109,7 +1109,7 @@ export const satleoContent = [
     "type": "list",
     "style": "bullet",
     "items": [
-      "Launch status and plans: [Dhruva Space (LEAP-2 mission)](https://www.dhruvaspace.com/leap-2-mission), [ETV Bharat, 6 Oct 2026](https://www.etvbharat.com/en/technology/exclusive-interview-satleo-labs-co-founder-urmil-bakhai-tapas-1-space-launch-future-plans-enn26100604772); rivals and investors: [Hydrosat, 21 Sep 2026](https://hydrosat.com/2026/09/21/hydrosat-secures-10m-investment-from-suma-capital-in-series-b-extension/), [Merak Ventures](https://www.merakventures.com/), [Indian Defence News (Gujarat policy)](https://www.indiandefensenews.in/2025/04/gujarat-becomes-1st-indian-state-to.html). All pages accessed between 4 and 11 Oct 2026."
+      "Launch status and plans: [Dhruva Space (LEAP-2 mission)](https://www.dhruvaspace.com/leap-2-mission), [BW Businessworld, via TradingView](https://www.tradingview.com/news/moodys:2cf3acc186310:0-seeing-earth-in-a-different-light/), [ETV Bharat, 6 Oct 2026](https://www.etvbharat.com/en/technology/exclusive-interview-satleo-labs-co-founder-urmil-bakhai-tapas-1-space-launch-future-plans-enn26100604772); rivals and investors: [Hydrosat, 21 Sep 2026](https://hydrosat.com/2026/09/21/hydrosat-secures-10m-investment-from-suma-capital-in-series-b-extension/), [Merak Ventures](https://www.merakventures.com/), [Indian Defence News (Gujarat policy)](https://www.indiandefensenews.in/2025/04/gujarat-becomes-1st-indian-state-to.html). All pages accessed between 4 and 22 Oct 2026."
     ]
   },
   {
@@ -1121,7 +1121,7 @@ export const satleoContent = [
     "style": "bullet",
     "items": [
       "**Press vs filings.** The press figures for the first two rounds ($3.3 million and $2.2 million) already add up to $5.5 million before the May 2026 top-up. It is not clear whether the Rs 1.4 crore May top-up is extra money, part of an announced round, or a later allotment of money committed earlier. I use the rupee total from the filings (Rs 45.9 crore) and leave the reconciliation open.",
-      "**The $1.2 million gap.** SatLeo says it has raised $6.7 million, including a $1.2 million pre-Series A ([DQ India](https://www.dqindia.com/dqdeeptech/satleo-labs-tapas-1-launch-series-a-satellite-manufacturing-12613286)). That money is not in the share records up to 29 May 2026. It may have come later, or may not be equity."
+      "**The $1.2 million gap.** SatLeo says it has raised $6.7 million, including a $1.2 million pre-Series A ([DQ India](https://www.dqindia.com/dqdeeptech/satleo-labs-tapas-1-launch-series-a-satellite-manufacturing-12613286)). That money is not in the share records up to 29 May 2026. It may have come later, or may not be equity. A pre-launch [BW Businessworld, via TradingView](https://www.tradingview.com/news/moodys:2cf3acc186310:0-seeing-earth-in-a-different-light/) article gives a different total, $6.1 million."
     ]
   }
 ];
