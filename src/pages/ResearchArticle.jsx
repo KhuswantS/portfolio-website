@@ -214,6 +214,7 @@ export default function ResearchArticle() {
         title={`${report.title} | Khuswant Sharma`}
         description={report.hook}
         path={`/research/${report.slug}`}
+        {...(report.ogImage ? { image: `https://khuswantsharma.com${report.ogImage}` } : {})}
       />
       <JsonLd data={articleSchema} />
       <Link to="/research" className="text-sm font-semibold text-navy hover:underline">

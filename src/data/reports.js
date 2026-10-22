@@ -12,6 +12,8 @@ export const reports = [
     category: "Regulation & Policy",
     date: "2026-07-25",
     thumbnail: "/images/reports/tax-without-recognition.svg",
+    // PNG for link previews (LinkedIn, WhatsApp and X do not show SVG).
+    ogImage: "/images/og/tax-without-recognition.png",
     hero: "/images/reports/tax-without-recognition.svg",
     heroAlt: "Report 001 emblem: a digital asset coin drawn only in outline, with a solid 30% tax slice cut out of it",
     pdf: "/reports/Tax-Without-Recognition-Khuswant-Sharma.pdf",
@@ -419,6 +421,7 @@ export const reports = [
     date: "2026-10-12",
     dataAsOf: "2026-10-22",
     thumbnail: "/images/reports/satleo-labs.svg",
+    ogImage: "/images/og/satleo-labs.png",
     hero: "/images/reports/satleo-labs.svg",
     heroAlt: "Report 002 emblem: a satellite scanning a thermal heat map",
     pdf: "/reports/SatLeo-Labs-Investment-Memo-Khuswant-Sharma.pdf",
