@@ -1,49 +1,56 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpIcon } from "./icons";
+import { LuArrowUp } from "react-icons/lu";
 import { socialLinks } from "../data/social";
 
 const BACK_TO_TOP_THRESHOLD = 480;
-const BUTTON_SIZE = 60;
 
 function BackToTopButton() {
+  const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY > BACK_TO_TOP_THRESHOLD);
+    const handleScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(window.scrollY / max, 1) : 0);
+      setVisible(window.scrollY > BACK_TO_TOP_THRESHOLD);
+    };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
+  // A small round button with a thin ring that fills as you read down the page.
+  const R = 20;
+  const C = 2 * Math.PI * R;
   return (
     <button
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Back to top"
-      style={{ height: BUTTON_SIZE, width: BUTTON_SIZE }}
-      className={`hover-lift fixed bottom-6 right-6 z-40 flex items-center justify-center rounded-full border-2 border-navy bg-paper-dim shadow-sm transition-opacity duration-300 ${
-        visible ? "opacity-100" : "pointer-events-none opacity-0"
+      className={`group fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-hairline bg-paper-dim/85 text-ink-soft shadow-lg backdrop-blur transition-all duration-300 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-light sm:bottom-8 sm:right-8 ${
+        visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >
-      {/* Curved "BACK TO TOP" label spanning ~130 degrees of the circle's
-          top (well under the ~150 degree point where text starts curving
-          below horizontal and becomes hard to read), plus a centered up
-          arrow. Plain CSS can't bend text along a path, so this is an
-          inline SVG <textPath> riding a dome-shaped arc (not a full circle
-          - text on the bottom half of a circle renders upside down). */}
-      <svg viewBox={`0 0 ${BUTTON_SIZE} ${BUTTON_SIZE}`} className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <path id="backToTopArc" d="M 9.16,20.28 A 23,23 0 0 1 50.84,20.28" fill="none" />
-        <text fontSize="7" fontWeight="700" style={{ letterSpacing: "0.3px" }} className="fill-navy uppercase">
-          <textPath href="#backToTopArc" startOffset="50%" textAnchor="middle" lengthAdjust="spacingAndGlyphs" textLength="44">
-            Back to top
-          </textPath>
-        </text>
+      <svg viewBox="0 0 44 44" className="absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
+        <circle cx="22" cy="22" r={R} fill="none" stroke="currentColor" strokeOpacity="0" strokeWidth="2" />
+        <circle
+          cx="22"
+          cy="22"
+          r={R}
+          fill="none"
+          stroke="var(--color-navy)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeDasharray={C}
+          strokeDashoffset={C * (1 - progress)}
+        />
       </svg>
-      <ArrowUpIcon
-        className="relative text-ink"
-        style={{ height: BUTTON_SIZE * 0.4, width: BUTTON_SIZE * 0.4 }}
-      />
+      <LuArrowUp className="relative h-5 w-5 transition-transform duration-200 group-hover:-translate-y-0.5" aria-hidden="true" />
     </button>
   );
 }

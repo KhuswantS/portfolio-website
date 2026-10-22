@@ -9,7 +9,7 @@ import { personSchema } from "../data/person";
 
 // Excel, Power BI, PowerPoint, Word form one office-tools cluster and stay in
 // this exact order as the first row; data/dev tools follow, then AI assistants
-// last. All render through the same ToolBadge, so the grid stays uniform.
+// last. All render as the same small pill.
 const technicalTools = [
   { label: "Excel (Advanced)", Icon: RiFileExcel2Fill },
   { label: "Power BI (learning)", Icon: IoLogoMicrosoft },
@@ -51,22 +51,12 @@ const education = [
   },
 ];
 
-function ToolBadge({ label, Icon }) {
+function ToolPill({ label, Icon }) {
   return (
-    <div className="hover-lift flex items-center gap-3 rounded-lg border border-navy/10 bg-paper-dim px-4 py-3 shadow-sm">
-      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md bg-navy/8 text-navy">
-        <Icon className="h-5 w-5" />
-      </span>
-      <span className="text-sm font-medium text-ink">{label}</span>
-    </div>
-  );
-}
-
-function CompetencyChip({ label }) {
-  return (
-    <div className="hover-lift flex items-center rounded-full border border-navy/10 bg-paper-dim px-5 py-3 shadow-sm">
-      <span className="text-sm font-medium text-ink">{label}</span>
-    </div>
+    <li className="flex items-center gap-2 rounded-full border border-hairline bg-paper px-3 py-1.5 text-sm text-ink">
+      <Icon className="h-4 w-4 flex-shrink-0 text-navy-light" aria-hidden="true" />
+      {label}
+    </li>
   );
 }
 
@@ -146,36 +136,40 @@ export default function About() {
       <div className="mt-16 space-y-8 border-t border-hairline pt-16">
         <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Skills</h2>
 
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft">Technical Tools</p>
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {technicalTools.map((tool) => (
-              <ToolBadge key={tool.label} label={tool.label} Icon={tool.Icon} />
-            ))}
+        <div className="grid gap-8 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:grid-cols-5 sm:gap-10 sm:p-7">
+          <div className="sm:col-span-3">
+            <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">Core skills</p>
+            <ul className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+              {coreCompetencies.map((skill) => (
+                <li key={skill} className="flex items-start gap-2.5 text-sm leading-snug text-ink">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-navy" aria-hidden="true" />
+                  {skill}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft">Core Competencies</p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            {coreCompetencies.map((skill) => (
-              <CompetencyChip key={skill} label={skill} />
-            ))}
+          <div className="sm:col-span-2 sm:border-l sm:border-hairline sm:pl-10">
+            <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">Tools</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {technicalTools.map((tool) => (
+                <ToolPill key={tool.label} label={tool.label} Icon={tool.Icon} />
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
       <div className="mt-16 border-t border-hairline pt-16">
         <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Education</h2>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {education.map((item) => (
             <div
               key={item.school}
-              className="hover-lift flex items-start gap-4 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:p-8"
+              className="flex items-center gap-4 rounded-lg border border-navy/10 bg-paper-dim px-5 py-4 shadow-sm"
             >
               {/* White chip, as with the IVCA logo: most institution logos are
                   dark ink on transparent and would vanish on the dark card. */}
-              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1">
+              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-0.5">
                 {item.logo ? (
                   <img src={item.logo} alt={`${item.school} logo`} className="h-full w-full object-contain" />
                 ) : (
@@ -185,9 +179,14 @@ export default function About() {
                 )}
               </span>
               <div>
-                <h3 className="font-serif text-lg font-semibold leading-snug text-ink sm:text-xl">{item.title}</h3>
-                <p className="mt-0.5 text-sm text-ink-soft sm:text-base">{item.school}</p>
-                <p className="mt-1 text-xs uppercase tracking-wide text-ink-soft/60">{item.period}</p>
+                <h3 className="text-base font-semibold leading-snug text-ink">{item.title}</h3>
+                <p className="text-sm text-ink-soft">
+                  {item.school}
+                  <span className="block text-ink-soft/60 sm:inline">
+                    <span className="hidden sm:inline"> &middot; </span>
+                    {item.period}
+                  </span>
+                </p>
               </div>
             </div>
           ))}
@@ -197,25 +196,28 @@ export default function About() {
       <div className="mt-16 border-t border-hairline pt-16">
         <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Experience</h2>
 
-        <div className="hover-lift mt-8 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:p-8">
-          <div className="flex items-start gap-4">
+        <div className="mt-8 rounded-lg border border-navy/10 bg-paper-dim p-6 shadow-sm sm:p-7">
+          <div className="flex items-center gap-4">
             {/* Light chip is deliberate: the IVCA wordmark is dark ink on
                 transparent and would vanish on the dark card without it. */}
             <img
               src="/images/IVCA-Logo.png"
               alt="IVCA logo"
-              className="h-12 w-12 flex-shrink-0 rounded-md bg-white object-contain p-1"
+              className="h-10 w-10 flex-shrink-0 rounded-md bg-white object-contain p-0.5"
             />
             <div>
-              <h3 className="font-serif text-lg font-semibold leading-snug text-ink sm:text-xl">Private Equity Fellow</h3>
-              <p className="mt-0.5 text-sm text-ink-soft sm:text-base">
+              <h3 className="text-base font-semibold leading-snug text-ink">Private Equity Fellow</h3>
+              <p className="text-sm text-ink-soft">
                 Indian Venture and Alternate Capital Association (IVCA)
+                <span className="block text-ink-soft/60 sm:inline">
+                  <span className="hidden sm:inline"> &middot; </span>
+                  Feb 2026 - Present
+                </span>
               </p>
-              <p className="mt-1 text-xs uppercase tracking-wide text-ink-soft/60">Feb 2026 - Present</p>
             </div>
           </div>
 
-          <p className="mt-6 text-xs uppercase tracking-wide text-ink-soft/60">Private Equity Ecosystem Team &middot; New Delhi</p>
+          <p className="mt-5 text-xs uppercase tracking-wide text-ink-soft/60">Private Equity Ecosystem Team &middot; New Delhi</p>
           <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-ink-soft">
             <li>&bull; <span className="font-medium text-ink">Fund and ecosystem research:</span> research PE, VC and private credit funds on strategy, sector focus and portfolio, and engage their partners on IVCA&rsquo;s platforms. Have worked with 50+ funds in various ways; 21 pieces published so far.</li>
             <li>&bull; <span className="font-medium text-ink">Market themes:</span> identify live investment themes for IVCA&rsquo;s #WhatsNext webinars (private credit; growth capital in AIFs) and build panels of fund partners from firms such as Kotak Alternate, Neo, Stride Ventures and Aavishkaar.</li>
