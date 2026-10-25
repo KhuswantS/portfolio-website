@@ -272,6 +272,15 @@ export default function ResearchArticle() {
           <ReportBlock key={i} block={block} index={i} />
         ))}
       </div>
+
+      <p className="mt-12 border-t border-hairline pt-6 text-xs leading-relaxed text-ink-soft/70">
+        Independent research for information only. Not investment advice or a recommendation to buy
+        or sell any security. See the{" "}
+        <Link to="/terms" className="underline decoration-ink-soft/30 underline-offset-2 hover:text-navy">
+          Terms &amp; Disclaimer
+        </Link>
+        .
+      </p>
     </article>
   );
 }

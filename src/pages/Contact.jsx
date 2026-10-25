@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { MailIcon, LinkedInIcon, GitHubIcon, TwitterIcon } from "../components/icons";
+import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
-const initialForm = { name: "", email: "", message: "" };
+const initialForm = { name: "", email: "", message: "", _gotcha: "" };
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mrenrpgd";
 
 const contactLinks = [
@@ -70,7 +71,7 @@ export default function Contact() {
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
       <SEO
         title="Contact | Khuswant Sharma"
-        description="Get in touch with Khuswant Sharma for research ideas, corrections, or investment discussions - reach out directly or via the contact form."
+        description="Get in touch with Khuswant Sharma about research ideas, corrections or opportunities, directly or through the contact form."
         path="/contact"
       />
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">Contact</p>
@@ -115,6 +116,8 @@ export default function Contact() {
               name="name"
               type="text"
               required
+              maxLength={100}
+              autoComplete="name"
               value={form.name}
               onChange={handleChange}
               className="mt-1.5 w-full rounded-md border border-navy/15 bg-paper-dim px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
@@ -130,6 +133,8 @@ export default function Contact() {
               name="email"
               type="email"
               required
+              maxLength={254}
+              autoComplete="email"
               value={form.email}
               onChange={handleChange}
               className="mt-1.5 w-full rounded-md border border-navy/15 bg-paper-dim px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
@@ -145,11 +150,29 @@ export default function Contact() {
               name="message"
               rows={5}
               required
+              maxLength={5000}
               value={form.message}
               onChange={handleChange}
               className="mt-1.5 w-full rounded-md border border-navy/15 bg-paper-dim px-4 py-2.5 text-sm text-ink focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15"
             />
           </div>
+
+          {/* Honeypot: hidden from people, filled by bots. Formspree drops any
+              submission where _gotcha has a value. */}
+          <div aria-hidden="true" className="hidden">
+            <label htmlFor="_gotcha">Leave this field empty</label>
+            <input id="_gotcha" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" value={form._gotcha} onChange={handleChange} />
+          </div>
+
+          <p className="text-xs leading-relaxed text-ink-soft/70">
+            I&rsquo;ll use your name and email only to reply to you, and keep your message for about a
+            year. Please don&rsquo;t include sensitive details such as bank, ID or health information. If
+            you are under 18, please ask a parent or guardian first. See the{" "}
+            <Link to="/privacy" className="text-navy hover:underline">
+              Privacy Policy
+            </Link>
+            .
+          </p>
 
           <button
             type="submit"

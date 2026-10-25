@@ -79,6 +79,10 @@ export default function Footer() {
           <Link to="/privacy" className="underline decoration-ink-soft/30 underline-offset-2 hover:text-navy">
             Privacy Policy
           </Link>
+          {" "}&middot;{" "}
+          <Link to="/terms" className="underline decoration-ink-soft/30 underline-offset-2 hover:text-navy">
+            Terms &amp; Disclaimer
+          </Link>
         </p>
       </div>
       <BackToTopButton />

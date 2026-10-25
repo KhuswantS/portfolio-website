@@ -22,6 +22,7 @@ const routes = [
   { url: "/about", out: "about/index.html" },
   { url: "/contact", out: "contact/index.html" },
   { url: "/privacy", out: "privacy/index.html" },
+  { url: "/terms", out: "terms/index.html" },
   { url: "/research/tax-without-recognition", out: "research/tax-without-recognition/index.html" },
   { url: "/research/satleo-labs-investment-memo", out: "research/satleo-labs-investment-memo/index.html" },
   // "*" (NotFound) is intentionally not prerendered - it has no fixed path.
