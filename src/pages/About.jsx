@@ -38,7 +38,7 @@ const education = [
   {
     title: "CFA Level I Candidate",
     school: "CFA Institute",
-    period: "Appearing November 2026",
+    period: "Appearing February 2027",
     logo: "/images/education/cfa-institute.png",
     mono: "CFA",
   },
@@ -137,7 +137,7 @@ export default function About() {
               At IVCA, India&rsquo;s apex body for 500+ PE, VC and alternate capital funds, I
               research funds and their strategies, work with their partners on IVCA&rsquo;s
               platforms and pick the market themes for our webinars. CFA Level I candidate
-              (November 2026), looking for analyst roles in VC, PE and private credit.
+              (February 2027), looking for analyst roles in VC, PE and private credit.
             </p>
           </div>
         </div>
